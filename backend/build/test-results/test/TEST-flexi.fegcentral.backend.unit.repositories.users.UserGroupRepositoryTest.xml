@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flexi.fegcentral.backend.unit.repositories.users.UserGroupRepositoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-06-10T13:27:48" hostname="DESKTOP-8MV4NGR" time="0.05">
+  <properties/>
+  <testcase name="findById_test" classname="flexi.fegcentral.backend.unit.repositories.users.UserGroupRepositoryTest" time="0.026"/>
+  <testcase name="findUserGroupsByUserId_test" classname="flexi.fegcentral.backend.unit.repositories.users.UserGroupRepositoryTest" time="0.013"/>
+  <testcase name="findAll_test" classname="flexi.fegcentral.backend.unit.repositories.users.UserGroupRepositoryTest" time="0.009"/>
+  <system-out><![CDATA[FlexiTranstore Project - (C) European Dynamics SA
+  _____   _____    ____      ____                  _                    _
+ |  ___| | ____|  / ___|    / ___|   ___   _ __   | |_   _ __    __ _  | |
+ | |_    |  _|   | |  _    | |      / _ \ | '_ \  | __| | '__|  / _` | | |
+ |  _|   | |___  | |_| |   | |___  |  __/ | | | | | |_  | |    | (_| | | |
+ |_|     |_____|  \____|    \____|  \___| |_| |_|  \__| |_|     \__,_| |_|
+
+16:27:44.858 [Test worker] INFO  f.f.b.u.r.u.UserGroupRepositoryTest - Starting UserGroupRepositoryTest on DESKTOP-8MV4NGR with PID 12092 (started by helias in C:\flexi-feg-central2\flexi-feg-central\backend)
+16:27:44.858 [Test worker] INFO  f.f.b.u.r.u.UserGroupRepositoryTest - No active profile set, falling back to default profiles: default
+16:27:46.227 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+16:27:46.231 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+16:27:46.236 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+16:27:46.241 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+16:27:46.242 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+16:27:46.243 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+16:27:46.250 [Test worker] INFO  l.lockservice.StandardLockService - Successfully acquired change log lock
+16:27:46.252 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0001.xml
+16:27:46.269 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0002.xml
+16:27:46.277 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0003.xml
+16:27:46.293 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0004.xml
+16:27:46.302 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0005.xml
+16:27:46.310 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0006.xml
+16:27:46.331 [Test worker] INFO  l.c.StandardChangeLogHistoryService - Creating database history table with name: PUBLIC.DATABASECHANGELOG
+16:27:46.332 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+16:27:46.333 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+16:27:46.333 [Test worker] INFO  l.c.StandardChangeLogHistoryService - Reading from PUBLIC.DATABASECHANGELOG
+16:27:46.334 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+16:27:46.334 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+16:27:46.457 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.aes_key (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, encrypted_key CLOB, encryption_version INT NOT NULL, keyuuid VARCHAR(255), rsa_public_key_id BIGINT, size INT, status VARCHAR(255), user_group_id BIGINT, user_id BIGINT, CONSTRAINT PK_AES_KEY PRIMARY KEY (id))
+16:27:46.468 [Test worker] INFO  liquibase.changelog.ChangeSet - Table aes_key created
+16:27:46.468 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-1::helias ran successfully in 12ms
+16:27:46.469 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+16:27:46.476 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-1', 'helias', 'changelog_0001.xml', NOW(), 1, '8:5fb66e3156a4c44222795e01a00a4847', 'createTable tableName=aes_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.480 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.basket (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, basket_type VARCHAR(255), metadata VARCHAR(255), timestamp TIMESTAMP, CONSTRAINT PK_BASKET PRIMARY KEY (id))
+16:27:46.482 [Test worker] INFO  liquibase.changelog.ChangeSet - Table basket created
+16:27:46.482 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-2::helias ran successfully in 4ms
+16:27:46.483 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-2', 'helias', 'changelog_0001.xml', NOW(), 2, '8:e6956a9dfd9af819f88b43015bdccca9', 'createTable tableName=basket', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.484 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.bmecommand (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, command_type VARCHAR(255), message VARCHAR(255), CONSTRAINT PK_BMECOMMAND PRIMARY KEY (id))
+16:27:46.486 [Test worker] INFO  liquibase.changelog.ChangeSet - Table bmecommand created
+16:27:46.486 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-3::helias ran successfully in 2ms
+16:27:46.487 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-3', 'helias', 'changelog_0001.xml', NOW(), 3, '8:87c2fd18805a9dc85121263a92741be6', 'createTable tableName=bmecommand', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.489 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.bmeorder_book_entry (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, entry_group_message VARCHAR(255), order_id BIGINT, price DOUBLE, product_id BIGINT, quantity DOUBLE, CONSTRAINT PK_BMEORDER_BOOK_ENTRY PRIMARY KEY (id))
+16:27:46.490 [Test worker] INFO  liquibase.changelog.ChangeSet - Table bmeorder_book_entry created
+16:27:46.490 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-4::helias ran successfully in 2ms
+16:27:46.491 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-4', 'helias', 'changelog_0001.xml', NOW(), 4, '8:a9bbbf9989ea983ac955f0bc4304db2d', 'createTable tableName=bmeorder_book_entry', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.493 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.contact (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, status VARCHAR(255), receiver_id BIGINT, sender_id BIGINT, CONSTRAINT PK_CONTACT PRIMARY KEY (id))
+16:27:46.495 [Test worker] INFO  liquibase.changelog.ChangeSet - Table contact created
+16:27:46.496 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-5::helias ran successfully in 4ms
+16:27:46.499 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-5', 'helias', 'changelog_0001.xml', NOW(), 5, '8:6eac82347a5ee3cb7805c7eb39d1ca85', 'createTable tableName=contact', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.501 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.country (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, name VARCHAR(255) NOT NULL, CONSTRAINT PK_COUNTRY PRIMARY KEY (id))
+16:27:46.502 [Test worker] INFO  liquibase.changelog.ChangeSet - Table country created
+16:27:46.502 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-6::helias ran successfully in 2ms
+16:27:46.503 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-6', 'helias', 'changelog_0001.xml', NOW(), 6, '8:1698875c5e1b4153fd530ab7eeca888e', 'createTable tableName=country', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.506 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.matched_order (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, metadata VARCHAR(255), price DOUBLE, quantity DOUBLE, status INT, timestamp TIMESTAMP, single_order1_id BIGINT, single_order2_id BIGINT, CONSTRAINT PK_MATCHED_ORDER PRIMARY KEY (id))
+16:27:46.508 [Test worker] INFO  liquibase.changelog.ChangeSet - Table matched_order created
+16:27:46.508 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-7::helias ran successfully in 3ms
+16:27:46.509 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-7', 'helias', 'changelog_0001.xml', NOW(), 7, '8:056bdf07be18e226d7609e9828044ed0', 'createTable tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.510 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.message (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, encrypted_message BLOB, CONSTRAINT PK_MESSAGE PRIMARY KEY (id))
+16:27:46.515 [Test worker] INFO  liquibase.changelog.ChangeSet - Table message created
+16:27:46.515 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-8::helias ran successfully in 5ms
+16:27:46.516 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-8', 'helias', 'changelog_0001.xml', NOW(), 8, '8:2685e2778a2b6d4a17183b7840da0a7f', 'createTable tableName=message', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.517 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.message_info (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, encryption_version INT NOT NULL, metadata VARCHAR(255), name VARCHAR(255), sender_id BIGINT, size VARCHAR(255), tag VARCHAR(255), time_sent TIMESTAMP, user_group_id BIGINT, message BIGINT, CONSTRAINT PK_MESSAGE_INFO PRIMARY KEY (id))
+16:27:46.519 [Test worker] INFO  liquibase.changelog.ChangeSet - Table message_info created
+16:27:46.519 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-9::helias ran successfully in 2ms
+16:27:46.520 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-9', 'helias', 'changelog_0001.xml', NOW(), 9, '8:0086ab8120d186c592646d70fc9e2f8c', 'createTable tableName=message_info', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.521 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.notification (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, description CLOB NOT NULL, name VARCHAR(255) NOT NULL, receiver_id BIGINT, sender_id BIGINT, status VARCHAR(255), time_sent TIMESTAMP, CONSTRAINT PK_NOTIFICATION PRIMARY KEY (id))
+16:27:46.523 [Test worker] INFO  liquibase.changelog.ChangeSet - Table notification created
+16:27:46.523 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-10::helias ran successfully in 2ms
+16:27:46.524 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-10', 'helias', 'changelog_0001.xml', NOW(), 10, '8:85465410adaae57f5ee34933c0ded3d9', 'createTable tableName=notification', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.525 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.product (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, delivery_time_end TIMESTAMP, delivery_time_start TIMESTAMP, name VARCHAR(255), period VARCHAR(255), product_status VARCHAR(255), user_id BIGINT, CONSTRAINT PK_PRODUCT PRIMARY KEY (id))
+16:27:46.529 [Test worker] INFO  liquibase.changelog.ChangeSet - Table product created
+16:27:46.529 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-11::helias ran successfully in 4ms
+16:27:46.531 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-11', 'helias', 'changelog_0001.xml', NOW(), 11, '8:0b1f449e866525571db1799daf107bdc', 'createTable tableName=product', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.532 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.rsa_public_key (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, keyuuid VARCHAR(255), public_key CLOB NOT NULL, size INT, status VARCHAR(255), user_id BIGINT, CONSTRAINT PK_RSA_PUBLIC_KEY PRIMARY KEY (id))
+16:27:46.534 [Test worker] INFO  liquibase.changelog.ChangeSet - Table rsa_public_key created
+16:27:46.534 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-12::helias ran successfully in 2ms
+16:27:46.535 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-12', 'helias', 'changelog_0001.xml', NOW(), 12, '8:b14ac8fd35820dfbaf978e86a3eb2191', 'createTable tableName=rsa_public_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.537 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.single_order (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, bid_time TIMESTAMP, current_price DOUBLE, current_quantity DOUBLE, metadata VARCHAR(255), order_direction VARCHAR(255), order_status VARCHAR(255), order_type VARCHAR(255), price DOUBLE, quantity DOUBLE, basket_id BIGINT, product_id BIGINT, user_id BIGINT, CONSTRAINT PK_SINGLE_ORDER PRIMARY KEY (id))
+16:27:46.538 [Test worker] INFO  liquibase.changelog.ChangeSet - Table single_order created
+16:27:46.538 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-13::helias ran successfully in 2ms
+16:27:46.539 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-13', 'helias', 'changelog_0001.xml', NOW(), 13, '8:44d1eb5f1ece9b1ddc17f86beb7555e2', 'createTable tableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.541 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.user (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, email VARCHAR(255) NOT NULL, encrypted_private_key CLOB, modules_feg VARCHAR(255) NOT NULL, modules_market VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, roles_feg VARCHAR(255) NOT NULL, roles_market VARCHAR(255) NOT NULL, status VARCHAR(255), username VARCHAR(255) NOT NULL, country_id BIGINT, CONSTRAINT PK_USER PRIMARY KEY (id))
+16:27:46.542 [Test worker] INFO  liquibase.changelog.ChangeSet - Table user created
+16:27:46.543 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-14::helias ran successfully in 3ms
+16:27:46.544 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-14', 'helias', 'changelog_0001.xml', NOW(), 14, '8:c11ebc7a2b6b889f88c14864d778a927', 'createTable tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.548 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.user_group (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, description VARCHAR(255) NOT NULL, encryption_version INT NOT NULL, name VARCHAR(255) NOT NULL, status VARCHAR(255), CONSTRAINT PK_USER_GROUP PRIMARY KEY (id))
+16:27:46.550 [Test worker] INFO  liquibase.changelog.ChangeSet - Table user_group created
+16:27:46.550 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-15::helias ran successfully in 3ms
+16:27:46.551 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-15', 'helias', 'changelog_0001.xml', NOW(), 15, '8:4c2a8b1a23169541884267a976fca747', 'createTable tableName=user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.552 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.user_to_user_group (user_group_id BIGINT NOT NULL, user_id BIGINT NOT NULL)
+16:27:46.553 [Test worker] INFO  liquibase.changelog.ChangeSet - Table user_to_user_group created
+16:27:46.553 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-16::helias ran successfully in 1ms
+16:27:46.567 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-16', 'helias', 'changelog_0001.xml', NOW(), 16, '8:08dc9395f97b414f0260ee37c4ff289f', 'createTable tableName=user_to_user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.570 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.weather_result (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, cloud_percentage DOUBLE, humidity DOUBLE, radiation DOUBLE, radiation_date TIMESTAMP, radiation_time TIMESTAMP, temperature DOUBLE, weather_condition_description VARCHAR(255), weather_condition_icon VARCHAR(255), weather_condition_id INT, weather_condition_main VARCHAR(255), weather_date_time TIMESTAMP, wind_digree DOUBLE, wind_speed DOUBLE, CONSTRAINT PK_WEATHER_RESULT PRIMARY KEY (id))
+16:27:46.571 [Test worker] INFO  liquibase.changelog.ChangeSet - Table weather_result created
+16:27:46.572 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-17::helias ran successfully in 4ms
+16:27:46.573 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-17', 'helias', 'changelog_0001.xml', NOW(), 17, '8:0358503c62b5409101e4c8487fba59d3', 'createTable tableName=weather_result', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.626 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK4kyxou5udc31b407y8iula3jo ON PUBLIC.matched_order(single_order1_id)
+16:27:46.632 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK4kyxou5udc31b407y8iula3jo created
+16:27:46.633 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-18::helias ran successfully in 60ms
+16:27:46.634 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-18', 'helias', 'changelog_0001.xml', NOW(), 18, '8:a29dad7cb4d65fe3703d2296c461719a', 'createIndex indexName=FK4kyxou5udc31b407y8iula3jo, tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.635 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK4x1sus75hqodee3pnip99vog8 ON PUBLIC.aes_key(user_id)
+16:27:46.635 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK4x1sus75hqodee3pnip99vog8 created
+16:27:46.635 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-19::helias ran successfully in 1ms
+16:27:46.636 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-19', 'helias', 'changelog_0001.xml', NOW(), 19, '8:8901ff637e72bd5f35547f9bb37d5a6f', 'createIndex indexName=FK4x1sus75hqodee3pnip99vog8, tableName=aes_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.637 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK8e1emba6orfbatnb6bub6rovr ON PUBLIC.single_order(user_id)
+16:27:46.638 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK8e1emba6orfbatnb6bub6rovr created
+16:27:46.638 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-20::helias ran successfully in 1ms
+16:27:46.639 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-20', 'helias', 'changelog_0001.xml', NOW(), 20, '8:c6c8352128139aea6112fe352aeb23b2', 'createIndex indexName=FK8e1emba6orfbatnb6bub6rovr, tableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.640 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK979liw4xk18ncpl87u4tygx2u ON PUBLIC.product(user_id)
+16:27:46.641 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK979liw4xk18ncpl87u4tygx2u created
+16:27:46.641 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-21::helias ran successfully in 1ms
+16:27:46.642 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-21', 'helias', 'changelog_0001.xml', NOW(), 21, '8:c4063b028a5319f3f470d1d4c639ed95', 'createIndex indexName=FK979liw4xk18ncpl87u4tygx2u, tableName=product', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.643 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK9mb4gn8pggjkus43we1af8kmf ON PUBLIC.single_order(basket_id)
+16:27:46.643 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK9mb4gn8pggjkus43we1af8kmf created
+16:27:46.643 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-22::helias ran successfully in 0ms
+16:27:46.645 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-22', 'helias', 'changelog_0001.xml', NOW(), 22, '8:3db035e5a9c4a3da41b46830509c5041', 'createIndex indexName=FK9mb4gn8pggjkus43we1af8kmf, tableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.647 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKdp9n1m0ovuoxc1rd24ux4gbao ON PUBLIC.aes_key(rsa_public_key_id)
+16:27:46.647 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKdp9n1m0ovuoxc1rd24ux4gbao created
+16:27:46.647 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-23::helias ran successfully in 1ms
+16:27:46.648 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-23', 'helias', 'changelog_0001.xml', NOW(), 23, '8:a509fe14abda473e27602c9d5bd82c9e', 'createIndex indexName=FKdp9n1m0ovuoxc1rd24ux4gbao, tableName=aes_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.650 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKeggdhk8s8sv0l104bhcyss5m5 ON PUBLIC.message_info(user_group_id)
+16:27:46.650 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKeggdhk8s8sv0l104bhcyss5m5 created
+16:27:46.650 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-24::helias ran successfully in 0ms
+16:27:46.651 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-24', 'helias', 'changelog_0001.xml', NOW(), 24, '8:797db70c1ee55e18a35d7c426fb90aa3', 'createIndex indexName=FKeggdhk8s8sv0l104bhcyss5m5, tableName=message_info', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.653 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKfdheg7vkbwo3hoi69frii3tbk ON PUBLIC.single_order(product_id)
+16:27:46.653 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKfdheg7vkbwo3hoi69frii3tbk created
+16:27:46.653 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-25::helias ran successfully in 1ms
+16:27:46.654 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-25', 'helias', 'changelog_0001.xml', NOW(), 25, '8:ab1a24e58c370ced70fbf54ff25145c4', 'createIndex indexName=FKfdheg7vkbwo3hoi69frii3tbk, tableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.655 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKfemhplm6homx9lx5bft54wqnt ON PUBLIC.message_info(sender_id)
+16:27:46.656 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKfemhplm6homx9lx5bft54wqnt created
+16:27:46.656 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-26::helias ran successfully in 1ms
+16:27:46.657 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-26', 'helias', 'changelog_0001.xml', NOW(), 26, '8:011262acb8cc0e65d6c9612ad6c12877', 'createIndex indexName=FKfemhplm6homx9lx5bft54wqnt, tableName=message_info', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.658 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKge8lxibk9q3wf206s600otk61 ON PUBLIC.user(country_id)
+16:27:46.659 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKge8lxibk9q3wf206s600otk61 created
+16:27:46.659 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-27::helias ran successfully in 1ms
+16:27:46.660 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-27', 'helias', 'changelog_0001.xml', NOW(), 27, '8:e6e6e0a1d11c21b4bb00a2960b675089', 'createIndex indexName=FKge8lxibk9q3wf206s600otk61, tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.660 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKgpv5rvwj628uvdbpk4d7ms6y5 ON PUBLIC.rsa_public_key(user_id)
+16:27:46.661 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKgpv5rvwj628uvdbpk4d7ms6y5 created
+16:27:46.661 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-28::helias ran successfully in 1ms
+16:27:46.662 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-28', 'helias', 'changelog_0001.xml', NOW(), 28, '8:899a6151bc1e2797239537ed71780a50', 'createIndex indexName=FKgpv5rvwj628uvdbpk4d7ms6y5, tableName=rsa_public_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.664 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKitjeiubncmo40fq58c01jygl6 ON PUBLIC.matched_order(single_order2_id)
+16:27:46.664 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKitjeiubncmo40fq58c01jygl6 created
+16:27:46.664 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-29::helias ran successfully in 1ms
+16:27:46.665 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-29', 'helias', 'changelog_0001.xml', NOW(), 29, '8:7f5b33feeb439753ae26c90b396a94c3', 'createIndex indexName=FKitjeiubncmo40fq58c01jygl6, tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.666 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKk5fiqqsjico0y32jk2vpold5 ON PUBLIC.contact(sender_id)
+16:27:46.666 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKk5fiqqsjico0y32jk2vpold5 created
+16:27:46.666 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-30::helias ran successfully in 0ms
+16:27:46.667 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-30', 'helias', 'changelog_0001.xml', NOW(), 30, '8:d5a067307220f30125726ef01d7c0846', 'createIndex indexName=FKk5fiqqsjico0y32jk2vpold5, tableName=contact', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.668 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKkhtrb2oa7qhti32gbnb49ckdc ON PUBLIC.user_to_user_group(user_id)
+16:27:46.668 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKkhtrb2oa7qhti32gbnb49ckdc created
+16:27:46.668 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-31::helias ran successfully in 0ms
+16:27:46.669 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-31', 'helias', 'changelog_0001.xml', NOW(), 31, '8:48f4ffa916324e9a8419b18979b5a4f1', 'createIndex indexName=FKkhtrb2oa7qhti32gbnb49ckdc, tableName=user_to_user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.670 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKmlidwdldgmdw67l7pbrval0un ON PUBLIC.notification(receiver_id)
+16:27:46.671 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKmlidwdldgmdw67l7pbrval0un created
+16:27:46.671 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-32::helias ran successfully in 1ms
+16:27:46.672 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-32', 'helias', 'changelog_0001.xml', NOW(), 32, '8:ff1465061f205305f18a71be6e268db2', 'createIndex indexName=FKmlidwdldgmdw67l7pbrval0un, tableName=notification', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.672 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKmtqyh1wp1x7jqgkr9er6q3ek1 ON PUBLIC.user_to_user_group(user_group_id)
+16:27:46.672 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKmtqyh1wp1x7jqgkr9er6q3ek1 created
+16:27:46.673 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-33::helias ran successfully in 0ms
+16:27:46.673 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-33', 'helias', 'changelog_0001.xml', NOW(), 33, '8:8ca7a3aa1c723be286ee68d17ac219ca', 'createIndex indexName=FKmtqyh1wp1x7jqgkr9er6q3ek1, tableName=user_to_user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.674 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKn9k2mifl9c7x5okmqm3t0eqf3 ON PUBLIC.contact(receiver_id)
+16:27:46.675 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKn9k2mifl9c7x5okmqm3t0eqf3 created
+16:27:46.675 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-34::helias ran successfully in 1ms
+16:27:46.675 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-34', 'helias', 'changelog_0001.xml', NOW(), 34, '8:9ec5d813394223b9aa21ae258ed299bd', 'createIndex indexName=FKn9k2mifl9c7x5okmqm3t0eqf3, tableName=contact', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.676 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKnbt1hengkgjqru2q44q8rlc2c ON PUBLIC.notification(sender_id)
+16:27:46.676 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKnbt1hengkgjqru2q44q8rlc2c created
+16:27:46.676 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-35::helias ran successfully in 0ms
+16:27:46.678 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-35', 'helias', 'changelog_0001.xml', NOW(), 35, '8:c823d786633665a868124cac739c02af', 'createIndex indexName=FKnbt1hengkgjqru2q44q8rlc2c, tableName=notification', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.679 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKo4d01une6qcmp7bi1l55e2kts ON PUBLIC.message_info(message)
+16:27:46.680 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKo4d01une6qcmp7bi1l55e2kts created
+16:27:46.680 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-36::helias ran successfully in 2ms
+16:27:46.681 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-36', 'helias', 'changelog_0001.xml', NOW(), 36, '8:90551365746e9737b508165cf3631bf3', 'createIndex indexName=FKo4d01une6qcmp7bi1l55e2kts, tableName=message_info', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.681 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FKs23imuro9um41s6gmxi58l7tb ON PUBLIC.aes_key(user_group_id)
+16:27:46.682 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FKs23imuro9um41s6gmxi58l7tb created
+16:27:46.682 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-37::helias ran successfully in 1ms
+16:27:46.683 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-37', 'helias', 'changelog_0001.xml', NOW(), 37, '8:ec753082e27e78dee7f3cf09c11e67ac', 'createIndex indexName=FKs23imuro9um41s6gmxi58l7tb, tableName=aes_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.718 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD CONSTRAINT FK4kyxou5udc31b407y8iula3jo FOREIGN KEY (single_order1_id) REFERENCES PUBLIC.single_order (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.725 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to matched_order (single_order1_id)
+16:27:46.725 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-38::helias ran successfully in 41ms
+16:27:46.726 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-38', 'helias', 'changelog_0001.xml', NOW(), 38, '8:2645e85218ecaf153aff3ff167720eb7', 'addForeignKeyConstraint baseTableName=matched_order, constraintName=FK4kyxou5udc31b407y8iula3jo, referencedTableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.727 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.aes_key ADD CONSTRAINT FK4x1sus75hqodee3pnip99vog8 FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.729 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to aes_key (user_id)
+16:27:46.730 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-39::helias ran successfully in 3ms
+16:27:46.730 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-39', 'helias', 'changelog_0001.xml', NOW(), 39, '8:43135a5c31e3992cf28ac46a0d780111', 'addForeignKeyConstraint baseTableName=aes_key, constraintName=FK4x1sus75hqodee3pnip99vog8, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.731 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.single_order ADD CONSTRAINT FK8e1emba6orfbatnb6bub6rovr FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.733 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to single_order (user_id)
+16:27:46.733 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-40::helias ran successfully in 2ms
+16:27:46.734 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-40', 'helias', 'changelog_0001.xml', NOW(), 40, '8:520e33c8e7adc688d1d9072020ba8b5f', 'addForeignKeyConstraint baseTableName=single_order, constraintName=FK8e1emba6orfbatnb6bub6rovr, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.735 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.product ADD CONSTRAINT FK979liw4xk18ncpl87u4tygx2u FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.736 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to product (user_id)
+16:27:46.736 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-41::helias ran successfully in 2ms
+16:27:46.737 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-41', 'helias', 'changelog_0001.xml', NOW(), 41, '8:408f2fd6d17cd101ed2234a08ffe99e4', 'addForeignKeyConstraint baseTableName=product, constraintName=FK979liw4xk18ncpl87u4tygx2u, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.738 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.single_order ADD CONSTRAINT FK9mb4gn8pggjkus43we1af8kmf FOREIGN KEY (basket_id) REFERENCES PUBLIC.basket (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.739 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to single_order (basket_id)
+16:27:46.740 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-42::helias ran successfully in 2ms
+16:27:46.741 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-42', 'helias', 'changelog_0001.xml', NOW(), 42, '8:a8200fa8aebf83c2b3873df427f0d92b', 'addForeignKeyConstraint baseTableName=single_order, constraintName=FK9mb4gn8pggjkus43we1af8kmf, referencedTableName=basket', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.742 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.aes_key ADD CONSTRAINT FKdp9n1m0ovuoxc1rd24ux4gbao FOREIGN KEY (rsa_public_key_id) REFERENCES PUBLIC.rsa_public_key (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.743 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to aes_key (rsa_public_key_id)
+16:27:46.743 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-43::helias ran successfully in 2ms
+16:27:46.744 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-43', 'helias', 'changelog_0001.xml', NOW(), 43, '8:ea7c7a81610f68607abd457873658d72', 'addForeignKeyConstraint baseTableName=aes_key, constraintName=FKdp9n1m0ovuoxc1rd24ux4gbao, referencedTableName=rsa_public_key', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.745 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.message_info ADD CONSTRAINT FKeggdhk8s8sv0l104bhcyss5m5 FOREIGN KEY (user_group_id) REFERENCES PUBLIC.user_group (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.747 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to message_info (user_group_id)
+16:27:46.748 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-44::helias ran successfully in 3ms
+16:27:46.749 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-44', 'helias', 'changelog_0001.xml', NOW(), 44, '8:87206d6e698e2dfaf5a76015ea2972cd', 'addForeignKeyConstraint baseTableName=message_info, constraintName=FKeggdhk8s8sv0l104bhcyss5m5, referencedTableName=user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.750 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.single_order ADD CONSTRAINT FKfdheg7vkbwo3hoi69frii3tbk FOREIGN KEY (product_id) REFERENCES PUBLIC.product (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.751 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to single_order (product_id)
+16:27:46.751 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-45::helias ran successfully in 1ms
+16:27:46.752 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-45', 'helias', 'changelog_0001.xml', NOW(), 45, '8:fb218a874fc40e3a9be724e48f276da7', 'addForeignKeyConstraint baseTableName=single_order, constraintName=FKfdheg7vkbwo3hoi69frii3tbk, referencedTableName=product', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.753 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.message_info ADD CONSTRAINT FKfemhplm6homx9lx5bft54wqnt FOREIGN KEY (sender_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.755 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to message_info (sender_id)
+16:27:46.755 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-46::helias ran successfully in 2ms
+16:27:46.755 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-46', 'helias', 'changelog_0001.xml', NOW(), 46, '8:11da567ceecc783e81cd4a6afcc24153', 'addForeignKeyConstraint baseTableName=message_info, constraintName=FKfemhplm6homx9lx5bft54wqnt, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.757 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user ADD CONSTRAINT FKge8lxibk9q3wf206s600otk61 FOREIGN KEY (country_id) REFERENCES PUBLIC.country (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.758 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to user (country_id)
+16:27:46.758 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-47::helias ran successfully in 2ms
+16:27:46.759 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-47', 'helias', 'changelog_0001.xml', NOW(), 47, '8:f6230697886b23a8d72e08d3f063b3c8', 'addForeignKeyConstraint baseTableName=user, constraintName=FKge8lxibk9q3wf206s600otk61, referencedTableName=country', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.760 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.rsa_public_key ADD CONSTRAINT FKgpv5rvwj628uvdbpk4d7ms6y5 FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.762 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to rsa_public_key (user_id)
+16:27:46.762 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-48::helias ran successfully in 2ms
+16:27:46.763 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-48', 'helias', 'changelog_0001.xml', NOW(), 48, '8:fb9b4141962312d5951abd55bdeeb791', 'addForeignKeyConstraint baseTableName=rsa_public_key, constraintName=FKgpv5rvwj628uvdbpk4d7ms6y5, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.764 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD CONSTRAINT FKitjeiubncmo40fq58c01jygl6 FOREIGN KEY (single_order2_id) REFERENCES PUBLIC.single_order (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.765 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to matched_order (single_order2_id)
+16:27:46.765 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-49::helias ran successfully in 2ms
+16:27:46.766 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-49', 'helias', 'changelog_0001.xml', NOW(), 49, '8:db8f93b232d8160393d6a437c512ec92', 'addForeignKeyConstraint baseTableName=matched_order, constraintName=FKitjeiubncmo40fq58c01jygl6, referencedTableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.767 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.contact ADD CONSTRAINT FKk5fiqqsjico0y32jk2vpold5 FOREIGN KEY (sender_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.768 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to contact (sender_id)
+16:27:46.768 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-50::helias ran successfully in 1ms
+16:27:46.769 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-50', 'helias', 'changelog_0001.xml', NOW(), 50, '8:53eb46c4d152b66d3b9107fe155ba769', 'addForeignKeyConstraint baseTableName=contact, constraintName=FKk5fiqqsjico0y32jk2vpold5, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.771 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user_to_user_group ADD CONSTRAINT FKkhtrb2oa7qhti32gbnb49ckdc FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.773 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to user_to_user_group (user_id)
+16:27:46.773 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-51::helias ran successfully in 3ms
+16:27:46.774 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-51', 'helias', 'changelog_0001.xml', NOW(), 51, '8:b2fda0a4a6c9f03d3c8cdf2f426c11f6', 'addForeignKeyConstraint baseTableName=user_to_user_group, constraintName=FKkhtrb2oa7qhti32gbnb49ckdc, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.775 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.notification ADD CONSTRAINT FKmlidwdldgmdw67l7pbrval0un FOREIGN KEY (receiver_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.777 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to notification (receiver_id)
+16:27:46.777 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-52::helias ran successfully in 2ms
+16:27:46.779 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-52', 'helias', 'changelog_0001.xml', NOW(), 52, '8:f5cac0dacc1a21fbe66ad9d67ad34315', 'addForeignKeyConstraint baseTableName=notification, constraintName=FKmlidwdldgmdw67l7pbrval0un, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.780 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user_to_user_group ADD CONSTRAINT FKmtqyh1wp1x7jqgkr9er6q3ek1 FOREIGN KEY (user_group_id) REFERENCES PUBLIC.user_group (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.781 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to user_to_user_group (user_group_id)
+16:27:46.781 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-53::helias ran successfully in 2ms
+16:27:46.782 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-53', 'helias', 'changelog_0001.xml', NOW(), 53, '8:e47813a113527113bb9c1ce41cd2527a', 'addForeignKeyConstraint baseTableName=user_to_user_group, constraintName=FKmtqyh1wp1x7jqgkr9er6q3ek1, referencedTableName=user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.783 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.contact ADD CONSTRAINT FKn9k2mifl9c7x5okmqm3t0eqf3 FOREIGN KEY (receiver_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.784 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to contact (receiver_id)
+16:27:46.784 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-54::helias ran successfully in 1ms
+16:27:46.785 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-54', 'helias', 'changelog_0001.xml', NOW(), 54, '8:622b143de3d1b666079e14fc350df10b', 'addForeignKeyConstraint baseTableName=contact, constraintName=FKn9k2mifl9c7x5okmqm3t0eqf3, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.786 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.notification ADD CONSTRAINT FKnbt1hengkgjqru2q44q8rlc2c FOREIGN KEY (sender_id) REFERENCES PUBLIC.user (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.787 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to notification (sender_id)
+16:27:46.787 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-55::helias ran successfully in 2ms
+16:27:46.788 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-55', 'helias', 'changelog_0001.xml', NOW(), 55, '8:a6aac81e00fb939307bae6d1e34a3b27', 'addForeignKeyConstraint baseTableName=notification, constraintName=FKnbt1hengkgjqru2q44q8rlc2c, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.789 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.message_info ADD CONSTRAINT FKo4d01une6qcmp7bi1l55e2kts FOREIGN KEY (message) REFERENCES PUBLIC.message (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.790 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to message_info (message)
+16:27:46.790 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-56::helias ran successfully in 2ms
+16:27:46.791 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-56', 'helias', 'changelog_0001.xml', NOW(), 56, '8:61571c8695f81a25a487f6132e7d093a', 'addForeignKeyConstraint baseTableName=message_info, constraintName=FKo4d01une6qcmp7bi1l55e2kts, referencedTableName=message', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.792 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.aes_key ADD CONSTRAINT FKs23imuro9um41s6gmxi58l7tb FOREIGN KEY (user_group_id) REFERENCES PUBLIC.user_group (id) ON UPDATE RESTRICT ON DELETE RESTRICT
+16:27:46.793 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to aes_key (user_group_id)
+16:27:46.793 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0001.xml::1575984957436-57::helias ran successfully in 2ms
+16:27:46.794 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1575984957436-57', 'helias', 'changelog_0001.xml', NOW(), 57, '8:6632b5daaf6a93b04612e714c935ae7b', 'addForeignKeyConstraint baseTableName=aes_key, constraintName=FKs23imuro9um41s6gmxi58l7tb, referencedTableName=user_group', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.797 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `user` (`id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `version`, `email`, `password`, `status`, `username`,
+                `modules_feg`,
+                `roles_feg`,
+                `modules_market`,
+                `roles_market`,
+                `encrypted_private_key`
+                ) VALUES
+                (2000, '', now(), '', now(), 0, 'user1@flexi.gr', '$2a$10$/qyqvfMLp0qEpTI4zE5HreTAvBI2I8CxdCc9muniHs126F4tSQs/K', 'enabled', 'admin','hyppoio','admin','market','admin','')
+16:27:46.802 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.802 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0002.xml::changelog_0002.xml::European Dynamics ran successfully in 7ms
+16:27:46.803 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog_0002.xml', 'European Dynamics', 'changelog_0002.xml', NOW(), 58, '8:67d3cfa81358b8e6b57b54a1d622b3d1', 'sql', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.805 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Afghanistan')
+16:27:46.805 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.806 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Albania')
+16:27:46.806 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.807 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Algeria')
+16:27:46.807 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.808 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'AmericanSamoa')
+16:27:46.808 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.809 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Andorra')
+16:27:46.809 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.810 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Angola')
+16:27:46.810 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.811 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Anguilla')
+16:27:46.811 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.812 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Antigua and Barbuda')
+16:27:46.812 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.813 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Argentina')
+16:27:46.813 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.814 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Armenia')
+16:27:46.814 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.815 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Aruba')
+16:27:46.815 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.815 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Australia')
+16:27:46.816 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.817 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Austria')
+16:27:46.817 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.818 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Azerbaijan')
+16:27:46.818 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.819 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bahamas,The')
+16:27:46.819 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.820 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bahrain')
+16:27:46.821 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.821 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bangladesh')
+16:27:46.822 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.822 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Barbados')
+16:27:46.822 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.823 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belarus')
+16:27:46.823 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.824 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belgium')
+16:27:46.824 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.825 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belize')
+16:27:46.825 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.825 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Benin')
+16:27:46.826 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.826 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bermuda')
+16:27:46.826 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.827 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bhutan')
+16:27:46.827 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.827 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bolivia')
+16:27:46.828 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.829 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bosnia and Herzegovina')
+16:27:46.829 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.830 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Botswana')
+16:27:46.830 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.831 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Brazil')
+16:27:46.831 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.831 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'BritishVirginIs.')
+16:27:46.832 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.832 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Brunei')
+16:27:46.832 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.833 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bulgaria')
+16:27:46.833 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.834 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'BurkinaFaso')
+16:27:46.834 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.835 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Burma')
+16:27:46.835 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.836 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Burundi')
+16:27:46.836 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.837 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cambodia')
+16:27:46.837 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.838 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cameroon')
+16:27:46.838 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.839 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Canada')
+16:27:46.839 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.840 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CapeVerde')
+16:27:46.840 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.841 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CaymanIslands')
+16:27:46.841 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.842 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CentralAfricanRep.')
+16:27:46.842 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.842 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Chad')
+16:27:46.843 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.843 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Chile')
+16:27:46.844 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.844 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'China')
+16:27:46.845 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.846 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Colombia')
+16:27:46.846 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.846 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Comoros')
+16:27:46.847 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.847 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Congo,Dem.Rep.')
+16:27:46.848 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.849 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Congo,Repub.ofthe')
+16:27:46.849 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.850 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CookIslands')
+16:27:46.850 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.851 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CostaRica')
+16:27:46.851 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.851 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Coted`Ivoire')
+16:27:46.852 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.852 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Croatia')
+16:27:46.853 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.853 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cuba')
+16:27:46.853 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.854 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cyprus')
+16:27:46.854 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.855 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CzechRepublic')
+16:27:46.855 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.856 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Denmark')
+16:27:46.856 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.856 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Djibouti')
+16:27:46.857 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.857 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Dominica')
+16:27:46.858 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.858 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'DominicanRepublic')
+16:27:46.858 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.859 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'EastTimor')
+16:27:46.859 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.860 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ecuador')
+16:27:46.860 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.860 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Egypt')
+16:27:46.861 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.861 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'ElSalvador')
+16:27:46.862 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.862 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'EquatorialGuinea')
+16:27:46.862 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.863 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Eritrea')
+16:27:46.863 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.864 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Estonia')
+16:27:46.864 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.865 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ethiopia')
+16:27:46.865 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.865 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FaroeIslands')
+16:27:46.866 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.866 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Fiji')
+16:27:46.866 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.867 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Finland')
+16:27:46.867 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.868 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'France')
+16:27:46.868 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.868 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FrenchGuiana')
+16:27:46.869 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.870 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FrenchPolynesia')
+16:27:46.870 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.871 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gabon')
+16:27:46.871 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.872 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gambia,The')
+16:27:46.872 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.873 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'GazaStrip')
+16:27:46.873 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.873 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Georgia')
+16:27:46.874 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.875 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Germany')
+16:27:46.875 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.876 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ghana')
+16:27:46.876 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.877 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gibraltar')
+16:27:46.877 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.877 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Greece')
+16:27:46.878 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.879 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Greenland')
+16:27:46.879 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.880 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Grenada')
+16:27:46.880 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.880 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guadeloupe')
+16:27:46.881 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.881 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guam')
+16:27:46.881 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.882 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guatemala')
+16:27:46.882 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.882 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guernsey')
+16:27:46.883 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.883 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guinea')
+16:27:46.884 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.884 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guinea-Bissau')
+16:27:46.884 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.885 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guyana')
+16:27:46.885 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.885 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Haiti')
+16:27:46.886 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.886 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Honduras')
+16:27:46.886 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.887 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'HongKong')
+16:27:46.887 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.887 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Hungary')
+16:27:46.887 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.888 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iceland')
+16:27:46.888 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.889 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'India')
+16:27:46.889 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.890 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Indonesia')
+16:27:46.890 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.891 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iran')
+16:27:46.892 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.893 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iraq')
+16:27:46.893 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.893 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ireland')
+16:27:46.894 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.895 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'IsleofMan')
+16:27:46.895 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.896 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Israel')
+16:27:46.896 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.897 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Italy')
+16:27:46.897 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.897 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jamaica')
+16:27:46.897 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.899 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Japan')
+16:27:46.899 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.899 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jersey')
+16:27:46.899 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.900 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jordan')
+16:27:46.900 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.901 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kazakhstan')
+16:27:46.901 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.902 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kenya')
+16:27:46.902 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.903 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kiribati')
+16:27:46.903 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.903 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Korea,North')
+16:27:46.903 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.904 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Korea,South')
+16:27:46.904 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.905 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kuwait')
+16:27:46.905 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.905 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kyrgyzstan')
+16:27:46.906 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.906 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Laos')
+16:27:46.906 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.907 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Latvia')
+16:27:46.907 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.908 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lebanon')
+16:27:46.908 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.909 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lesotho')
+16:27:46.909 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.909 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Liberia')
+16:27:46.909 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.910 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Libya')
+16:27:46.910 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.911 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Liechtenstein')
+16:27:46.911 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.912 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lithuania')
+16:27:46.912 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.914 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Luxembourg')
+16:27:46.914 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.914 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Macau')
+16:27:46.914 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.915 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Macedonia')
+16:27:46.915 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.916 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Madagascar')
+16:27:46.916 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.916 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malawi')
+16:27:46.917 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.917 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malaysia')
+16:27:46.917 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.918 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Maldives')
+16:27:46.918 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.918 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mali')
+16:27:46.918 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.919 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malta')
+16:27:46.919 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.919 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'MarshallIslands')
+16:27:46.919 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.920 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Martinique')
+16:27:46.920 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.920 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mauritania')
+16:27:46.920 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.920 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mauritius')
+16:27:46.921 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.921 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mayotte')
+16:27:46.921 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.921 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mexico')
+16:27:46.922 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.922 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Micronesia,Fed.St.')
+16:27:46.922 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.922 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Moldova')
+16:27:46.922 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.923 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Monaco')
+16:27:46.923 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.923 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mongolia')
+16:27:46.923 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.924 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Montserrat')
+16:27:46.924 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.924 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Morocco')
+16:27:46.924 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.925 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mozambique')
+16:27:46.925 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.925 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Namibia')
+16:27:46.925 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.925 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nauru')
+16:27:46.926 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.926 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nepal')
+16:27:46.926 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.927 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Netherlands')
+16:27:46.927 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.928 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NetherlandsAntilles')
+16:27:46.928 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.929 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NewCaledonia')
+16:27:46.930 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.930 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NewZealand')
+16:27:46.930 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.931 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nicaragua')
+16:27:46.931 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.931 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Niger')
+16:27:46.932 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.932 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nigeria')
+16:27:46.934 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.934 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'N.MarianaIslands')
+16:27:46.934 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.934 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Norway')
+16:27:46.934 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.934 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Oman')
+16:27:46.935 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.935 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Pakistan')
+16:27:46.935 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.936 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Palau')
+16:27:46.936 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.937 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Panama')
+16:27:46.937 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.937 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'PapuaNewGuinea')
+16:27:46.937 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.938 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Paraguay')
+16:27:46.938 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.939 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Peru')
+16:27:46.939 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.940 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Philippines')
+16:27:46.940 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.941 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Poland')
+16:27:46.941 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.942 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Portugal')
+16:27:46.942 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.942 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'PuertoRico')
+16:27:46.943 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.943 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Qatar')
+16:27:46.943 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.944 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Reunion')
+16:27:46.944 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.945 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Romania')
+16:27:46.945 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.945 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Russia')
+16:27:46.945 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.946 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Rwanda')
+16:27:46.946 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.947 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintHelena')
+16:27:46.947 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.947 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintKitts and Nevis')
+16:27:46.947 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.948 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintLucia')
+16:27:46.948 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.948 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'StPierre and Miquelon')
+16:27:46.948 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.949 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintVincentandtheGrenadines')
+16:27:46.949 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.950 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Samoa')
+16:27:46.950 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.950 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SanMarino')
+16:27:46.951 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.951 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaoTome and Principe')
+16:27:46.951 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.952 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaudiArabia')
+16:27:46.952 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.952 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Senegal')
+16:27:46.952 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.953 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Serbia')
+16:27:46.953 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.953 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Seychelles')
+16:27:46.954 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.954 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SierraLeone')
+16:27:46.954 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.954 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Singapore')
+16:27:46.955 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.955 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Slovakia')
+16:27:46.955 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.956 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Slovenia')
+16:27:46.956 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.956 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SolomonIslands')
+16:27:46.956 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.957 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Somalia')
+16:27:46.957 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.957 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SouthAfrica')
+16:27:46.957 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.958 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Spain')
+16:27:46.958 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.959 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SriLanka')
+16:27:46.959 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.960 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Sudan')
+16:27:46.960 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.961 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Suriname')
+16:27:46.961 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.962 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Swaziland')
+16:27:46.962 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.963 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Sweden')
+16:27:46.964 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.964 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Switzerland')
+16:27:46.965 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.965 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Syria')
+16:27:46.965 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.966 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Taiwan')
+16:27:46.966 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.966 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tajikistan')
+16:27:46.967 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.967 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tanzania')
+16:27:46.967 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.968 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Thailand')
+16:27:46.968 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.968 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Togo')
+16:27:46.968 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.969 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tonga')
+16:27:46.969 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.970 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Trinidad and Tobago')
+16:27:46.970 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.970 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tunisia')
+16:27:46.970 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.971 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turkey')
+16:27:46.971 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.971 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turkmenistan')
+16:27:46.971 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.971 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turks and CaicosIs')
+16:27:46.972 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.972 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tuvalu')
+16:27:46.972 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.973 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uganda')
+16:27:46.973 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.973 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ukraine')
+16:27:46.973 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.974 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedArabEmirates')
+16:27:46.974 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.974 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedKingdom')
+16:27:46.974 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.975 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedStates')
+16:27:46.975 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.975 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uruguay')
+16:27:46.975 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.975 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uzbekistan')
+16:27:46.976 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.976 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Vanuatu')
+16:27:46.976 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.976 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Venezuela')
+16:27:46.976 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.976 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Vietnam')
+16:27:46.977 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.977 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'VirginIslands')
+16:27:46.977 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.977 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WallisandFutuna')
+16:27:46.978 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.979 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WestBank')
+16:27:46.979 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.979 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WesternSahara')
+16:27:46.979 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.979 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Yemen')
+16:27:46.981 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.982 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Zambia')
+16:27:46.982 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.983 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Zimbabwe')
+16:27:46.983 [Test worker] INFO  liquibase.changelog.ChangeSet - Custom SQL executed
+16:27:46.985 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0003.xml::changelog_0003.xml::European Dynamics ran successfully in 181ms
+16:27:46.987 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('changelog_0003.xml', 'European Dynamics', 'changelog_0003.xml', NOW(), 59, '8:b21cde68e9710a905d0deb980aa8ec52', 'sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sql; sq...', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.990 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.file_upload_registry (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, filename VARCHAR(255), path VARCHAR(255), user_id BIGINT, prefix VARCHAR(255), CONSTRAINT PK_FILE_UPLOAD_REGISTRY PRIMARY KEY (id))
+16:27:46.991 [Test worker] INFO  liquibase.changelog.ChangeSet - Table file_upload_registry created
+16:27:46.991 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-1::ED (generated) ran successfully in 2ms
+16:27:46.993 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-1', 'ED (generated)', 'changelog_0004.xml', NOW(), 60, '8:ecb525a1ca2f55669a8578b7a8afb1ad', 'createTable tableName=file_upload_registry', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.996 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.import_order (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, action VARCHAR(255), basket_id VARCHAR(255), basket_type VARCHAR(255), basket_meta VARCHAR(255), message_info_id BIGINT, order_direction VARCHAR(255), order_type VARCHAR(255), order_id BIGINT, order_meta VARCHAR(255), price DOUBLE, product_name VARCHAR(255), quantity DOUBLE, status VARCHAR(255), time_stamp TIMESTAMP, user_id BIGINT, single_order_id BIGINT, market_code VARCHAR(255), CONSTRAINT PK_IMPORT_ORDER PRIMARY KEY (id))
+16:27:46.997 [Test worker] INFO  liquibase.changelog.ChangeSet - Table import_order created
+16:27:46.997 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-2::ED (generated) ran successfully in 3ms
+16:27:46.998 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-2', 'ED (generated)', 'changelog_0004.xml', NOW(), 61, '8:f539ccc33a880e928d58822a5232af30', 'createTable tableName=import_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:46.999 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.basket ADD basket_status VARCHAR(255)
+16:27:47.010 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns basket_status(VARCHAR(255 BYTE)) added to basket
+16:27:47.010 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-3::ED (generated) ran successfully in 11ms
+16:27:47.012 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-3', 'ED (generated)', 'changelog_0004.xml', NOW(), 62, '8:aef36a48e121c316deeadf576818ef7a', 'addColumn tableName=basket', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.013 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.product ADD market_code VARCHAR(255)
+16:27:47.017 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns market_code(VARCHAR(255 BYTE)) added to product
+16:27:47.017 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-4::ED (generated) ran successfully in 5ms
+16:27:47.018 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-4', 'ED (generated)', 'changelog_0004.xml', NOW(), 63, '8:adb0db3a32cf2b296297730323a6eaf3', 'addColumn tableName=product', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.019 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.message_info ADD unique_id VARCHAR(255)
+16:27:47.024 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns unique_id(VARCHAR(255 BYTE)) added to message_info
+16:27:47.025 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-5::ED (generated) ran successfully in 6ms
+16:27:47.025 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-5', 'ED (generated)', 'changelog_0004.xml', NOW(), 64, '8:606e2693ae35173db6f5cbdf6c4bbe8f', 'addColumn tableName=message_info', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.026 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE INDEX PUBLIC.FK2alei1t7exsd7r5qxcdlbehpv ON PUBLIC.file_upload_registry(user_id)
+16:27:47.027 [Test worker] INFO  liquibase.changelog.ChangeSet - Index FK2alei1t7exsd7r5qxcdlbehpv created
+16:27:47.027 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-6::ED (generated) ran successfully in 1ms
+16:27:47.028 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-6', 'ED (generated)', 'changelog_0004.xml', NOW(), 65, '8:981a635fb0e80d81f1fcfe0b8ca24a2b', 'createIndex indexName=FK2alei1t7exsd7r5qxcdlbehpv, tableName=file_upload_registry', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.029 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.file_upload_registry ADD CONSTRAINT FK2alei1t7exsd7r5qxcdlbehpv FOREIGN KEY (user_id) REFERENCES PUBLIC.user (id) ON UPDATE NO ACTION ON DELETE NO ACTION
+16:27:47.031 [Test worker] INFO  liquibase.changelog.ChangeSet - Foreign key constraint added to file_upload_registry (user_id)
+16:27:47.031 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0004.xml::1580909247013-7::ED (generated) ran successfully in 2ms
+16:27:47.032 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-7', 'ED (generated)', 'changelog_0004.xml', NOW(), 66, '8:d49fd3e4bfa113024e236b04ef61415d', 'addForeignKeyConstraint baseTableName=file_upload_registry, constraintName=FK2alei1t7exsd7r5qxcdlbehpv, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.033 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.import_order ADD message_info_name VARCHAR(255)
+16:27:47.036 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns message_info_name(VARCHAR(255)) added to import_order
+16:27:47.036 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1580909247013-4::ED ran successfully in 3ms
+16:27:47.037 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-4', 'ED', 'changelog_0005.xml', NOW(), 67, '8:d51e6f05ce74c6b72f45126ba6c18954', 'addColumn tableName=import_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.038 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.import_order ADD singleOrderActiveGroupId BIGINT
+16:27:47.040 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns singleOrderActiveGroupId(BIGINT) added to import_order
+16:27:47.040 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1580909247013-5::ED ran successfully in 3ms
+16:27:47.041 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-5', 'ED', 'changelog_0005.xml', NOW(), 68, '8:7ebdadd10dced5ea7ce9c0657e705ba8', 'addColumn tableName=import_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.042 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.weather_result ADD market_code VARCHAR(255)
+16:27:47.046 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns market_code(VARCHAR(255)) added to weather_result
+16:27:47.046 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1580909247013-6::ED ran successfully in 4ms
+16:27:47.047 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-6', 'ED', 'changelog_0005.xml', NOW(), 69, '8:c4017cda564b50b11143fce1974c97b6', 'addColumn tableName=weather_result', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.048 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.weather_result ADD sky_code VARCHAR(255)
+16:27:47.050 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns sky_code(VARCHAR(255)) added to weather_result
+16:27:47.050 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1580909247013-7::ED ran successfully in 2ms
+16:27:47.051 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1580909247013-7', 'ED', 'changelog_0005.xml', NOW(), 70, '8:1f85b163f409a99500fb7fa1e028c4ab', 'addColumn tableName=weather_result', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.052 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD order1_price DOUBLE(22)
+16:27:47.056 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns order1_price(DOUBLE(22)) added to matched_order
+16:27:47.057 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-1::ED ran successfully in 5ms
+16:27:47.057 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-1', 'ED', 'changelog_0005.xml', NOW(), 71, '8:79fdedb87c7f7674f94ccd041abb7b34', 'addColumn tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.058 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD order1_quantity DOUBLE(22)
+16:27:47.063 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns order1_quantity(DOUBLE(22)) added to matched_order
+16:27:47.063 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-2::ED ran successfully in 5ms
+16:27:47.064 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-2', 'ED', 'changelog_0005.xml', NOW(), 72, '8:3e68e4c68f946f6f6e226da29a8c00e5', 'addColumn tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.065 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD order2_price DOUBLE(22)
+16:27:47.068 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns order2_price(DOUBLE(22)) added to matched_order
+16:27:47.068 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-3::helias (generated) ran successfully in 4ms
+16:27:47.069 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-3', 'helias (generated)', 'changelog_0005.xml', NOW(), 73, '8:a232d21e00e7c18552638a74a81b2737', 'addColumn tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.070 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.matched_order ADD order2_quantity DOUBLE(22)
+16:27:47.073 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns order2_quantity(DOUBLE(22)) added to matched_order
+16:27:47.073 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-4::ED ran successfully in 3ms
+16:27:47.074 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-4', 'ED', 'changelog_0005.xml', NOW(), 74, '8:ad78b2d5ee31b802d98ff5e61fb40f4d', 'addColumn tableName=matched_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.075 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.import_order ADD single_order_active_group_id BIGINT(19)
+16:27:47.077 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns single_order_active_group_id(BIGINT(19)) added to import_order
+16:27:47.077 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-5::ED ran successfully in 2ms
+16:27:47.079 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-5', 'ED', 'changelog_0005.xml', NOW(), 75, '8:33062e67f1732bb6bed82a265f31d0f8', 'addColumn tableName=import_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.080 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.import_order ALTER COLUMN single_order_active_group_id RENAME TO active_group_id
+16:27:47.081 [Test worker] INFO  liquibase.changelog.ChangeSet - Column import_order.single_order_active_group_id renamed to active_group_id
+16:27:47.081 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-6::ED ran successfully in 2ms
+16:27:47.081 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-6', 'ED', 'changelog_0005.xml', NOW(), 76, '8:931a914d9051e3e40f3533ac202b72f5', 'renameColumn newColumnName=active_group_id, oldColumnName=single_order_active_group_id, tableName=import_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.082 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.single_order ADD removed_on TIMESTAMP
+16:27:47.087 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns removed_on(datetime) added to single_order
+16:27:47.087 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-7::ED ran successfully in 5ms
+16:27:47.088 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-7', 'ED', 'changelog_0005.xml', NOW(), 77, '8:19322e8325818dea77714c027255bc89', 'addColumn tableName=single_order', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.089 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user ADD default_market VARCHAR(255)
+16:27:47.099 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns default_market(VARCHAR(255)) added to user
+16:27:47.099 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-8::ED ran successfully in 10ms
+16:27:47.100 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-8', 'ED', 'changelog_0005.xml', NOW(), 78, '8:2b043843d54573e07abe0258a371ba48', 'addColumn tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.101 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user ADD market VARCHAR(255)
+16:27:47.107 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns market(VARCHAR(255)) added to user
+16:27:47.107 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-9::ED ran successfully in 7ms
+16:27:47.107 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-9', 'ED', 'changelog_0005.xml', NOW(), 79, '8:df049190cde73a3177e8069c13e10abe', 'addColumn tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.108 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.user ADD landing_page VARCHAR(255)
+16:27:47.116 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns landing_page(VARCHAR(255)) added to user
+16:27:47.116 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-10::ED ran successfully in 8ms
+16:27:47.117 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-10', 'ED', 'changelog_0005.xml', NOW(), 80, '8:037ca099d8fd9a862a6543a5f009b65b', 'addColumn tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.118 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - ALTER TABLE PUBLIC.weather_result ADD type VARCHAR(255)
+16:27:47.121 [Test worker] INFO  liquibase.changelog.ChangeSet - Columns type(VARCHAR(255)) added to weather_result
+16:27:47.121 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0005.xml::1583327722381-11::ED ran successfully in 3ms
+16:27:47.122 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1583327722381-11', 'ED', 'changelog_0005.xml', NOW(), 81, '8:027e1df56ff727915fea520dc5db56a9', 'addColumn tableName=weather_result', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.123 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - CREATE TABLE PUBLIC.market_scenario (id BIGINT AUTO_INCREMENT NOT NULL, created_by VARCHAR(255) NOT NULL, created_on TIMESTAMP NOT NULL, modified_by VARCHAR(255), modified_on TIMESTAMP, version BIGINT, scenario VARCHAR(255), CONSTRAINT PK_MARKET_SCENARIO PRIMARY KEY (id))
+16:27:47.125 [Test worker] INFO  liquibase.changelog.ChangeSet - Table market_scenario created
+16:27:47.125 [Test worker] INFO  liquibase.changelog.ChangeSet - ChangeSet changelog_0006.xml::0006-1::Helias Karagozidis ran successfully in 2ms
+16:27:47.125 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('0006-1', 'Helias Karagozidis', 'changelog_0006.xml', NOW(), 82, '8:0964047d7ea04e3a82408b7e39fd8695', 'createTable tableName=market_scenario', '', 'EXECUTED', NULL, NULL, '3.6.3', '1795666334')
+16:27:47.127 [Test worker] INFO  l.lockservice.StandardLockService - Successfully released change log lock
+16:27:47.212 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:27:47.225 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:27:47.777 [Test worker] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+16:27:48.357 [Test worker] INFO  f.f.b.u.r.u.UserGroupRepositoryTest - Started UserGroupRepositoryTest in 3.686 seconds (JVM running for 54.77)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

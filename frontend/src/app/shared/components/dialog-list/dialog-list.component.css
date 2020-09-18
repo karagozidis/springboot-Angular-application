@@ -1,0 +1,66 @@
+.mat-table {
+    background: transparent;
+}
+.mat-paginator{
+    background-color: transparent;
+}
+
+.material-icons {
+    color: white;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: darkcyan !important;
+  }
+  .close.mat-button {
+    position: inherit;
+    top: 0;
+    right: 0;
+    transform: translate(95%, -100%);
+    background:transparent;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
+  .material-icons.closeClass{
+      
+    font-size:15px;
+    cursor:pointer;
+    color:black;
+    position:absolute;
+    left:100%;
+    bottom:1%;
+    
+}
+.mat-raised-button {
+   
+    background-color: #305d79;
+    color:white;
+    float:right;
+}
+
+.rejectButton{
+    position:absolute;
+    left:65%;
+    background-color:#305d79;
+    color:white;
+}
+.acceptButton{
+    position:absolute;
+    left:65%;
+    background-color:#305d79;
+    color:white;
+}
+.sendOfferButton{
+    position:absolute;
+    left:62%;
+    background-color:#305d79;
+    color:white;
+}
+
+.responseNoButton{
+    position:absolute;
+    left:82%;
+    background-color:#305d79;
+    color:white;
+}

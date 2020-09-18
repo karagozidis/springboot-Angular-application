@@ -1,0 +1,58 @@
+.nav-item{
+    padding-right:10px;
+}
+
+.mat-column-actions{
+    padding-left: 0 !important;
+    flex: 0 0 5% !important;
+    justify-content: center;
+}
+
+.unreadNotification{
+    font-weight: bold;
+}
+
+.mat-row:hover {
+    cursor: pointer;
+    background: #abc6dc47;
+}
+
+pre {
+    font-family: Consolas,monospace;
+}
+
+
+mat-header-cell {
+    // text-align: center;
+    // justify-content: center;
+}
+
+mat-cell {
+    // text-align: center;
+    // justify-content: center;
+    // word-break: break-all;
+    // padding-right: 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.mat-column-createdOn {
+    flex: 0 0 15% !important;
+}
+
+.mat-column-name {
+    flex: 0 0 30% !important;
+}
+
+.mat-column-description {
+    flex: 0 0 42% !important;
+}
+
+.mat-cell-text {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+}

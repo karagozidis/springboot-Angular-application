@@ -1,0 +1,244 @@
+<div class="card">
+    <div class="card-header card-header-tabs card-header-primary">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+
+                <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+
+                    <li class="nav-item">
+                        <a mat-button class="nav-link active" (click)="orderCodesAllFilterRun()">
+                            <i class="material-icons">filter_list</i> Filter orders by ids
+                            <div class="ripple-container"></div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <input type="text" (keyup.enter)="orderCodesAllFilterRun()" [(ngModel)]="orderIdsAllFilter"
+                               name="orderIdsAllFilter"
+                               style="margin-top: 8px;margin-left: 10px;margin-right: 15px;width: 150px;">
+                    </li>
+
+                    <li class="nav-item">
+                        <a mat-button class="nav-link active" (click)="refreshTransactions()">
+                            <i class="material-icons">autorenew</i> Refresh
+                            <div class="ripple-container"></div>
+                        </a>
+                    </li>
+
+                    <li *ngIf="showNavigation" class="nav-item" style="margin-left: 5px;">
+                        <a mat-button class="nav-link active" (click)="backToList()" data-toggle="tab">
+                            <i class="material-icons">view_list</i> Back to List
+                            <div class="ripple-container"></div>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="d-none d-sm-block">
+                    <ul class="nav nav-tabs " data-tabs="tabs">
+                        <li class="nav-item">
+                            <i class="material-icons header-mat-icon">search</i>
+                        </li>
+
+                        <li class="nav-item">
+                            <h4 class="card-title"> Product {{product?.name}} </h4>
+                            <p class="card-category">Orders and Trades that were placed are shown below</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+
+        <div class="tab-content">
+
+
+            <ng-container *ngFor="let marketObject of marketObjects; let odd = odd;">
+
+
+                <div [ngClass]="{ 'odd-row': odd,'even-row': !odd }" *ngIf="marketObject.type === 'ORDER_REMOVED'"
+                     class="row justify-content-center">
+
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                        <div class="card card-stats"
+                             [ngClass]="{'sell-card': marketObject.singleOrderDTO.orderDirection === 'SELL', 'buy-card': marketObject.singleOrderDTO.orderDirection === 'BUY'}">
+                            <div class="card-header card-header-warning card-header-icon">
+                                <div class="card-icon my-transaction-border" style="padding: 0px;">
+                                    <span class="orderId">{{marketObject.singleOrderDTO.id}}</span>
+                                    <br>
+                                    <i class="material-icons">close</i>
+                                </div>
+
+                                <h3 class="card-title" style="float: left;">
+                                    <small>Direction: </small>{{marketObject.singleOrderDTO.orderDirection}}
+                                    <br>
+                                    <small>Type: </small>{{marketObject.singleOrderDTO.orderType}}
+                                </h3>
+
+                                <h3 class="card-title"><small>Qty: </small>{{marketObject.singleOrderDTO.quantity}}
+                                    <small>Price: </small>{{marketObject.singleOrderDTO.price}}
+                                </h3>
+
+                                <h3 class="card-title" style="font-size: 14px;"><small>Options: {{marketObject.singleOrderDTO.metadata}}</small>
+                                </h3>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons text-danger">date_range</i><a
+                                        href="javascript:void(0)">{{marketObject.singleOrderDTO.removedOn | date:'medium'}}</a>
+                                </div>
+                                <div class="stats">
+                                    <i class="material-icons text-danger">perm_identity</i><a
+                                        href="javascript:void(0)">{{marketObject.singleOrderDTO.user.country.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div [ngClass]="{ 'odd-row': odd,'even-row': !odd }" *ngIf="marketObject.type === 'ORDER'"
+                     class="row justify-content-center">
+
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                        <div class="card card-stats"
+                             [ngClass]="{'sell-card': marketObject.singleOrderDTO.orderDirection === 'SELL', 'buy-card': marketObject.singleOrderDTO.orderDirection === 'BUY'}">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon my-transaction-border" style="padding: 0px;">
+                                        <span class="orderId">{{marketObject.singleOrderDTO.id}}</span>
+                                        <br>
+                                        <i class="material-icons">vertical_align_bottom</i>
+                                </div>
+
+                                <h3 class="card-title" style="float: left;">
+                                    <small>Direction: </small>{{marketObject.singleOrderDTO.orderDirection}}
+                                    <br>
+                                    <small>Type: </small>{{marketObject.singleOrderDTO.orderType}}
+                                </h3>
+
+                                <h3 class="card-title"><small>Qty: </small>{{marketObject.singleOrderDTO.quantity}}
+                                    <small>Price: </small>{{marketObject.singleOrderDTO.price}}
+                                </h3>
+
+                                <h3 class="card-title" style="font-size: 14px;"><small>Options: {{marketObject.singleOrderDTO.metadata}}</small>
+                                </h3>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons text-danger">date_range</i><a
+                                        href="javascript:void(0)">{{marketObject.singleOrderDTO.bidTime | date:'medium'}}</a>
+                                </div>
+                                <div class="stats">
+                                    <i class="material-icons text-danger">perm_identity</i><a
+                                        href="javascript:void(0)">{{marketObject.singleOrderDTO.user.country.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div [ngClass]="{ 'odd-row': odd,'even-row': !odd }" *ngIf="marketObject.type === 'TRADE'"
+                     class="row justify-content-center">
+
+
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                        <div class="card card-stats trade-card">
+                            <div class="card-header card-header-success card-header-icon">
+                                <div class="card-icon my-transaction-border" style="padding: 0px;">
+                                    <span class="orderId">{{marketObject.tradeDTO.id}}</span>
+                                    <br>
+                                    <i class="material-icons">compare_arrows</i></div>
+                                <h3 class="card-title"><small>Qty: </small>{{marketObject.tradeDTO.quantity}} <small>Price: </small>{{marketObject.tradeDTO.price}}
+                                </h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats"><i class="material-icons text-danger">date_range</i><a
+                                        href="javascript:void(0)">{{marketObject.createdOn | date:'medium' }}</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                        <div class="card card-stats"
+                             [ngClass]="{'sell-card': marketObject.tradeDTO.singleOrder1.orderDirection === 'SELL', 'buy-card': marketObject.tradeDTO.singleOrder1.orderDirection === 'BUY'}">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon my-transaction-border" style="padding: 0px;">
+                                    <span class="orderId">{{marketObject.tradeDTO.singleOrder1.id}}</span>
+                                    <br>
+                                    <i class="material-icons">compare_arrows</i>
+                                </div>
+
+                                <h3 class="card-title" style="float: left;">
+                                    <small>Direction: </small>{{marketObject.tradeDTO.singleOrder1.orderDirection}}
+                                    <br>
+                                    <small>Type: </small>{{marketObject.tradeDTO.singleOrder1.orderType}}
+                                </h3>
+                                <h3 class="card-title"><small>New qty: </small>{{marketObject.tradeDTO.order1_quantity}}
+                                    <small>New price: </small>{{marketObject.tradeDTO.order1_price}} </h3>
+
+                                <h3 class="card-title" style="font-size: 14px;">
+                                    <small>Options: {{marketObject.tradeDTO.singleOrder1.metadata}} </small> </h3>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons text-danger">date_range</i><a
+                                        href="javascript:void(0)">{{marketObject.createdOn | date:'medium'}}</a>
+                                </div>
+                                <div class="stats">
+                                    <i class="material-icons text-danger">perm_identity</i><a
+                                        href="javascript:void(0)">{{marketObject.tradeDTO.singleOrder1.user.country.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+                        <div class="card card-stats"
+                             [ngClass]="{'sell-card': marketObject.tradeDTO.singleOrder2.orderDirection === 'SELL', 'buy-card': marketObject.tradeDTO.singleOrder2.orderDirection === 'BUY'}">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon my-transaction-border" style="padding: 0px;">
+                                    <span class="orderId">{{marketObject.tradeDTO.singleOrder2.id}}</span>
+                                    <br>
+                                    <i class="material-icons">compare_arrows</i>
+                                </div>
+                                <h3 class="card-title" style="float: left;">
+                                    <small>Direction: </small>{{marketObject.tradeDTO.singleOrder2.orderDirection}}
+                                    <br>
+                                    <small>Type: </small> -
+                                </h3>
+
+                                <h3 class="card-title"><small>New qty: </small> - <small>New price: </small> - </h3>
+
+                                <h3 class="card-title" style="font-size: 14px;"><small>Options: </small> - </h3>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons text-danger">date_range</i><a
+                                        href="javascript:void(0)">{{marketObject.createdOn | date:'medium'}}</a>
+                                </div>
+
+                                <div class="stats">
+                                    <i class="material-icons text-danger">perm_identity</i><a
+                                        href="javascript:void(0)">{{marketObject.tradeDTO.singleOrder2.user.country.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

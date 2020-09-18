@@ -1,0 +1,61 @@
+.nav-item{
+  padding-right:10px;
+}
+
+.mat-column-actions{
+  
+  flex: 0 0 20%;
+}
+.mat-column-filename{
+  
+  flex: 0 0 44%;
+}
+.mat-column-fromDate{
+
+  flex: 0 0 12%;
+}
+.mat-column-toDate{
+  
+  flex: 0 0 12%;
+}
+
+.mat-column-tag{
+  
+  flex: 0 0 12%;
+}
+.choose-files-button {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  width: 0px;
+  height:0px;
+  border:none;
+  margin:0;
+  padding:0
+}
+
+select#soflow, select#soflow-color {
+  -webkit-appearance: button;
+  color: #555;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+select#soflow-color {
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 40%, #ffffff);
+  background-color: #ffffff;
+  padding-left: 15px;
+  width: 100%;
+}
+.card{
+  min-width:auto;
+  margin-top:0px;
+}
+.one{
+  margin-top: 0%;
+  margin-right: 0%;
+  margin-left: 0%
+}
+
+
+

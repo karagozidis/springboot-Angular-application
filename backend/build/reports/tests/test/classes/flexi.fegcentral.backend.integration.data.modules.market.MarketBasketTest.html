@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/flexi.fegcentral.backend.integration.data.modules.market.html">flexi.fegcentral.backend.integration.data.modules.market</a> &gt; MarketBasketTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.989s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="basket_test"></a>
+<h3 class="failures">basket_test</h3>
+<span class="code">
+<pre>org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1013)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:71)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:166)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:133)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:182)
+	at flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest.createBasketOrder(MarketBasketTest.java:253)
+	at flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest.basket_test(MarketBasketTest.java:150)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.NullPointerException
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:889)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3004)
+	at flexi.fegcentral.backend.services.data.modules.market.BasketService.checkNumericValues(BasketService.java:178)
+	at flexi.fegcentral.backend.services.data.modules.market.BasketService$$FastClassBySpringCGLIB$$905ab655.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at flexi.fegcentral.backend.services.data.modules.market.BasketService$$EnhancerBySpringCGLIB$$a2c5106c.checkNumericValues(&lt;generated&gt;)
+	at flexi.fegcentral.backend.controllers.data.modules.market.BasketController.create(BasketController.java:55)
+	at flexi.fegcentral.backend.controllers.data.modules.market.BasketController$$FastClassBySpringCGLIB$$9dae17bd.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at flexi.fegcentral.backend.controllers.data.modules.market.BasketController$$EnhancerBySpringCGLIB$$43bb539f.create(&lt;generated&gt;)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	... 66 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">basket_test</td>
+<td class="failures">1.989s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:26:54.670 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.681 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:26:54.684 [Test worker] INFO org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+16:26:54.689 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:26:54.713 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:26:54.725 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest], using SpringBootContextLoader
+16:26:54.729 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]: class path resource [flexi/fegcentral/backend/integration/data/modules/market/MarketBasketTest-context.xml] does not exist
+16:26:54.730 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]: class path resource [flexi/fegcentral/backend/integration/data/modules/market/MarketBasketTestContext.groovy] does not exist
+16:26:54.730 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:26:54.785 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.927 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]: using defaults.
+16:26:54.927 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+16:26:54.946 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f988aa5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@356c9191, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3cd39f8e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7df3e727, org.springframework.test.context.support.DirtiesContextTestExecutionListener@16d5979e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@47646ccc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@67eba441, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@543ad44, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3f90b315, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5bf6ba27, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6185d4b4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@79346c4d]
+16:26:54.949 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.949 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.950 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.950 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.957 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1bef9cea testClass = MarketBasketTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@42daeb51 testClass = MarketBasketTest, locations = '{}', classes = '{class flexi.fegcentral.backend.App, class flexi.fegcentral.backend.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{classpath:applicationIT.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@e7e84fc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@188dba5f, [ImportsContextCustomizer@4c1a5ed8 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3e7e6df9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6b6b58f4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7078085f], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+16:26:54.958 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.958 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [flexi.fegcentral.backend.integration.data.modules.market.MarketBasketTest]
+16:26:54.993 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+FlexiTranstore Project - (C) European Dynamics SA
+  _____   _____    ____      ____                  _                    _
+ |  ___| | ____|  / ___|    / ___|   ___   _ __   | |_   _ __    __ _  | |
+ | |_    |  _|   | |  _    | |      / _ \ | '_ \  | __| | '__|  / _` | | |
+ |  _|   | |___  | |_| |   | |___  |  __/ | | | | | |_  | |    | (_| | | |
+ |_|     |_____|  \____|    \____|  \___| |_| |_|  \__| |_|     \__,_| |_|
+
+16:26:55.759 [Test worker] INFO  f.f.b.i.d.m.market.MarketBasketTest - Starting MarketBasketTest on DESKTOP-8MV4NGR with PID 12092 (started by helias in C:\flexi-feg-central2\flexi-feg-central\backend)
+16:26:55.760 [Test worker] INFO  f.f.b.i.d.m.market.MarketBasketTest - No active profile set, falling back to default profiles: default
+16:26:58.353 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - fegCentralDS - Starting...
+16:26:58.535 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - fegCentralDS - Start completed.
+16:26:59.179 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM feg_central_integration_tests.DATABASECHANGELOGLOCK
+16:26:59.195 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM feg_central_integration_tests.DATABASECHANGELOGLOCK
+16:26:59.198 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT `LOCKED` FROM feg_central_integration_tests.DATABASECHANGELOGLOCK WHERE ID=1
+16:26:59.217 [Test worker] INFO  l.lockservice.StandardLockService - Successfully acquired change log lock
+16:26:59.278 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0001.xml
+16:27:00.177 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0002.xml
+16:27:00.198 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0003.xml
+16:27:00.233 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0004.xml
+16:27:00.250 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0005.xml
+16:27:00.262 [Test worker] INFO  l.changelog.DatabaseChangeLog - Reading resource: db/changelog/changes/changelog_0006.xml
+16:27:00.312 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT MD5SUM FROM feg_central_integration_tests.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+16:27:00.316 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT COUNT(*) FROM feg_central_integration_tests.DATABASECHANGELOG
+16:27:00.318 [Test worker] INFO  l.c.StandardChangeLogHistoryService - Reading from feg_central_integration_tests.DATABASECHANGELOG
+16:27:00.319 [Test worker] INFO  liquibase.executor.jvm.JdbcExecutor - SELECT * FROM feg_central_integration_tests.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+16:27:00.430 [Test worker] INFO  l.lockservice.StandardLockService - Successfully released change log lock
+16:27:00.664 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:27:00.756 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+16:27:00.758 [Test worker] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:27:00.958 [Test worker] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+16:27:01.173 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:27:04.495 [Test worker] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+16:27:07.360 [Test worker] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity&lt;springfox.documentation.spring.web.json.Json&gt; springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+16:27:08.808 [Test worker] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+16:27:08.835 [Test worker] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:27:08.896 [Test worker] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+16:27:09.222 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_1
+16:27:09.225 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+16:27:09.237 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_1
+16:27:09.238 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_2
+16:27:09.262 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllUsingGET_3
+16:27:09.273 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_2
+16:27:09.277 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_2
+16:27:09.280 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_1
+16:27:09.284 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getPageUsingGET_1
+16:27:09.306 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+16:27:09.309 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_2
+16:27:09.323 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_3
+16:27:09.340 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_3
+16:27:09.341 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_2
+16:27:09.346 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getByIdUsingGET_1
+16:27:09.356 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_4
+16:27:09.369 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_1
+16:27:09.371 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_4
+16:27:09.378 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_5
+16:27:09.424 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: createUsingPOST_6
+16:27:09.426 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_3
+16:27:09.434 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getPageUsingGET_2
+16:27:09.434 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_2
+16:27:09.453 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_3
+16:27:09.455 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllStatusesUsingGET_1
+16:27:09.476 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getMatchedOrdersUsingGET_1
+16:27:09.477 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getOrdersUsingGET_1
+16:27:09.479 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getProductsUsingGET_1
+16:27:09.486 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_5
+16:27:09.488 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updatePasswordUsingPUT_1
+16:27:09.507 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_4
+16:27:09.525 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_6
+16:27:09.533 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_4
+16:27:09.537 [Test worker] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: uploadOrdersUsingPOST_1
+16:27:09.567 [Test worker] INFO  f.f.b.i.d.m.market.MarketBasketTest - Started MarketBasketTest in 14.561 seconds (JVM running for 15.979)
+16:27:11.221 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - open_product 2020-06-10T15:27:11.156532300Z 2020-06-10T16:27:11.156532300Z 108
+16:27:11.255 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - OK
+16:27:11.414 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 108 sell 10.0 22.0 2020-06-10T13:27:11.385533700Z 258
+16:27:11.416 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.416 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 0;limit;sell;108;2020-06-10T15:27:11.156532;2020-06-10T16:27:11.156532;10.0;22.00;2020-06-10T13:27:11.385533;-1;258
+16:27:11.416 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 0
+16:27:11.416 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 0
+16:27:11.472 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 108 sell 5.0 22.0 2020-06-10T13:27:11.469537600Z 259
+16:27:11.473 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.473 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 1;limit;sell;108;2020-06-10T15:27:11.156532;2020-06-10T16:27:11.156532;5.0;22.00;2020-06-10T13:27:11.469537;-1;259
+16:27:11.473 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 0
+16:27:11.473 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 0
+16:27:11.519 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 108 buy 20.0 18.0 2020-06-10T13:27:11.515537300Z 260
+16:27:11.519 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.519 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 2;limit;buy;108;2020-06-10T15:27:11.156532;2020-06-10T16:27:11.156532;20.0;18.00;2020-06-10T13:27:11.515537;-1;260
+16:27:11.519 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 0
+16:27:11.519 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 0
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/auth/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.users.UserController
+           Method = public flexi.fegcentral.backend.dto.auth.JWTResponseDTO flexi.fegcentral.backend.controllers.users.UserController.authenticate(flexi.fegcentral.backend.dto.auth.LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;jwt&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;,&quot;requires2FA&quot;:false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/products/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.ProductDTO flexi.fegcentral.backend.controllers.data.modules.market.ProductController.create(flexi.fegcentral.backend.dto.data.modules.market.ProductDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.196533800Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11.156532300Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11.156532300Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11.156532300Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:258,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.385533700Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.385533700Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:259,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.469537600Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.469537600Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:260,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.516534200Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.515537300Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:18.0,&quot;quantity&quot;:20.0,&quot;current_price&quot;:18.0,&quot;current_quantity&quot;:20.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.4.1</a> at Jun 10, 2020, 4:27:48 PM</p>
+</div>
+</div>
+</body>
+</html>

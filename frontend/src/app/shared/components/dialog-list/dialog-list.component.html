@@ -1,0 +1,100 @@
+
+
+<div class="main-content">
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <i *ngIf="data.compAction==='createUsrGrp' || data.compAction==='editUsrGrp' || data.compAction==='invite' || data.compAction==='acceptOffer' || data.compAction==='rejectOffer' || data.compAction==='sendOffer'" class="material-icons closeClass" (click)="onNoClick()" >close</i>
+                    </div>
+                </div>
+            <div class="row" *ngIf="data.compAction!=='acceptOffer' && data.compAction!=='rejectOffer' && data.compAction!=='sendOffer'" >
+    
+                <div class="col-md-12">
+                    <div class="card card-plain">
+                        <div class="card-header card-header-info">  
+                            <h4 class="card-title mt-0" *ngIf="data.compAction!=='notificationDetails'"> Users List</h4>
+                            
+                        </div>
+                        <div class="card-body">
+
+
+                            <mat-form-field class="example-chip-list" *ngIf="data.compAction!=='notificationDetails'">
+                                    <mat-chip-list #chipList aria-label="Partner selection">
+                                      <mat-chip
+                                        *ngFor="let partner of partners"
+                                        [selectable]="selectable"
+                                        [removable]="removable"
+                                        (removed)="remove(partner)">
+                                        {{partner}}
+                                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                      </mat-chip>
+                                      <input
+                                        placeholder="New user..."
+                                        (click)="focusUsersListInput()"
+                                        #partnerInput
+                                        [formControl]="partnerCtrl"
+                                        [matAutocomplete]="auto"
+                                        [matChipInputFor]="chipList"
+                                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                        [matChipInputAddOnBlur]="addOnBlur"
+                                        (matChipInputTokenEnd)="add($event)">
+                                    </mat-chip-list>
+                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                                      <mat-option *ngFor="let partner of filteredPartners | async" [value]="partner">
+                                        {{partner}}
+                                      </mat-option>
+                                    </mat-autocomplete>
+                                  </mat-form-field>
+
+                                 
+                                  <div class="row" *ngIf="data.compAction ==='notificationDetails'">
+                                    <div class="col-md-12" >
+                                      <div style="height:30vh;"><pre style="font-family: 'Avenir', Verdana, sans-serif; font-size: 10px">{{data.rowDescription}}</pre></div>
+                                    </div>
+                                  </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                <button  *ngIf="data.compAction ==='invite'" mat-raised-button (click) ="postUsers()">Ιnvite User(s)</button>
+                                <div class="clearfix"></div>
+                            </div>
+                          </div>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="data.compAction ==='acceptOffer'|| data.compAction ==='rejectOffer' || data.compAction ==='sendOffer'" >
+    
+              <div class="col-md-12">
+                  <div class="card card-plain">
+                    <div class="card-header card-header-info">  
+                      <h4 class="card-title mt-0" *ngIf="data.compAction !=='sendOffer'" > Offer's Response Verification</h4>
+                      <h4 class="card-title mt-0" *ngIf="data.compAction ==='sendOffer'" > Offer's Verification</h4>
+                      
+                    </div>
+                      <div class="card-body">
+                          <p *ngIf="data.compAction ==='acceptOffer'">You have selected to accept the offer. Do you want to proceed ?</p>
+                          <p *ngIf="data.compAction ==='rejectOffer'">You have selected to reject the offer. Do you want to proceed ?</p>
+                          <p *ngIf="data.compAction ==='sendOffer'">Are you sure you want to send the offer to system operator?</p>
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <button mat-button class="reject" *ngIf="data.compAction!=='acceptOffer' && data.compAction!=='rejectOffer' && data.compAction!=='sendOffer'" (click)="onNoClick()">No </button>
+                              <button  *ngIf="data.compAction ==='acceptOffer'" class="acceptButton"  mat-raised-button (click) ="acceptOffer()">Yes</button>
+                              <button  *ngIf="data.compAction ==='rejectOffer'"  class="rejectButton" mat-raised-button (click) ="rejectOffer()">Yes</button>
+                              <button  *ngIf="data.compAction ==='sendOffer'"  class="sendOfferButton" mat-raised-button (click) ="sendOffer()">Yes</button>
+                              <button mat-button class="responseNoButton" *ngIf="data.compAction ==='acceptOffer' || data.compAction ==='rejectOffer' || data.compAction ==='sendOffer'" (click)="responseNo()">No </button>
+                              <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                   
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>

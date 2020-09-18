@@ -1,0 +1,695 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0003.xml">
+
+    <changeSet id="changelog_0003.xml" author="European Dynamics">
+
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Afghanistan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Albania');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Algeria');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'AmericanSamoa');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Andorra');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Angola');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Anguilla');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Antigua and Barbuda');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Argentina');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Armenia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Aruba');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Australia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Austria');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Azerbaijan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bahamas,The');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bahrain');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bangladesh');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Barbados');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belarus');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belgium');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Belize');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Benin');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bermuda');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bhutan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bolivia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bosnia and Herzegovina');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Botswana');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Brazil');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'BritishVirginIs.');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Brunei');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Bulgaria');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'BurkinaFaso');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Burma');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Burundi');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cambodia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cameroon');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Canada');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CapeVerde');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CaymanIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CentralAfricanRep.');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Chad');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Chile');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'China');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Colombia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Comoros');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Congo,Dem.Rep.');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Congo,Repub.ofthe');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CookIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CostaRica');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Coted`Ivoire');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Croatia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cuba');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Cyprus');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'CzechRepublic');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Denmark');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Djibouti');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Dominica');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'DominicanRepublic');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'EastTimor');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ecuador');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Egypt');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'ElSalvador');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'EquatorialGuinea');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Eritrea');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Estonia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ethiopia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FaroeIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Fiji');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Finland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'France');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FrenchGuiana');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'FrenchPolynesia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gabon');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gambia,The');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'GazaStrip');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Georgia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Germany');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ghana');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Gibraltar');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Greece');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Greenland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Grenada');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guadeloupe');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guam');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guatemala');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guernsey');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guinea');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guinea-Bissau');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Guyana');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Haiti');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Honduras');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'HongKong');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Hungary');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iceland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'India');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Indonesia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iran');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Iraq');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ireland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'IsleofMan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Israel');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Italy');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jamaica');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Japan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jersey');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Jordan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kazakhstan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kenya');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kiribati');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Korea,North');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Korea,South');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kuwait');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Kyrgyzstan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Laos');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Latvia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lebanon');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lesotho');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Liberia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Libya');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Liechtenstein');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Lithuania');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Luxembourg');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Macau');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Macedonia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Madagascar');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malawi');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malaysia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Maldives');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mali');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Malta');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'MarshallIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Martinique');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mauritania');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mauritius');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mayotte');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mexico');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Micronesia,Fed.St.');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Moldova');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Monaco');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mongolia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Montserrat');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Morocco');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Mozambique');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Namibia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nauru');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nepal');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Netherlands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NetherlandsAntilles');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NewCaledonia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'NewZealand');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nicaragua');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Niger');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Nigeria');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'N.MarianaIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Norway');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Oman');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Pakistan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Palau');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Panama');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'PapuaNewGuinea');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Paraguay');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Peru');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Philippines');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Poland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Portugal');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'PuertoRico');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Qatar');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Reunion');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Romania');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Russia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Rwanda');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintHelena');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintKitts and Nevis');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintLucia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'StPierre and Miquelon');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaintVincentandtheGrenadines');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Samoa');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SanMarino');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaoTome and Principe');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SaudiArabia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Senegal');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Serbia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Seychelles');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SierraLeone');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Singapore');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Slovakia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Slovenia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SolomonIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Somalia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SouthAfrica');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Spain');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'SriLanka');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Sudan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Suriname');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Swaziland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Sweden');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Switzerland');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Syria');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Taiwan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tajikistan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tanzania');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Thailand');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Togo');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tonga');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Trinidad and Tobago');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tunisia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turkey');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turkmenistan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Turks and CaicosIs');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Tuvalu');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uganda');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Ukraine');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedArabEmirates');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedKingdom');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'UnitedStates');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uruguay');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Uzbekistan');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Vanuatu');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Venezuela');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Vietnam');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'VirginIslands');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WallisandFutuna');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WestBank');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'WesternSahara');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Yemen');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Zambia');
+        </sql>
+        <sql>
+            INSERT INTO `country`( `created_by`, `created_on`, `modified_by`, `modified_on`, `name`) VALUES ('liquibase',now(),'liquibase',now(),'Zimbabwe');
+        </sql>
+
+
+    </changeSet>
+
+
+</databaseChangeLog>

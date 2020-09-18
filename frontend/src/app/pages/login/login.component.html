@@ -1,0 +1,28 @@
+<div class="login-page">
+    <div class="form">
+        <div class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+        </div>
+        <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="username" type="text" placeholder="Username" (keyup.enter)="onEnterMethod()">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="password" type="password" placeholder="Password" (keyup.enter)="onEnterMethod()">
+        </mat-form-field>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" [(ngModel)]="isChecked" type="checkbox">
+                Remember me
+                <span class="form-check-sign">
+                <span class="check"></span>
+            </span>
+            </label>
+        </div>
+        <button btn btn-info (click)="authenticateUser()">
+            <span [hidden]="showLoadingButton===false" class="spinner-border spinner-border-sm" role="status"
+                  style="margin-right:3%;"></span>
+            <span [hidden]="showLoadingButton===false">Logging in...</span>
+            <span [hidden]="showLoadingButton===true">Log in</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.nav-item{
+    padding-right:10px;
+}
+mat-header-row {
+    padding-left:1%
+}
+.mat-header-cell {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .mat-cell {
+    text-align: center;
+    justify-content:center;
+  }
+
+.mat-column-actions{
+    padding-left: 15px;
+    flex: 0 0 10%!important;;
+}
+.mat-column-datetime{
+    flex: 0 0 18%!important;;
+}
+.mat-column-sun_radiation{
+    flex: 0 0 16%!important;;
+}
+.mat-column-wind_speed{
+    flex: 0 0 13%!important;;
+}
+.mat-column-temperature{
+    flex: 0 0 14%!important;;
+}
+.mat-column-sky_code{
+    flex: 0 0 14%!important;;
+}
+.mat-column-type{
+    flex: 0 0 14%!important;;
+}
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}

@@ -1,0 +1,108 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-md-12">
+              <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link active" routerLink="/user-form/0" data-toggle="tab">
+                                                    <i class="material-icons">playlist_add</i> Add new
+                                                    <div class="ripple-container"></div>
+                                          
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                                                    <i class="material-icons">autorenew</i> Refresh
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+
+
+                  <div class="card-body">
+
+
+                         <div class="tab-content">
+        
+                            <div class="table-responsive table">
+
+                              <mat-table
+                                  [dataSource]="dataSource"
+                                  matSort
+                                  matSortDisableClear
+                                  (matSortChange)="refresh()">
+
+                                                        <ng-container matColumnDef="actions" class="td-actions text-right">
+                                                                <mat-header-cell   *matHeaderCellDef >  
+                                                                </mat-header-cell>
+                                                                <mat-cell *matCellDef="let row" >
+                                                                    <button mat-raised-button type="button" routerLink="/user-form/{{row.id}}" matTooltip="Edit" matTooltipPosition="above"  class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                                        <i class="material-icons">edit</i>
+                                                                    </button>
+                                                                    <button mat-raised-button type="button" matTooltip="Delete" matTooltipPosition="above"  class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="deleteUser(row)">
+                                                                            <i class="material-icons">delete_outline</i>
+                                                                    </button>
+                                                                </mat-cell>
+                                                        </ng-container>
+        
+
+                                                    <ng-container matColumnDef="username" >
+                                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Username</mat-header-cell>
+                                                        <mat-cell *matCellDef="let row">{{row.username}}</mat-cell>
+                                                    </ng-container>
+
+                                                    <ng-container matColumnDef="email" >
+                                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Email</mat-header-cell>  
+                                                        <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+                                                    </ng-container>
+                                                    
+
+                                                    <ng-container matColumnDef="role" >
+                                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Role</mat-header-cell>  
+                                                        <mat-cell *matCellDef="let row">{{row.role}}</mat-cell>
+                                                    </ng-container>
+
+                                                    <ng-container matColumnDef="status" >
+                                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Status</mat-header-cell>  
+                                                        <mat-cell *matCellDef="let row">{{row.status}}</mat-cell>
+                                                    </ng-container>
+
+                                                    <ng-container matColumnDef="createdOn" >
+                                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Created On</mat-header-cell>  
+                                                        <mat-cell *matCellDef="let row">{{row.createdOn}}</mat-cell>
+                                                    </ng-container>
+
+                                                    <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+                                                    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                                                </mat-table>
+
+
+                                                <mat-paginator
+                                                [length]="totalElements"
+                                                [pageSize]="paginator.pageSize"
+                                                [pageIndex]="paginator.pageIndex"
+                                                [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                                                (page)="refresh()">
+                                                </mat-paginator>
+                            </div>
+                         </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- <button mat-fab (click)="createUserGroup()">
+  <i class="material-icons" style="font-size:28px;
+  margin-left:12px;">group_add</i>
+  </button> -->
+</div>

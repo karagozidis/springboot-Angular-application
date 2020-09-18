@@ -1,0 +1,34 @@
+.nav-item{
+    padding-right:10px;
+}
+
+.mat-column-actions{
+    padding-left: 15px;
+    flex: 0 0 120px;
+}
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}
+
+select#soflow, select#soflow-color {
+    -webkit-appearance: button;
+    color: #555;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+select#soflow-color {
+    background-image: -webkit-linear-gradient(#ffffff, #ffffff 40%, #ffffff);
+    background-color: #ffffff;
+    padding-left: 15px;
+    width: 100%;
+}
+

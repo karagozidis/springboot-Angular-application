@@ -1,0 +1,139 @@
+<div class="card">
+  <div class="card-header card-header-tabs card-header-primary">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+          <li class="nav-item">
+            <a mat-button class="nav-link active" (click)="generateOrders()" data-toggle="tab">
+
+              <i class="material-icons">autorenew</i> Run
+              <div class="ripple-container"></div>
+
+            </a>
+          </li>
+        </ul>
+        <ul class="nav nav-tabs" data-tabs="tabs">
+          <li class="nav-item">
+            <i class="material-icons header-mat-icon">build</i>
+          </li>
+          <li class="nav-item">
+            <h4 class="card-title"> Random orders generator </h4>
+            <p class="card-category">Select options & click run to generate random orders </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Total Orders"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.totalOrders"
+                 type="number" value="10">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Market Code"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.marketCode" value="this.randomOrderGenerationSettingsDTO.marketCode">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Min Price"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.minPrice"
+                 type="number" value="10">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Max Price"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.maxPrice" type="number"
+                 value="100" >
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Min Quantity"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.minQuantity"
+                 type="number" value="10">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Max Quantity"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.maxQuantity" type="number"
+                 value="100" >
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <select
+            [(ngModel)]="randomOrderGenerationSettingsDTO.orderDirections"
+            class="custom-select" multiple>
+          <option value="" selected >---Order direction---</option>
+          <option value="SELL">SELL</option>
+          <option value="BUY">BUY</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <select [(ngModel)]="randomOrderGenerationSettingsDTO.orderTypes"
+                class="custom-select" multiple>
+          <option value="" selected >---Order type---</option>
+          <option value="LIMIT">LIMIT</option>
+          <option value="IMMEDIATE_OR_CANCEL">IMMEDIATE_OR_CANCEL</option>
+          <option value="FILL_OR_KILL">FILL_OR_KILL</option>
+          <option value="ALL_OR_NONE">ALL_OR_NONE</option>
+          <option value="ICEBERG">ICEBERG</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row" [ngClass]="{'iceberg-hidden': hideIcebergFields() }">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Min Iceberg Quantity"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.minIcebergQuantity"
+                 type="number" value="10">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Max Iceberg Quantity"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.maxIcebergQuantity" type="number"
+                 value="100" >
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row" [ngClass]="{'iceberg-hidden': hideIcebergFields() }">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Min Iceberg Price"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.minIcebergPrice"
+                 type="number" value="10">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Max Iceberg Price"
+                 [(ngModel)]="randomOrderGenerationSettingsDTO.maxIcebergPrice"
+                 type="number"  value="100" >
+        </mat-form-field>
+      </div>
+    </div>
+
+  </div>
+
+</div>

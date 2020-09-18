@@ -1,0 +1,82 @@
+.card {
+    margin-top: -50px;
+    left: -28px;
+}
+
+.card-body{
+    margin-top: -17px;
+}
+
+.header-mat-icon{
+    padding: 11px;
+    padding-top: 8px;
+    font-size: 34px;
+}
+
+mat-header-cell {
+    padding-right: 0 !important;
+    word-break: break-all;
+    // text-align: center;
+    // justify-content: center;
+}
+
+ mat-cell {
+    // text-align: center;
+    // justify-content: center;
+    // width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+// mat-cell > span.ellipsis {
+//    text-overflow: ellipsis;
+//    overflow: hidden;
+//    white-space: nowrap;
+// }
+
+.mat-column-actions{
+    padding-left: 0 !important;
+    flex: 0 0 10% !important;
+    justify-content: center;
+}
+
+.mat-column-name{
+    flex: 0 0 10% !important;
+}
+.mat-column-description{
+    flex: 0 0 10% !important;
+}
+.mat-column-calculation_date{
+    flex: 0 0 15% !important;
+}
+
+.mat-column-senderUsername{
+    flex: 0 0 10% !important;
+}
+
+.mat-column-userGroupName{
+    flex: 0 0 10% !important;
+}
+
+.mat-column-location{
+    flex: 0 0 15% !important;
+    font-style: oblique;
+}
+
+.mat-column-status{
+    flex: 0 0 10% !important;
+    font-style: oblique;
+}
+
+.mat-column-size{
+    flex: 0 0 7% !important;
+    font-style: oblique;
+}
+
+.mat-cell-text {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    // text-overflow: ellipsis;
+}

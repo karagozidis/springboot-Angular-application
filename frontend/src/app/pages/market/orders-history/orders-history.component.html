@@ -1,0 +1,95 @@
+<mat-card>
+  
+
+  <mat-card-content> 
+      <div class="row">
+          <div class="col-sm-2" >
+                  <mat-form-field>
+                      <input matInput  [formControl]="buy_sell_Filter" placeholder="Buy/Sell">
+                  </mat-form-field>
+          </div>
+          <div class="col-xs-4" >
+                      <mat-form-field>
+                          <input matInput  [formControl]="quantityFilter" placeholder="Quantity (MW)">
+                      </mat-form-field>
+          </div>
+          <div class="col-sm-2" >
+              <mat-form-field>
+                  <input matInput  [formControl]="priceFilter" placeholder="Price">
+              </mat-form-field>
+        </div>
+          <form class="date-block" [formGroup]="filterForm">
+          <div class="date-block__list">
+              <mat-form-field>
+                  <input matInput [matDatepicker]="fromDate" placeholder="From Date"
+                  
+                  (dateInput)="addFromEvent('input', $event)" (dateChange)="addFromEvent('change', $event)"
+                  formControlName="fromDate" >
+                  <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                  <mat-datepicker #fromDate></mat-datepicker>
+                  </mat-form-field>
+          </div>
+              <div class="date-block__list">
+                  <mat-form-field>
+                      <input matInput [min]="filterForm.controls.fromDate.value"  [matDatepicker]="toDate" placeholder="To Date"
+                          (dateInput)="addToEvent('input', $event)" (dateChange)="addToEvent('change', $event)"
+                          formControlName="toDate" >
+                      <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+                      <mat-datepicker #toDate></mat-datepicker>
+                  </mat-form-field>
+          </div>
+      
+  </form>
+      </div>
+    <mat-table [dataSource]="dataSource" matSort>
+
+      
+      <ng-container matColumnDef="buy_sell">
+        <mat-header-cell mat-sort-header *matHeaderCellDef  (mousedown)="onResizeColumn($event, i)"> Buy/Sell </mat-header-cell> 
+        <mat-cell *matCellDef="let order"> {{order.buy_sell}} </mat-cell>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="type">
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Type </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.type}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.quantity}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Price (€) </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.price}} </mat-cell>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="delivery">
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Delivery Time </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.delivery}} </mat-cell>
+        
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>Status </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.status}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="orderTime">
+        <mat-header-cell mat-sort-header *matHeaderCellDef> Order Time </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.orderTime}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+     
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="12" [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+  </mat-card-content>
+
+ 
+
+</mat-card>

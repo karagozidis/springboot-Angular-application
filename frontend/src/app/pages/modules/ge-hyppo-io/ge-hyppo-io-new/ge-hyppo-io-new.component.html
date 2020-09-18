@@ -1,0 +1,752 @@
+
+                        <div class="tab">
+                        <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate> 
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                            <div class="card-header card-header-tabs card-header-primary">
+                                                    <div class="nav-tabs-navigation">
+                                                        <div class="nav-tabs-wrapper">
+                                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                                <li class="nav-item">
+                                                                        <i class="material-icons header-mat-icon">view_list</i> 
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                        <h4 class="card-title">Configuration Parameters</h4>
+                                                                        <p class="card-category">Sections: Information, Basic, Advanced & Expert configuration</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
+
+
+                                        <div class="card-body">
+                                            <br>
+
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-12"> 
+                                                            <h6>          
+                                                                     Information
+                                                            </h6>
+                                                        </div>    
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="container-fluid">
+                                               
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Name"  #name="ngModel"  [(ngModel)]="geHyppoParams.name" name = "name"   pattern="^[a-zA-Z0-9_]*$" >
+                                                            <mat-error *ngIf="name.invalid" class="invalid-feedback"> 
+                                                            <div class="errorMsg" *ngIf="name?.errors.pattern">Invalid character</div>   
+                                                            </mat-error>
+                                                            <mat-hint>Required Field.</mat-hint>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Description"    [(ngModel)]="geHyppoParams.description" name = "param2" >
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                            <mat-form-field>
+                                                                    <mat-label>Share With UsersGroup</mat-label>
+                                                                    <mat-select [(value)]="selectedUserGroup" >
+                                                                            <!-- <mat-option>None</mat-option> -->
+                                                                            <mat-option *ngFor="let usergroup of usergroups" [value]="usergroup.id">
+                                                                                    {{usergroup.name}}
+                                                                            </mat-option>
+                                                                    </mat-select>
+                                                                          
+                                                            </mat-form-field>
+                                                            <!-- <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="UserGroup"    [(ngModel)]="geHyppoParams.userGroupToSend" name = "usrGrp" >
+                                                                </mat-form-field> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <br>
+                                           
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            
+                                                            <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea2" aria-expanded="true" aria-controls="multiCollapseExample1" >
+                                                                    
+                                                                     Basic
+                                                                     <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                                            </h6>
+                                                        </div>    
+                                                </div>
+                                            </div>
+
+                                            <div id="colapseArea2" class="container-fluid collapse show">
+                                            
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Make Data Charts</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.make_data_charts" name = "param3" matTooltip = {{description6}}   [matTooltipClass]="'my-custom-tooltip'">
+                                                                <mat-option value="true" [value]=true >Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Baseload (MW)" [(ngModel)]="configurationParameters.baseload" #baseload = "ngModel" name = "param4" matTooltip= {{description8}}  matTooltipClass="my-custom-tooltip" pattern = "^(([0-9]|[0-9][0-9]|[0-9][0-9][0-8]|[0-9][0-9][0-9][0-8]?|9[0-8]?)\.\d+|[0-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-2][0-9][0-9][0-9]?)$">
+                                                            <mat-error *ngIf="baseload.invalid" class="invalid-feedback"> 
+                                                                <div class="errorMsg" *ngIf="baseload?.errors.pattern">Baseload valid values:[0 - 2999]</div>   
+                                                                </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Primary Reserve (MW)"    [(ngModel)]="configurationParameters.primary_reserve" #primary_reserve = "ngModel" name = "param5" matTooltip= {{description9}}  matTooltipClass="my-custom-tooltip" pattern = "^(([1-9]|[0-9][0-9]|[0-9][0-9][0-8]?|9[0-8]?)\.\d+|[0-9]|[1-9][0-9]|[1-9][0-9][0-9]?)$">
+                                                            <mat-error *ngIf="primary_reserve.invalid" class="invalid-feedback"> 
+                                                                <div class="errorMsg" *ngIf="primary_reserve?.errors.pattern">Primary Reserve valid values:[0 - 999]</div>   
+                                                                </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width"> 
+                                                            <input matInput   placeholder="Data Time Interval Sec (seconds)"    [(ngModel)]="configurationParameters.data_time_interval_sec" #data_time_interval_sec="ngModel" name = "data_time_interval_sec" matTooltip= {{description10}}  matTooltipClass="my-custom-tooltip"   pattern="^(?:[1-9][0-9]{4}|[1-9][0-9]{3}|[1-9][0-9]{2}|[1-9][0-9]|[0-9])$" />
+                                                            <mat-error *ngIf="data_time_interval_sec.invalid" class="invalid-feedback"> 
+                                                                    <div class="errorMsg" *ngIf="data_time_interval_sec?.errors.required">Data Interval Sec field is required</div>
+                                                                    <div class="errorMsg" *ngIf="data_time_interval_sec?.errors.pattern">This field requires only positive numbers</div>   
+                                                            </mat-error>
+                                                            <mat-hint>Required Field.</mat-hint>
+                                                            </mat-form-field> 
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Use Price Data ($/MWH)</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.use_price_data" name = "param7" matTooltip = {{description11}}  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Alternative Fixed Price ($/MWh)"    [(ngModel)]="configurationParameters.alternative_fixed_price" #alternative_fixed_price = "ngModel" name = "param8" matTooltip= {{description12}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="alternative_fixed_price.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="alternative_fixed_price?.errors.pattern">This field requires only positive numbers</div>    
+                                                        </mat-error>
+                                                        <mat-hint>Required Field.</mat-hint>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Battery % To Pr (%)"    [(ngModel)]="configurationParameters.batt_percent_to_pr" name = "batt_percent_to_pr" matTooltip= {{description24}}  matTooltipClass="my-custom-tooltip" #batt_percent_to_pr="ngModel" name = "batt_percent_to_pr" matTooltip= {{description10}}  matTooltipClass="my-custom-tooltip"   pattern="^(100|[1-9]?[0-9])$" />
+                                                            <mat-error *ngIf="batt_percent_to_pr.invalid" class="invalid-feedback"> 
+                                                                    <div class="errorMsg" *ngIf="batt_percent_to_pr?.errors.required">Βattery percent to pr field is required</div>
+                                                                    <div class="errorMsg" *ngIf="batt_percent_to_pr?.errors.pattern">[0-100][%] only required</div>      
+                                                            </mat-error>
+                                                            <mat-hint>Required Field.</mat-hint>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Export Results To CSV</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.export_results_tocsv" name = "export_results_to_csv" matTooltip = {{description30}}  matTooltipClass="my-custom-tooltip" #export_results_tocsv = "ngModel" >
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <br>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            
+                                                            <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea3" aria-expanded="true" aria-controls="multiCollapseExample1" >
+                                                                     Advanced
+                                                                     <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                                            </h6>
+                                                        </div>    
+                                                </div>
+                                            </div>
+
+                                            <div id="colapseArea3" class="container-fluid collapse" >
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field  class="example-full-width">
+                                                            <input matInput placeholder="Gap In Days "    [(ngModel)]="configurationParameters.gap_in_days" #gap_in_days = "ngModel" name = "param11"  [value] = "10" matTooltip= {{description1}} matTooltipClass="my-custom-tooltip"  pattern = "^[0-9]\d*$">
+                                                            <mat-error *ngIf="gap_in_days.invalid" class="invalid-feedback"> 
+                                                                <div class="errorMsg" *ngIf="gap_in_days?.errors.pattern">This field requires only positive numbers</div>         
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Filter With Grid</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.filter_with_grid" matTooltip = {{description2}} name = "param12"  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Detect Parameters</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.detect_parameters" matTooltip = {{description7}} name = "param13"  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Reserve MW Price ($/MW * h)"  name = "param14"  [(ngModel)]="configurationParameters.reserve_MW_price" #reserve_MW_price = "ngModel" matTooltip= {{description13}}  matTooltipClass="my-custom-tooltip" pattern = "^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="reserve_MW_price.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="reserve_MW_price?.errors.pattern">This field requires only positive numbers</div>
+                                                                
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Auto Size Bat</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.auto_size_bat" name = "param15" matTooltip = {{description14}}  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Battery Power (MW)"  [disabled]="autosizeBatCondition()"  name = "param16" [(ngModel)]="configurationParameters.battery_power_MW" #battery_power_MW = "ngModel" matTooltip= {{description15}}  matTooltipClass="my-custom-tooltip" pattern = "^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="battery_power_MW.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="battery_power_MW?.errors.pattern">This field requires only positive integers</div>
+                                                                
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Battery Energy (MWH)"  [disabled]="autosizeBatCondition()" name = "param17"   [(ngModel)]="configurationParameters.battery_energy_MWH" #battery_energy_MWH = "ngModel" matTooltip= {{description16}}  matTooltipClass="my-custom-tooltip" pattern = "^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="battery_energy_MWH.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="battery_energy_MWH?.errors.pattern">This field requires only positive integers</div>
+                                                                
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Gas Price ($/MWH)"  name = "param18"  [(ngModel)]="configurationParameters.gas_price_mwh" #gas_price_mwh = "ngModel" matTooltip= {{description17}}  matTooltipClass="my-custom-tooltip" pattern = "^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="gas_price_mwh.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="gas_price_mwh?.errors.pattern">This field requires only positive integers</div>
+                                                                
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Battery Eff"  name = "param19"  [(ngModel)]="configurationParameters.battery_eff" #battery_eff="ngModel" matTooltip= {{description19}}  matTooltipClass="my-custom-tooltip" pattern="^(0(\.\d+)?|1(\.0+)?)$">
+                                                            <mat-error *ngIf="battery_eff.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="battery_eff?.errors.pattern">Lowest valid value:0 - Greatest valid value:1</div>
+                                                                
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Batt Power Limit To Pr" name = "param20"   [(ngModel)]="configurationParameters.batt_power_limit_to_pr" #batt_power_limit_to_pr="ngModel" matTooltip= {{description25}}  matTooltipClass="my-custom-tooltip" pattern ="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="batt_power_limit_to_pr.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="batt_power_limit_to_pr?.errors.pattern">This field requires only positive integers</div>  
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Batt For Black Start</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.batt_for_black_start" matTooltip = {{description26}} name = "param21"  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Batt Price For MWH ($)" name = "param22"   [(ngModel)]="configurationParameters.batt_price_MWh" #batt_priceMWh="ngModel" matTooltip= {{description27}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="batt_priceMWh.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="batt_priceMWh?.errors.pattern">This field requires only positive numbers</div>  
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Batt Price For MW ($)" name = "param23"   [(ngModel)]="configurationParameters.batt_price_MW" #batt_priceMW="ngModel" matTooltip= {{description28}}  matTooltipClass="my-custom-tooltip"  pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="batt_priceMW.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="batt_priceMW?.errors.pattern">This field requires only positive numbers</div>  
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Converter Price MVA ($)" name = "param24"   [(ngModel)]="configurationParameters.converter_price_MVA" #converter_price_MVA="ngModel" matTooltip= {{description29}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="converter_price_MVA.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="converter_price_MVA?.errors.pattern">This field requires only positive numbers</div>  
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+
+
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            
+                                                            <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea4" aria-expanded="true" aria-controls="multiCollapseExample1" >
+                                                                Expert
+                                                                     <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                                            </h6>
+                                                        </div>    
+                                                </div>
+                                            </div>
+
+
+                                            <div id="colapseArea4" class="container-fluid collapse">
+                                                <p>Expert</p>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Filter With Flags</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.filter_with_flags" matTooltip = {{description3}} name = "param25" matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Check Ranges</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.check_ranges" name = "param26" matTooltip = {{description4}}  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Gas LHV (MJ/kg)"  name = "param27"  [(ngModel)]="configurationParameters.gas_LHV" #gas_LHV = "ngModel" matTooltip= {{description18}}  matTooltipClass="my-custom-tooltip" pattern = "^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="gas_LHV.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="gas_LHV?.errors.pattern">This field requires only positive numbers</div>     
+                                                        </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Limit Response Signal</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.limit_PFRLDCMD_signal" matTooltip = {{description20}} name = "param28" matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Search Metadata</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.search_metadata" matTooltip = {{description21}} name = "param29"  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Osm or Ext Data (osm/ext)</mat-label>
+                                                            <mat-select   [(ngModel)]="configurationParameters.osm_or_ext_data" matTooltip = {{description22}} name = "param30"  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="osm">Osm</mat-option>
+                                                                <mat-option value="ext">Ext</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label >Rename Output</mat-label>
+                                                            <mat-select [(ngModel)]="configurationParameters.rename_output" name = "param31" matTooltip = {{description23}}  matTooltipClass="my-custom-tooltip">
+                                                                <mat-option value="true" [value]=true>Yes</mat-option>
+                                                                <mat-option value="false" [value]=false>No</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Limit Power Augmentation (%)" name = "param32"   [(ngModel)]="configurationParameters.limit_power_augm" #limit_power_augm="ngModel" matTooltip= {{description31}}  matTooltipClass="my-custom-tooltip" pattern="^(?:100|\d{1,2})(?:\.\d{1,2})?$">
+                                                            <mat-error *ngIf="limit_power_augm.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="limit_power_augm?.errors.pattern">[0-100][%] only required</div>     
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                        <mat-label >Super Fast Frequency Response</mat-label>
+                                                        <mat-select   [(ngModel)]="configurationParameters.super_fast_fr" name = "param34" matTooltip = {{description33}} name = "param1"  matTooltipClass="my-custom-tooltip">
+                                                            <mat-option value="true" [value]=true>Yes</mat-option>
+                                                            <mat-option value="false" [value]=false>No</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput [disabled]="superFrCondition()" placeholder="Grid Deadband (Hz)" name = "param35"   [(ngModel)]="configurationParameters.grid_deadband_hz" #grid_deadband_hz = "ngModel" matTooltip= {{description34}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="grid_deadband_hz.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="grid_deadband_hz?.errors.pattern">This field requires only positive numbers</div>     
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput [disabled]="superFrCondition()" placeholder="Grid Freq Abs Range (Hz)" name = "param36"   [(ngModel)]="configurationParameters.grid_freq_abs_range" #grid_freq_abs_range="ngModel" matTooltip= {{description35}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="grid_freq_abs_range.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="grid_freq_abs_range?.errors.pattern">This field requires only positive numbers</div>     
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput [disabled]="superFrCondition()" placeholder="Sffr Power Size (MW)" name = "param37"   [(ngModel)]="configurationParameters.sffr_power_size_MW" #sffr_power_size_MW = "ngModel" matTooltip= {{description36}}  matTooltipClass="my-custom-tooltip" pattern="^(?:[0-9]\d*|0)?(?:\.\d+)?$">
+                                                            <mat-error *ngIf="sffr_power_size_MW.invalid" class="invalid-feedback">
+                                                                <div class="errorMsg" *ngIf="sffr_power_size_MW?.errors.pattern">This field requires only positive numbers</div>     
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            <br>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h6>
+                                                                     List Of Graph(s) parameters
+                                                            </h6>
+                                                        </div>    
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        
+                                                      
+                                                        <form [formGroup]="form" style="width:90%" >  
+                                                            <div  formArrayName="items"
+                                                              *ngFor="let item of form.get('items')['controls']; let i = index">
+                                                              <div [formGroupName]="i">
+                                                                 
+                                                                 
+                                                                        <mat-form-field class="example-chip-list">
+                                                                                <mat-chip-list #chipList >
+                                                                                  <mat-chip
+                                                                                    *ngFor="let parameter of graphParametersArray[i]"   
+                                                                                    [selectable]="selectable"
+                                                                                    [removable]="removable"
+                                                                                    (removed)="removeGraphParameter(parameter, i)">  
+                                                                                    {{parameter}}
+                                                                                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                                                                  </mat-chip>
+                                                                                  <input
+                                                                                    placeholder="New parameter..."
+                                                                                    #parameterInput
+                                                                                    (click)="focusParameterInput()"
+                                                                                    [formControl]="parameterCtrl"
+                                                                                    [matAutocomplete]="auto"
+                                                                                    [matChipInputFor]="chipList"
+                                                                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                                                                    (matChipInputTokenEnd)="add($event,i)" 
+                                                                                    formControlName= 'listContents' >
+                                                                                </mat-chip-list>
+                                                                                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event,i)">
+                                                                                  <mat-option *ngFor="let parameter of filteredParameters | async" [value]="parameter">
+                                                                                    {{parameter}}
+                                                                                  </mat-option>
+                                                                                </mat-autocomplete>
+                                                                                <mat-error>No parameter declared</mat-error>
+                                                                                <mat-hint>At least one graph parameter needed.</mat-hint>
+                                                                              </mat-form-field>
+                                                                
+                                                                  <div>    
+                                                                      
+                                                                      <button *ngIf="form.controls.items.controls.length > 1" type="button"  class="btn btn-sm btn-info buttonsClass" (click)="removeItem(i)">Remove</button>&nbsp;
+                                                                </div>
+                                                                  
+                                                                
+                                                        
+                                                              </div>
+                                                            </div>
+                                                          </form>
+
+
+
+
+
+                                                    </div>    
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h6>
+                                                            <button type="button"  class="btn  btn-info" (click)="addNext()">Add Graph</button>
+                                                        </h6>
+                                                    </div>    
+                                                </div>
+
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                                <div class="card-header card-header-tabs card-header-primary">
+                                                    <div class="nav-tabs-navigation">
+                                                        <div class="nav-tabs-wrapper">
+                                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                                <li class="nav-item">
+                                                                        <i class="material-icons header-mat-icon">view_list</i> 
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                        <h4 class="card-title">Csv Data</h4>
+                                                                        <p class="card-category">Sections: Upload csv files, Csv headers' mappings</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <br>
+                                                <div class="container-fluid">
+                                                        <div class="row">
+                                                                <div class="col-md-12"> 
+                                                                    <h6>          
+                                                                            Upload CSVs
+                                                                    </h6>
+                                                                </div>    
+                                                        </div>
+                                                </div>
+                                                <div class="container-fluid">
+                                                        <div class="row">
+                                                                <div class="col-md-12"> 
+                                                                        <div id="fileSelector" style="margin-bottom:0.4rem;" >
+                                                                                <!-- <span style="font-weight:normal;">Input Data: </span> <br /> -->
+
+                                                                                <button (click)="chooseDataFiles.click()" class="btn btn-info">
+                                                                                    Add Input Data
+                                                                                </button>
+                                                                                <input type="file" #chooseDataFiles class="choose-files-button" name="fileUplaod" id="fileUpload" (change)="loadFiles()"
+                                                                            multiple ng2FileSelect [uploader]="uploader" accept=".csv">
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="row uploadList" *ngFor="let inputData of uploader.queue">
+                                                                                    <div class="col-sm-4">{{inputData.file.name}}</div>
+                                                                                    <div class="col-sm-4">
+                                                                                        <div class="progress">
+                                                                                            <div class="progress-bar bg-success" [ngStyle]="{'width':inputData.progress+'%'}"
+                                                                                            ></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-4">
+                                                                                        <button mat-raised-button type="button" class="btn btn-danger btn-link btn-sm btn-just-icon"  (click)="removeFile(inputData, uploadDescription1)" style="bottom:10px">
+                                                                                            <i class="material-icons">close</i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                </div>    
+                                                        </div>
+                                                </div>
+                                                <div class="container-fluid">
+                                                        <div class="row">
+                                                                <div class="col-md-12"> 
+                                                                    
+                                                                        <div id="fileSelector_" style="margin-bottom:0.4rem;">
+                                                                                <!-- <span style="font-weight:normal;">Energy Prices:</span> <br /> -->
+                                                                                <button (click)="chooseEnergyFile.click()" class="btn btn-info">Add Energy Prices</button>
+                                                                                <!-- <button (click)="chooseEnergyFile.click()" mat-raised-button type="button" class="btn btn-info btn-link btn-sm btn-just-icon">
+                                                                                    <i class="material-icons" style="color:blue;">add_circle</i>
+                                                                                </button> -->
+                                                                                <input type="file" #chooseEnergyFile class="choose-files-button" name="fileUplaod_" id="fileUpload_" (change)="loadEnergyCSVFiles()"
+                                                                                multiple ng2FileSelect [uploader]="uploader_" accept=".csv">
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="row uploadList" *ngFor="let energyData of uploader_.queue">
+                                                                                    <div class="col-sm-4">{{energyData.file.name}}</div>
+                                                                                    <div class="col-sm-4">
+                                                                                        <div class="progress">
+                                                                                            <div class="progress-bar bg-success" [ngStyle]="{'width':energyData.progress+'%'}"
+                                                                                            ></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-4">
+                                                                                        <button mat-raised-button type="button" class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="removeFile(energyData, uploadDescription2)" style="bottom:10px">
+                                                                                            <i class="material-icons">close</i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                </div>    
+                                                        </div>
+                                                </div>
+                                             
+
+
+                                                <br>
+
+                                                <div class="container-fluid">
+                                                        <div class="row">
+                                                                <div class="col-md-12"> 
+                                                                    <h6>          
+                                                                            Csv headers' mappings
+                                                                    </h6>
+                                                                </div>    
+                                                        </div>
+                                                </div>
+
+                                               
+                                                <div class="container-fluid">
+                                                     
+                                        
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="ST1.POWER"  [(ngModel)] = "mappings.st1_power" name="input1" matTooltip= {{description37}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.FREQUENCY"  [(ngModel)] = "mappings.gt1_frequency" name="input7" matTooltip= {{description38}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.AMBIENT_TEMP"  [(ngModel)] = "mappings.gt1_ambient_temp" name="input2" matTooltip= {{description39}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.POWER"  [(ngModel)] = "mappings.gt1_power" name="input3" matTooltip= {{description40}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.FUEL_FLOW"  [(ngModel)] = "mappings.gt1_fuel_flow" name="input4" matTooltip= {{description41}}  matTooltipClass="my-custom-tooltip"  >
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.GRID_CONNECTED"  [(ngModel)] = "mappings.gt1_grid_connected" name="input5" matTooltip= {{description42}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT1.PRIMARY_RESPONSE"  [(ngModel)] = "mappings.gt1_primary_responce" name="input6" matTooltip= {{description43}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT2.AMBIENT_TEMP" [(ngModel)] = "mappings.gt2_ambient_temp" name="input8" matTooltip= {{description39}}  matTooltipClass="my-custom-tooltip" >
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT2.POWER" [(ngModel)] = "mappings.gt2_power" name="input9" matTooltip= {{description40}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT2.FUEL_FLOW"[(ngModel)] = "mappings.gt2_fuel_flow" name="input10" matTooltip= {{description41}}  matTooltipClass="my-custom-tooltip" >
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT2.GRID_CONNECTED"[(ngModel)] = "mappings.gt2_grid_connected" name="input11" matTooltip= {{description42}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT2.PRIMARY_RESPONSE" [(ngModel)] = "mappings.gt2_primary_responce" name="input12" matTooltip= {{description43}}  matTooltipClass="my-custom-tooltip" >
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT3.AMBIENT_TEMP" [(ngModel)] = "mappings.gt3_ambient_temp" name="input14" matTooltip= {{description39}}  matTooltipClass="my-custom-tooltip" >
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT3.POWER" [(ngModel)] = "mappings.gt3_power" name="input15" matTooltip= {{description40}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT3.FUEL_FLOW" [(ngModel)] = "mappings.gt3_fuel_flow" name="input16" matTooltip= {{description41}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT3.GRID_CONNECTED" [(ngModel)] = "mappings.gt3_grid_connected" name="input17" matTooltip= {{description42}}  matTooltipClass="my-custom-tooltip">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="GT3.PRIMARY_RESPONSE" [(ngModel)] = "mappings.gt3_primary_responce" name="input18" matTooltip= {{description43}}  matTooltipClass="my-custom-tooltip"> 
+                                                        </mat-form-field>
+                                                    </div>
+                
+                                                </div>
+
+
+                                            </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-info pull-right" >
+                                Run
+                            </button>
+                        </div>
+                    </form> 
+                    </div>
+                        
+                

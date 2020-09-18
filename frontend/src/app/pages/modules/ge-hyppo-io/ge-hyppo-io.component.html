@@ -1,0 +1,36 @@
+    <div class="main-content">
+        <div class="container-fluid" style="margin-top:2%">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Hyppo IO</h1>
+                    <h4>General Electric</h4>
+
+                    <div class="card-body">
+                        <mat-tab-group selectedIndex="0" (selectedTabChange)="changeTab($event)">
+                            <mat-tab label="New">
+                                <ng-template matTabContent>
+                                    <ge-hyppo-io-new></ge-hyppo-io-new>
+                                </ng-template>
+                            </mat-tab>
+                            <mat-tab label="History">
+                                <ng-template matTabContent>
+                                    <ge-hyppo-io-history></ge-hyppo-io-history>
+                                </ng-template>
+                            </mat-tab>
+                            <mat-tab label="Results">
+                                <ng-template matTabContent>
+                                    <ge-hyppo-io-results></ge-hyppo-io-results>
+                                </ng-template>
+                            </mat-tab>
+                            <mat-tab label="Graph">
+                                <ng-template matTabContent>
+                                    <ge-hyppo-io-graph></ge-hyppo-io-graph>
+                                </ng-template>
+                            </mat-tab>
+                        </mat-tab-group>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

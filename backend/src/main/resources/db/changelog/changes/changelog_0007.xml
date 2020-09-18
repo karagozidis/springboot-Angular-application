@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0007.xml">
+
+
+    <changeSet  author="Helias Karagozidis"  id="0007-1">
+        <modifyDataType  tableName="message_info"
+                         columnName="metadata"
+                         newDataType="TEXT"/>
+    </changeSet>
+
+
+    <changeSet author="ED" id="0007-3">
+        <addColumn tableName="user">
+            <column name="active_substation_user_group_id" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
+

@@ -1,0 +1,119 @@
+
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                           <div class="card-header card-header-tabs card-header-primary">
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+                                                    <i class="material-icons header-mat-icon">view_list</i>
+                                            </li>
+                                            <li class="nav-item">
+                                                    <h4 class="card-title">History</h4>
+                                                    <p class="card-category">Check your execution results on this section</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        <div class="card-body">
+    
+                            <div class="table-responsive">
+                                <mat-table [dataSource] = "dataSource" matSort>
+                                    <ng-container matColumnDef="actions">
+                                            <mat-header-cell   *matHeaderCellDef >  </mat-header-cell>
+                                            <mat-cell *matCellDef="let row" >
+                                                <button mat-raised-button type="button" *ngIf="row.location !== 'ONCRMCENTRAL'"
+                                                    class="btn btn-primary btn-link btn-sm btn-just-icon"
+                                                    style="color:#0a1332;" (click)="downloadFileList(row)">
+                                                    <i class="material-icons">get_app</i>
+                                                </button>
+                                                <button mat-raised-button type="button" *ngIf="row['status'] === 'EXECUTED' && showResultsLoadingButton === false"
+                                                    class="btn btn-primary btn-link btn-sm btn-just-icon"
+                                                    style="color:#0a1332;" (click)="openResultsTab(row)">
+                                                    <i class="material-icons">open_in_new</i>
+                                                </button>
+                                                <div *ngIf="row['status'] === 'EXECUTED' && showResultsLoadingButton === true" class="spinner-border" style="width: 1rem;height: 1rem;color:#0a1332;" > </div> 
+    
+                                            <!-- <button *ngIf="(row.location === 'SYNC' || row.location === 'ONCRMLOCAL') && row.status===executionStatus.EXECUTED" mat-raised-button type="button" matTooltip="View results" matTooltipPosition="above"
+                                            class="btn btn-primary btn-link btn-sm btn-just-icon" style="color:#0a1332;" (click)="openSpecificResult(row)">
+                                                <i class="material-icons">open_in_new</i>
+                                            </button>
+    
+                                            <button *ngIf="(row.location === 'SYNC' || row.location === 'ONCRMLOCAL') && row.status===executionStatus.EXECUTED" mat-raised-button type="button" matTooltip="Download" matTooltipPosition="above"
+                                            class="btn btn-primary btn-link btn-sm btn-just-icon" style="color:#0a1332;" (click)="downloadContent(row)">
+                                                    <i class="material-icons">get_app</i>
+                                            </button>
+                                             -->
+                                            <button *ngIf="row.location === 'ONCRMCENTRAL'" mat-raised-button type="button" matTooltip="Request from Server" matTooltipPosition="above"
+                                            class="btn btn-primary btn-link btn-sm btn-just-icon" style="color:#0a1332;" (click)="copyFromCentral(row)">
+                                                    <i class="material-icons">cloud_download</i>
+                                            </button>
+                                            
+                                            <button *ngIf="row.status!=='ΟN_EXECUTION'" mat-raised-button type="button" matTooltip="Delete" matTooltipPosition="above"
+                                            class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="deleteResult(row)">
+                                                    <i class="material-icons">delete_outline</i>
+                                            </button>
+                                            
+    
+    
+                                            </mat-cell>
+                                    </ng-container>
+    
+                                    
+    
+                                    <ng-container matColumnDef="status" >
+                                            <mat-header-cell mat-sort-header *matHeaderCellDef>Status</mat-header-cell>
+                                            <mat-cell *matCellDef="let result" [style.color]="getStatusColumnColor(result)">
+                                                {{formatBackendResponse(result['status'])}}
+                                                <!-- <span *ngIf="result.status===executionStatus.RUNNING" style="margin-left:0.4vw;" class="spinner-border spinner-border-sm" role="status"></span> -->
+                                            </mat-cell>
+                                        </ng-container>
+    
+                                    <ng-container matColumnDef="name" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Name</mat-header-cell>
+                                        <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{result['name']}}</div></mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="description" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Description</mat-header-cell>
+                                        <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{result['description']}}</div></mat-cell>
+                                    </ng-container>
+    
+                                   
+    
+                            
+                                    <ng-container matColumnDef="calculation_date" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Date</mat-header-cell>
+                                        <!-- <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{result.createdOn | date: 'medium'}}</div></mat-cell> -->
+                                        <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{ formatDate(result['creationDate']) }}</div></mat-cell>
+                                    </ng-container>
+                                    
+                                    <ng-container matColumnDef="location" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Location</mat-header-cell>
+                                        <!-- <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{result.createdOn | date: 'medium'}}</div></mat-cell> -->
+                                        <mat-cell *matCellDef="let result"><div class="mat-cell-text">{{ formatLocationResponse(result['location']) }}</div></mat-cell>
+                                    </ng-container>
+    
+    
+    
+                                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                                </mat-table>
+                                    <mat-paginator #paginator
+                                    [pageIndex]="0"
+                                    [pageSize]="20"
+                                    [pageSizeOptions]="[5, 10, 15, 20]">
+                                </mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        </div>
+    

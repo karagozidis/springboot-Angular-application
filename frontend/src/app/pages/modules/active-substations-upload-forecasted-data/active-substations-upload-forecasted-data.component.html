@@ -1,0 +1,367 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-md-12">
+              <div class="card one">
+
+                  <div class="card-header card-header-tabs card-header-primary">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+
+                             
+
+                              <ul class="nav nav-tabs" data-tabs="tabs">
+
+
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link active"
+                                         matTooltip="Info! Connected Crm local is required to upload file encrypted!"
+                                         matTooltipPosition="below" data-toggle="modal"
+                                         data-target="#uploadEncryptedModal">
+                                          <i class="material-icons">cloud_upload</i> Upload
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a mat-button class="nav-link active"
+                                        data-toggle="modal"
+                                       data-target="#uploadHistoricalDataModal">
+                                        <i class="material-icons">cloud_upload</i> Upload Historical Data
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link active"
+                                        data-toggle="modal"
+                                       data-target="#uploadEventsModal">
+                                        <i class="material-icons">cloud_upload</i> Upload Events
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link active" (click)="refresh()"  data-toggle="tab">
+                                          <i class="material-icons">autorenew</i> Refresh
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <div class="card-body">
+
+
+                      <div class="tab-content">
+
+
+                          <div class="table-responsive table">
+
+
+                              <mat-table [dataSource]="dataSource" matSort>
+
+                                  <ng-container matColumnDef="actions" class="td-actions text-right">
+                                      <mat-header-cell *matHeaderCellDef>
+                                      </mat-header-cell>
+                                      <mat-cell *matCellDef="let row">
+
+
+                                         <!--  <button *ngIf="appDataService.userDto.username != row.createdBy" mat-raised-button type="button" matTooltip="Only the Owner can delete this file!"
+                                                  matTooltipPosition="above"
+                                                  class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons" style="color: #c5c5c5;">delete_forever</i>
+                                          </button> -->
+
+                                          <button  mat-raised-button type="button" matTooltip="Delete"
+                                                  matTooltipPosition="above"
+                                                  class="btn btn-danger btn-link btn-sm btn-just-icon"
+                                                  (click)="delete(row)">
+                                              <i class="material-icons">delete_outline</i>
+                                          </button>
+
+
+                                          <button  mat-raised-button type="button" matTooltip="Download"
+                                                  matTooltipPosition="above" class="btn btn-link btn-sm btn-just-icon"
+                                                  (click)="download(row)">
+                                              <i class="material-icons">get_app</i>
+                                          </button>
+
+                                          <!-- <button *ngIf="row.tag === 'encrypted_file_upload'" mat-raised-button type="button" matTooltip="Crm Local must be connected to download this file"
+                                                  matTooltipPosition="above" class="btn btn-link btn-sm btn-just-icon"
+                                                  (click)="download(row)">
+                                              <i class="material-icons">get_app</i>
+                                          </button> -->
+
+                                      </mat-cell>
+                                  </ng-container>
+
+
+                                  <ng-container matColumnDef="filename">
+                                      <mat-header-cell mat-sort-header *matHeaderCellDef> File</mat-header-cell>
+                                      <mat-cell *matCellDef="let row">
+                                          <i class="material-icons"   style="font-size: 16px;color: #c11b0f;">lock</i>
+                                          {{row.originalFileName}}</mat-cell>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="fromDate">
+                                      <mat-header-cell mat-sort-header *matHeaderCellDef>From Date
+                                      </mat-header-cell>
+                                      <mat-cell *matCellDef="let row">{{formatDate(row.fromDate)}}</mat-cell>
+                                  </ng-container>
+                                  <ng-container matColumnDef="toDate">
+                                    <mat-header-cell mat-sort-header *matHeaderCellDef>To Date
+                                    </mat-header-cell>
+                                    <mat-cell *matCellDef="let row">{{formatDate(row.toDate)}}</mat-cell>
+                                </ng-container>
+
+                                  <ng-container matColumnDef="tag">
+                                      <mat-header-cell mat-sort-header *matHeaderCellDef>Tag</mat-header-cell>
+                                      <mat-cell *matCellDef="let row">{{row.tag}}</mat-cell>
+                                  </ng-container>
+
+
+                                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                              </mat-table>
+
+
+                              <mat-paginator #paginator
+                                             [pageIndex]="0"
+                                             [pageSize]="50"
+                                             [pageSizeOptions]="[5, 10, 15, 20, 50, 100]">
+                              </mat-paginator>
+
+                          </div>
+
+
+                      </div>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="uploadEncryptedModal" data-backdrop="false" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <i class="material-icons" style="padding-right: 10px;">cloud_upload</i>
+              <h5 class="modal-title" id="exampleModalLongTitle"> Upload File Encrypted</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+
+          <div class="modal-body">
+            <div class= "row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Forecast Date</mat-label>
+                    <input matInput   [matDatepicker]="picker" (dateChange)="catchDateEvent('change', $event, 'displayValue')" [value]="displayValue">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" >
+                <mat-label>Tag</mat-label>
+                <mat-select [(value)]= selectedTag>
+                    <mat-option  value = "cmrPrice">CMR Price</mat-option>
+                    <mat-option  value = "demand" >Demand</mat-option>
+                    <mat-option  value = "generation" >Generation</mat-option>
+                    <mat-option  value = "pvPower" >PvPower</mat-option>
+                    <mat-option  value = "pbpPrice">PbpPrice</mat-option>
+                    <mat-option  value = "pvPrice" >PvPrice</mat-option>
+                    <mat-option value="settlementPrice">Settlement Price</mat-option>
+                    <mat-option  value = "tieLinePowerFlow" >TieLinePowerFlow</mat-option>
+                    <mat-option  value = "wholesalePrice" >WholeSalePrice</mat-option>
+                    <mat-option  value = "windPower">WindPower</mat-option> 
+                </mat-select>
+            </mat-form-field>
+          </div>
+          </div>
+         
+            
+          </div>
+          <div class="modal-footer">
+
+              <a data-dismiss="modal" style="border-style: solid;border-color: #b53b3b; margin-left: 10px; right:25%;"  mat-button class="nav-link active"
+                 (click)="chooseEnergyFileToEncrypt.click()" >
+
+                  <i class="material-icons">lock</i> Upload file encrypted
+                  <div class="ripple-container"></div>
+
+              </a>
+      
+              <input type="file"  #chooseEnergyFileToEncrypt class="choose-files-button"
+                     (change)="uploadFileEncrypted($event.target.files)"
+                     accept=".csv">
+
+          </div>
+      </div>
+  </div>
+
+</div>
+
+<div class="modal fade" id="uploadHistoricalDataModal" data-backdrop="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons" style="padding-right: 10px;">cloud_upload</i>
+                <h5 class="modal-title" id="exampleModalLongTitle"> Upload Historical Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+  
+            <div class="modal-body">
+              <div class= "row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                      <mat-label>From</mat-label>
+                      <input matInput   [matDatepicker]="picker1" (dateChange)="catchDateEvent('change', $event, 'displayFromValue')" [value]="displayFromValue">
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>To</mat-label>
+                    <input matInput   [matDatepicker]="picker2" (dateChange)="catchDateEvent('change', $event, 'displayToValue')" [value]="displayToValue">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            </div>
+            <div class= "row">
+                <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Resolution</mat-label>
+                    <input matInput numeric decimals="1" [(ngModel)]='activeSubstationForecastFileDTO.res'>
+                </mat-form-field>
+                </div>
+            </div>
+
+            <div class= "row">
+                <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Description</mat-label>
+                    <input matInput   [(ngModel)]='uploadHistoricalDataDescription'>
+                </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" >
+                        <mat-label>Measurements/Predictions</mat-label>
+                        <mat-select [(value)]= selectedHistoricalChoice>
+                            <mat-option  value = "measurements">Measurements</mat-option>
+                            <mat-option  value = "prediction" >Predictions</mat-option>
+                           
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" >
+                    <mat-select [(value)]= selectedHistoricalTag>
+                        <mat-option  value = "historicalCmrPrice">Historical CMR Price</mat-option>
+                        <mat-option  value = "historicalDemand" >Historical  Demand</mat-option>
+                        <mat-option  value = "historicalGeneration" >Historical Generation</mat-option>
+                        <mat-option  value = "historicalPvPower" >Historical  PvPower</mat-option>
+                        <mat-option  value = "historicalPbpPrice">Historical  PbpPrice</mat-option>
+                        <mat-option  value = "historicalPvPrice" >Historical  PvPrice</mat-option>
+                        <mat-option  value=  "historicalSettlementPrice">Historical  Settlement Price</mat-option>
+                        <mat-option  value = "historicalTieLinePowerFlow" >Historical  TieLinePowerFlow</mat-option>
+                        <mat-option  value = "historicalWholesalePrice" >Historical  WholeSalePrice</mat-option>
+                        <mat-option  value = "historicalWindPower">Historical  WindPower</mat-option> 
+                    </mat-select>
+                </mat-form-field>
+                </div>
+            </div>
+           
+              
+            </div>
+            <div class="modal-footer">
+  
+                <a data-dismiss="modal" style="border-style: solid;border-color: #b53b3b; margin-left: 10px; right:30%;"  mat-button class="nav-link active"
+                   (click)="chooseHistoricalData.click()" >
+                   <i class="material-icons">lock</i>
+                     Upload Historical Data
+                    <div class="ripple-container"></div>
+  
+                </a>
+        
+                <input type="file"  #chooseHistoricalData class="choose-files-button"
+                       (change)="uploadHistoricalData($event.target.files)"
+                       accept=".csv">
+  
+            </div>
+        </div>
+    </div>
+  
+  </div>
+
+  <div class="modal fade" id="uploadEventsModal" data-backdrop="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons" style="padding-right: 10px;">cloud_upload</i>
+                <h5 class="modal-title" id="exampleModalLongTitle"> Upload Events</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+  
+            <div class="modal-body">
+              <div class= "row">
+                    <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Forecast Date</mat-label>
+                        <input matInput   [matDatepicker]="picker4" (dateChange)="catchDateEvent('change', $event, 'displayEventsValue')" [value]="displayEventsValue">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker #picker4></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+            <div class= "row">
+                <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Description</mat-label>
+                        <input matInput [(ngModel)]='uploadEventsDescription'>
+                    </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                
+            </div> 
+        </div>
+           
+              
+            </div>
+            <div class="modal-footer">
+  
+                <a data-dismiss="modal" style="border-style: solid;border-color: #b53b3b; margin-left: 10px; right:35%;"  mat-button class="nav-link active"
+                   (click)="chooseEvents.click()" >
+                   <i class="material-icons">lock</i>
+                     Upload Events
+                    <div class="ripple-container"></div>
+  
+                </a>
+        
+                <input type="file"  #chooseEvents class="choose-files-button"
+                       (change)="uploadEvents($event.target.files)"
+                       accept=".csv">
+  
+            </div>
+        </div>
+    </div>
+  
+  </div>

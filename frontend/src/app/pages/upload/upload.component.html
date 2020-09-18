@@ -1,0 +1,128 @@
+
+        <div class="main-content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card card-plain">
+                        <div class="card-header card-header-tabs card-header-primary">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+
+                                        <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                     
+                                                <li class="nav-item">
+                                                        <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                                                            <i class="material-icons">info</i> Info
+                                                            <div class="ripple-container"></div>
+                                                        </a>
+                                                    </li>
+                                        </ul>
+
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link active" (click)="chooseEnergyFile.click()" data-toggle="tab">
+                                
+                                                    <i class="material-icons">playlist_add</i> Add new
+                                                    <div class="ripple-container"></div>
+                                          
+                                            </a>
+                                            <input type="file" #chooseEnergyFile class="choose-files-button" name="fileUpload" id="fileUpload" (change)="uploadFile($event.target.files)" multiple  ng2FileSelect [uploader]="uploader"
+                                              accept=".csv">
+                                        </li>
+                                        <li class="nav-item">
+                                                <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                                                    <i class="material-icons">autorenew</i> Refresh
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                  <div class="card-body">
+
+
+                         <div class="tab-content">
+
+
+
+                                <div class="table-responsive table">
+
+
+                                  <mat-table [dataSource] = "dataSource" matSort>
+
+                                          <ng-container matColumnDef="actions" class="td-actions text-right">
+                                                  <mat-header-cell   *matHeaderCellDef >  
+                                                  </mat-header-cell>
+                                                  <mat-cell *matCellDef="let row" >
+                                      
+                                                      <button mat-raised-button type="button" matTooltip="Delete" matTooltipPosition="above"  class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="delete(row)">
+                                                              <i class="material-icons">delete_outline</i>
+                                                      </button>
+
+
+                                                      <button mat-raised-button type="button" matTooltip="Download" matTooltipPosition="above"  class="btn btn-link btn-sm btn-just-icon" (click)="download(row)">
+                                                        <i class="material-icons">get_app</i>
+                                                      </button>
+ 
+                                                  </mat-cell>
+                                          </ng-container>
+
+
+                                      <ng-container matColumnDef="filename" >
+                                          <mat-header-cell mat-sort-header *matHeaderCellDef> File</mat-header-cell>
+                                          <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="createdOn" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Creation Date</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{formatDate(row.createdOn)}}</mat-cell>
+                                      </ng-container>
+                                      
+                                      <ng-container matColumnDef = "progressBar">
+                                          <mat-header-cell  *matHeaderCellDef>Progress Bar</mat-header-cell>
+                                          <mat-cell *matCellDef="let row">  
+                                            
+                                            <div class="col-sm-2">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-success" [ngStyle]="{'width':progressVal +'%'}"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- <mat-progress-bar [value]='progressVal'></mat-progress-bar>
+                                            <span style="position: absolute; top: 0.5em;" [ngStyle]="{'left':  + '50%'}"></span> -->
+                                            
+                                          </mat-cell>
+                                      </ng-container>
+
+                                      <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+                                      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                                  </mat-table>
+
+
+                                  <mat-paginator #paginator
+                                  [pageIndex]="0"
+                                  [pageSize]="20"
+                                  [pageSizeOptions]="[5, 10, 15, 20]">
+                                  </mat-paginator>
+
+                                  </div>
+
+
+
+
+
+
+                        </div>
+
+
+               
+                  </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>

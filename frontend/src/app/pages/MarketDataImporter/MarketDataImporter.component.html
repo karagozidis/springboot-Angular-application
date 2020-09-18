@@ -1,0 +1,244 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-md-12">
+              <div class="card">
+
+                    <div class="card-header card-header-tabs card-header-primary">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+
+                                    <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                      <li style="margin-left: 5px;" class="nav-item">
+                                        <a mat-button class="nav-link active"  data-toggle="modal" data-target="#infoModal" >
+                                            <i class="material-icons">info</i> Help
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                      </li>
+                                    </ul>
+
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link active" (click)="fileSelector.click()" data-toggle="tab">
+                                                    <i class="material-icons">import_export</i> Upload File
+                                                    <div class="ripple-container"></div>
+                                            </a>
+                                            <input type="file" #fileSelector class="choose-files-button" name="fileUplaod_" id="fileUpload_" (change)="uploadFile($event.target.files)"
+                                              accept=".csv">
+                                        </li>
+                                        <li class="nav-item" >
+                                                <a mat-button class="nav-link active" (click)="deleteByFileId()"   data-toggle="tab">
+                                                    <i class="material-icons">delete</i> Delete By File Id
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                                <!-- [ngClass]= "{'button-disabled': totalElements<1}" -->
+                                        </li>   
+                                        <li class="nav-item" *ngIf="userRolesMarket.includes('admin')">
+                                                <a mat-button class="nav-link active" (click)="deleteAll()" data-toggle="tab">
+                                                    <i class="material-icons">delete</i> Delete All
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                          <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                                              <i class="material-icons">autorenew</i> Refresh
+                                              <div class="ripple-container"></div>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <input type="text"  [(ngModel)]="productsViewMarketCode" name="productsViewMarketCode" style="margin-top: 7px;margin-left: 10px;width: 50px;">
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                  <div class="card-body">
+
+                         <div class="tab-content">
+
+                                <div class="table-responsive table">
+
+                                  <mat-table
+                                      [dataSource]="dataSource"
+                                      matSort
+                                      matSortDisableClear
+                                      (matSortChange)="refresh()">
+
+                                       <ng-container matColumnDef="actions" class="td-actions text-right">
+                                               <mat-header-cell   *matHeaderCellDef >
+                                               </mat-header-cell>
+
+                                               <mat-cell *matCellDef="let row">
+                                                   <button mat-raised-button type="button" matTooltip="Delete group {{row.order_ID}}" matTooltipPosition="above"  class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="deleteGroup(row)">
+                                                           <i class="material-icons">delete_outline</i>
+                                                   </button>
+                                               </mat-cell>
+                                       </ng-container>
+                                       
+                                     <!--  <ng-container matColumnDef="id" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Id</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+                                      </ng-container> -->
+                                   
+                                      <ng-container matColumnDef="file_id" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>File Id</mat-header-cell>
+                                        <mat-cell *matCellDef="let row" (mouseover)="getToolTipData(row)" matTooltip={{displayedData}}>{{row.messageInfoId}}</mat-cell>
+                                      </ng-container>
+
+                                     
+                                      <ng-container matColumnDef="order_ID" >
+                                          <mat-header-cell mat-sort-header *matHeaderCellDef>Group Id</mat-header-cell>
+                                          <mat-cell *matCellDef="let row">{{row.order_ID}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="action" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Order action</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.action}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="product_name" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Product</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.product_name}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="orderType" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Order Type</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.orderType}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="quantity" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Quantity</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.quantity}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="price" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Price</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.price}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="orderDirection" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Direction</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.orderDirection}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="timeStamp" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Time stamp</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{formatDate(row.timeStamp)}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="basket_ID" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Basket Id</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.basket_ID}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="basket_Type" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Basket Type</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.basket_Type}}</mat-cell>
+                                      </ng-container>
+
+                                       
+
+                                      <ng-container matColumnDef="status" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Status</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.status}}</mat-cell>
+                                      </ng-container>
+
+                                      <ng-container matColumnDef="order_id" >
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef> Created order</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.singleOrderId}}</mat-cell>
+                                      </ng-container>
+
+
+                                      <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+                                      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                                  </mat-table>
+
+
+                                  <mat-paginator
+                                      [length]="totalElements"
+                                      [pageSize]="paginator.pageSize"
+                                      [pageIndex]="paginator.pageIndex"
+                                      [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                                      (page)="refresh()">
+                                  </mat-paginator>
+
+                                  </div>
+
+
+
+                        </div>
+
+
+               
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="modal fade" id="infoModal"  role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="material-icons"  style="padding-right: 10px;">info</i>
+        <h5 class="modal-title" id="exampleModalLongTitle"> Help</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-md-12">
+              Click here to open usage instructions
+              <button type="button" class="btn btn-info" (click)="showHelpPdf();" >
+                <i class="material-icons">picture_as_pdf</i> Usage instructions
+                <div class="ripple-container"></div>
+              </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+              Download csv file with demo data
+              <a  type="button" class="btn btn-info" [href]="'/assets/csv/importOrdersDemoFile.zip'" download>
+                <i class="material-icons">save_alt</i>  Demo file
+                <div class="ripple-container"></div>
+              </a> 
+     
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+              Download empty csv file 
+              <a  type="button" class="btn btn-info" [href]="'/assets/csv/import-orders-empty-file.csv'" download>
+                <i class="material-icons">save_alt</i> Empty file
+                <div class="ripple-container"></div>
+              </a> 
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">
+        Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

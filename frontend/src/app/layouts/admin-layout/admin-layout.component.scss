@@ -1,0 +1,63 @@
+.mainButton {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+}
+
+.returnButton {
+    position: absolute;
+    top: 8%;
+    left: 60%;
+}
+
+.main-panel {
+    // width: 'calc(100%-260px)';
+    width: 100%;
+    height:100vh;
+}
+
+.sidebar-hidden {
+    width: 100%;
+}
+
+.sidebar-visible {
+    width: calc(100% - 260px);
+    // width: auto;
+}
+
+@media (max-width: 991px){
+.sidebar-visible {
+    width: 100%;
+}
+}
+.sidebar-responsive{
+    width:260px;
+}
+
+// .mat-progress-spinner circle, .mat-spinner circle {
+//     stroke: #3fb53f;
+// }
+//
+// .mat-spinner-color::ng-deep circle{
+//     stroke: # !important;
+// }
+
+mat-spinner {
+    position: fixed;
+    height: 2rem;
+    width: 2rem;
+    z-index: 100;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+}
+
+.loading-cirle {
+    position:fixed;
+    color:#070d24;
+    width: 40rem;
+    height: 40rem;
+    top:500px;
+    right: 50px;
+    z-index: 100;
+}

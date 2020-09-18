@@ -1,0 +1,44 @@
+.card {
+    width:480px;
+}
+.card-header {
+    background-color: #305d79;
+}
+.card .card-category:not([class*=text-]) {
+    color: rgba(194, 189, 189, 0.925);
+}
+.card-header .windowHeader{
+    color:white;
+}
+.mat-raised-button {
+   
+    background-color: #305d79;
+    color:white;
+    float:right;  
+}
+.close.mat-button {
+    position: inherit;
+    top: 0;
+    right: 0;
+    transform: translate(95%, -100%);
+    background:transparent;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
+
+  .material-icons{
+      font-size:15px;
+      color:black;
+  }
+  
+
+  .selectionButton{
+    margin-left: 47%;
+    padding-inline-start: 13%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+  .mat-fab {
+    background-color:#305d79
+  }

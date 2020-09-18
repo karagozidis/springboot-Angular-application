@@ -1,0 +1,34 @@
+.nav-item{
+    padding-right:10px;
+}
+
+.mat-column-actions{
+    padding-left: 15px;
+    justify-content: center;
+    flex: 0 0 10%;
+}
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}
+.mat-column-filename{
+    justify-content: center;
+    flex: 0 0 20%;
+}
+.mat-column-createdOn{
+    justify-content: center;
+    flex: 0 0 20%;
+}
+
+.mat-column-progressBar{
+    justify-content: center;
+    flex: 0 0 30%;
+}
+      

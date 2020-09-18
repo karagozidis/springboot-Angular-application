@@ -1,0 +1,842 @@
+ <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card fourth">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+
+                                    <li class="nav-item">
+                                        <a mat-button class="nav-link active" (click)="refresh()" id="sysOperatorMessage" data-toggle="modal"
+                                            data-target="#sysOperatorMesageModal">
+                                            <i class="material-icons">info</i> Info
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: Output Results</h4>
+                                    </li>
+                                    
+                                </ul>
+                                
+
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea1"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Energy Market
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea1" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]=" dataSourceEnergyMarket">
+                              
+                                  
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                                  
+                                  
+                              
+                                
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" *ngIf="this.energyMarketArray  && this.energyMarketArray[0]" >
+                                           <div class="row" >  
+                                            <div class="col"  >{{energyMarketArray[i][0]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][1]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][2]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][3]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][4]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][5]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][6]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][7]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][8]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][9]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][10]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][11]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][12]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][13]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][14]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][15]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][16]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][17]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][18]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][19]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][20]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][21]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][22]| number:'1.1-2'}}</div>
+                                            <div class="col"  >{{energyMarketArray[i][23]| number:'1.1-2'}}</div>
+                                               
+                                           </div>
+                                           <div class="col" *ngIf="i===10">
+                                            <mat-form-field class="example-full-width" style="width:20%;">
+                                                <input matInput [(ngModel)]="cellUpdatedState[10][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                            </mat-form-field>
+                                            
+                                        </div>
+                                        <div class="col" *ngIf="i===11">
+                                            <mat-form-field class="example-full-width" style="width:20%;">
+                                                <input matInput   [(ngModel)]="cellUpdatedState[11][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                            </mat-form-field>
+                                        </div>
+                                        </div>  
+                                    </mat-cell>
+                                  </ng-container>
+
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col cell1">1</div>
+                                                <div class="col cell2">2</div>
+                                                <div class="col cell3">3</div>
+                                                <div class="col cell4">4</div>
+                                                <div class="col cell5">5</div>
+                                                <div class="col cell6">6</div>
+                                                <div class="col cell7">7</div>
+                                                <div class="col cell8">8</div>
+                                                <div class="col cell9">9</div>
+                                                <div class="col cell10">10</div>
+                                                <div class="col cell11">11</div>
+                                                <div class="col cell12">12</div>
+                                                <div class="col cell13">13</div>
+                                                <div class="col cell14">14</div>
+                                                <div class="col cell15">15</div>
+                                                <div class="col cell16">16</div>
+                                                <div class="col cell17">17</div>
+                                                <div class="col cell18">18</div>
+                                                <div class="col cell19">19</div>
+                                                <div class="col cell20">20</div>
+                                                <div class="col cell21">21</div>
+                                                <div class="col cell22">22</div>
+                                                <div class="col cell23">23</div>
+                                                <div class="col cell24">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsEnergyMarket" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsEnergyMarket;"></mat-row>
+                                </mat-table>
+                              </div>
+                              <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="graphMainContent">
+                                            <plotly-plot divId="real" [data]="graphEnergyMarket.data" [layout]="graphEnergyMarket.layout"  [config]="graphEnergyMarket.config"
+                                                [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <br>
+                        
+
+                        
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea2"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Power Balance Provision
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea2" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]="dataSourcePowerBalanceProvision">
+                              
+                                  
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Data</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                                 
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" *ngIf="this.powerBalanceProvisionArray  && this.powerBalanceProvisionArray[0]" >
+                                           <div class="row" >
+                                            <!-- <div class="col"  >{{energyMarketArray[i][0]| number:'1.1-2'}}</div> -->
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][0]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][1]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][2]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][3]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][4]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][5]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][6]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][7]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][8]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][9]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][10]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][11]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][12]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][13]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][14]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][15]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][16]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][17]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][18]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][19]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][20]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][21]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][22]" ></div>
+                                            <div class="col"  ><input type="text" size = "2" class="inputsStyle" [(ngModel)] = "this.powerBalanceProvisionArray[i][23]" ></div>
+                                               
+                                           </div>
+                                           <div class="col" *ngIf="i===10">
+                                            <mat-form-field class="example-full-width" style="width:20%;">
+                                                <input matInput [(ngModel)]="cellUpdatedState[10][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                            </mat-form-field>
+                                            
+                                        </div>
+                                        <div class="col" *ngIf="i===11">
+                                            <mat-form-field class="example-full-width" style="width:20%;">
+                                                <input matInput   [(ngModel)]="cellUpdatedState[11][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                            </mat-form-field>
+                                        </div>
+                                        </div>  
+                                    </mat-cell>
+                                  </ng-container>
+
+                                
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col cell1">1</div>
+                                                <div class="col cell2">2</div>
+                                                <div class="col cell3">3</div>
+                                                <div class="col cell4">4</div>
+                                                <div class="col cell5">5</div>
+                                                <div class="col cell6">6</div>
+                                                <div class="col cell7">7</div>
+                                                <div class="col cell8">8</div>
+                                                <div class="col cell9">9</div>
+                                                <div class="col cell10">10</div>
+                                                <div class="col cell11">11</div>
+                                                <div class="col cell12">12</div>
+                                                <div class="col cell13">13</div>
+                                                <div class="col cell14">14</div>
+                                                <div class="col cell15">15</div>
+                                                <div class="col cell16">16</div>
+                                                <div class="col cell17">17</div>
+                                                <div class="col cell18">18</div>
+                                                <div class="col cell19">19</div>
+                                                <div class="col cell20">20</div>
+                                                <div class="col cell21">21</div>
+                                                <div class="col cell22">22</div>
+                                                <div class="col cell23">23</div>
+                                                <div class="col cell24">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsPowerBalanceProvision" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsPowerBalanceProvision;"></mat-row>
+                                </mat-table>
+                              </div>
+                              <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+    
+                                        <div class="graphMainContent">
+                                            <plotly-plot divId="real" [data]="graphPowerBalanceProvision.data" [layout]="graphPowerBalanceProvision.layout"  [config]="graphPowerBalanceProvision.config"
+                                                [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+
+                        
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea3"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                         Congestion Management Relief
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea3" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]="dataSourceCongestionManagemetRelief">
+                              
+                                  
+                                    
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Data</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                                  
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" *ngIf="this.congestionManagementReliefArray  && this.congestionManagementReliefArray[0]" >
+                                            <div class="row" >
+                                             <div class="col"  >{{congestionManagementReliefArray[i][0]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][1]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][2]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][3]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][4]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][5]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][6]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][7]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][8]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][9]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][10]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][11]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][12]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][13]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][14]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][15]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][16]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{congestionManagementReliefArray[i][17]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][18]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][19]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][20]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][21]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][22]| number:'1.1-2'}}</div> 
+                                             <div class="col"  >{{congestionManagementReliefArray[i][23]| number:'1.1-2'}}</div> 
+                                             
+                                                
+                                            </div>
+                                            <div class="col" *ngIf="i===10">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput [(ngModel)]="cellUpdatedState[10][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                             
+                                         </div>
+                                         <div class="col" *ngIf="i===11">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput   [(ngModel)]="cellUpdatedState[11][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                         </div>
+                                         </div>  
+                                    </mat-cell>
+                                  </ng-container>
+
+                                  
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col cell1">1</div>
+                                                <div class="col cell2">2</div>
+                                                <div class="col cell3">3</div>
+                                                <div class="col cell4">4</div>
+                                                <div class="col cell5">5</div>
+                                                <div class="col cell6">6</div>
+                                                <div class="col cell7">7</div>
+                                                <div class="col cell8">8</div>
+                                                <div class="col cell9">9</div>
+                                                <div class="col cell10">10</div>
+                                                <div class="col cell11">11</div>
+                                                <div class="col cell12">12</div>
+                                                <div class="col cell13">13</div>
+                                                <div class="col cell14">14</div>
+                                                <div class="col cell15">15</div>
+                                                <div class="col cell16">16</div>
+                                                <div class="col cell17">17</div>
+                                                <div class="col cell18">18</div>
+                                                <div class="col cell19">19</div>
+                                                <div class="col cell20">20</div>
+                                                <div class="col cell21">21</div>
+                                                <div class="col cell22">22</div>
+                                                <div class="col cell23">23</div>
+                                                <div class="col cell24">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsCongestionManagementRelief" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsCongestionManagementRelief;"></mat-row>
+                                </mat-table>
+                              </div>
+                              <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+     
+                                        <div class="graphMainContent">
+                                            <plotly-plot divId="real" [data]="graphCongestionManagementRelief.data" [layout]="graphCongestionManagementRelief.layout"  [config]="graphCongestionManagementRelief.config"
+                                                [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea4"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                         Prices SLC Services #1
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea4" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]="dataSourcePricesOne">
+                              
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Data</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                               
+                                  
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" *ngIf="this.pricesServiceFirstArray  && this.pricesServiceFirstArray[0]" >  
+                                            <div class="row" >
+                                             <div class="col"  >{{pricesServiceFirstArray[i][0]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][1]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][2]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][3]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][4]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][5]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][6]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][7]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][8]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][9]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][10]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][11]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][12]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][13]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][14]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][15]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][16]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][17]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][18]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][19]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][20]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][21]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][22]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceFirstArray[i][23]| number:'1.1-2'}}</div>
+                                             
+                                                
+                                            </div>
+                                            <div class="col" *ngIf="i===10">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput [(ngModel)]="cellUpdatedState[10][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                             
+                                         </div>
+                                         <div class="col" *ngIf="i===11">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput   [(ngModel)]="cellUpdatedState[11][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                         </div>
+                                         </div> 
+                                    </mat-cell>
+                                  </ng-container>
+
+                                 
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col cell1">1</div>
+                                                <div class="col cell2">2</div>
+                                                <div class="col cell3">3</div>
+                                                <div class="col cell4">4</div>
+                                                <div class="col cell5">5</div>
+                                                <div class="col cell6">6</div>
+                                                <div class="col cell7">7</div>
+                                                <div class="col cell8">8</div>
+                                                <div class="col cell9">9</div>
+                                                <div class="col cell10">10</div>
+                                                <div class="col cell11">11</div>
+                                                <div class="col cell12">12</div>
+                                                <div class="col cell13">13</div>
+                                                <div class="col cell14">14</div>
+                                                <div class="col cell15">15</div>
+                                                <div class="col cell16">16</div>
+                                                <div class="col cell17">17</div>
+                                                <div class="col cell18">18</div>
+                                                <div class="col cell19">19</div>
+                                                <div class="col cell20">20</div>
+                                                <div class="col cell21">21</div>
+                                                <div class="col cell22">22</div>
+                                                <div class="col cell23">23</div>
+                                                <div class="col cell24">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsPricesSLCServicesOne" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsPricesSLCServicesOne;"></mat-row>
+                                </mat-table>
+                              </div>
+                              <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+    
+                                        <div class="graphMainContent">
+                                            <plotly-plot divId="real" [data]="graphPricesSLCServices1.data" [layout]="graphPricesSLCServices1.layout"  [config]="graphPricesSLCServices1.config"
+                                                [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+                      
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea5"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Prices SLC Services #2
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea5" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]="dataSourcePricesTwo">
+                              
+                                
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Data</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                                  
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" *ngIf="this.pricesServiceSecondArray  && this.pricesServiceSecondArray[0]" >  
+                                            <div class="row" >
+                                             <div class="col"  >{{pricesServiceSecondArray[i][0]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][1]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][2]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][3]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][4]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][5]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][6]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][7]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][8]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][9]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][10]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][11]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][12]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][13]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][14]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][15]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][16]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][17]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][18]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][19]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][20]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][21]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][22]| number:'1.1-2'}}</div>
+                                             <div class="col"  >{{pricesServiceSecondArray[i][23]| number:'1.1-2'}}</div>
+                                             
+                                            
+                                                
+                                            </div>
+                                            <div class="col" *ngIf="i===10">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput [(ngModel)]="cellUpdatedState[10][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                             
+                                         </div>
+                                         <div class="col" *ngIf="i===11">
+                                             <mat-form-field class="example-full-width" style="width:20%;">
+                                                 <input matInput   [(ngModel)]="cellUpdatedState[11][0]"  pattern="^[a-zA-Z0-9_]*$" >
+                                             </mat-form-field>
+                                         </div>
+                                         </div> 
+                                    </mat-cell>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="select_deselect_all">
+                                    <mat-header-cell *matHeaderCellDef> Select/Deselect All </mat-header-cell>
+                                    <mat-cell *matCellDef="let element;let i = index">
+                                        <div class="row">
+                                           <!--  <div class="col"><mat-checkbox  [(ngModel)]="selectedCellInTheRow[i]" (change)="$event ? updateAllCellsInRowCheckedState(i):null" 
+                                                class="example-margin" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"></mat-checkbox>
+                                            </div> -->
+                                            <div class="col"><mat-checkbox  [(ngModel)]="selectedCellInTheRow[i]" (change)="$event ? updateAllCellsInRowCheckedState(i):null" 
+                                                class="example-margin"></mat-checkbox>
+                                            </div>
+                                        </div>
+                                    </mat-cell>
+                                  </ng-container>
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col cell1">1</div>
+                                                <div class="col cell2">2</div>
+                                                <div class="col cell3">3</div>
+                                                <div class="col cell4">4</div>
+                                                <div class="col cell5">5</div>
+                                                <div class="col cell6">6</div>
+                                                <div class="col cell7">7</div>
+                                                <div class="col cell8">8</div>
+                                                <div class="col cell9">9</div>
+                                                <div class="col cell10">10</div>
+                                                <div class="col cell11">11</div>
+                                                <div class="col cell12">12</div>
+                                                <div class="col cell13">13</div>
+                                                <div class="col cell14">14</div>
+                                                <div class="col cell15">15</div>
+                                                <div class="col cell16">16</div>
+                                                <div class="col cell17">17</div>
+                                                <div class="col cell18">18</div>
+                                                <div class="col cell19">19</div>
+                                                <div class="col cell20">20</div>
+                                                <div class="col cell21">21</div>
+                                                <div class="col cell22">22</div>
+                                                <div class="col cell23">23</div>
+                                                <div class="col cell24">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsPricesSLCServicesTwo" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsPricesSLCServicesTwo;"></mat-row>
+                                </mat-table>
+                              </div>
+                              <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+    
+                                        <div class="graphMainContent">
+                                            <plotly-plot divId="real" [data]="graphPricesSLCServices2.data" [layout]="graphPricesSLCServices2.layout"  [config]="graphPricesSLCServices2.config"
+                                                [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card fourth">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: Output Results</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea1"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Energy Market
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea1" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]=" dataSourceProfitsAndCosts">
+                              
+                                  
+                                  <ng-container matColumnDef="quantity">
+                                    <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.quantity}} </mat-cell>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="expected">
+                                    <mat-header-cell *matHeaderCellDef> Expected </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.expected}} </mat-cell>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="imported">
+                                    <mat-header-cell *matHeaderCellDef> Imported </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.imported}} </mat-cell>
+                                  </ng-container>
+                              
+                                  
+                                  <mat-header-row *matHeaderRowDef="displayedColumnsProfitsAndCosts" class="example-first-header-row"></mat-header-row>
+  
+                                 
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumnsProfitsAndCosts;"></mat-row>
+                                </mat-table>
+                              </div>
+
+                        </div>
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="row" >
+        <button mat-raised-button type="button" *ngIf= "this.appDataService.userDto.modulesCrm.includes('system-operator')===true" class="btn btn-primary btn-link btn-sm btn-just-icon"style="background-color:#305d79;left:84%;bottom:60%;width:6%;padding-bottom:2.5%;" (click)="acceptOffer()"><p style="color:white;font-size:small;text-transform: none">Accept Offer</p></button>
+        <button mat-raised-button type="button" *ngIf= "this.appDataService.userDto.modulesCrm.includes('system-operator')===true" class="btn btn-primary btn-link btn-sm btn-just-icon"style="background-color: #305d79;left:86%;bottom:60%;width:6%;padding-bottom:2.5%;" (click)="rejectOffer()"> <p style="color:white;font-size:small;text-transform: none">Reject Offer</p></button>
+        <button mat-raised-button type="button" *ngIf= "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" class="sendOfferButton"style="bottom:60%;" (click)="sendOffer()">Send Offer</button>
+    </div>
+</div>
+
+<div class="modal fade" id="sysOperatorMesageModal" data-backdrop="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons" style="padding-right: 10px;">message</i>
+                <h5 class="modal-title" id="exampleModalLongTitle"> Offer Received</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        There is a new offer from the Substation Operator:
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">ν
+
+                <a data-dismiss="modal" style="background-color: #305d79;" mat-button class="nav-link active"
+                   (click)="acceptOffer()" >
+
+                    <i class="material-icons">done</i> Accept Offer
+                    <div class="ripple-container"></div>
+
+                </a>
+               
+
+                <a data-dismiss="modal" style="background-color: #305d79; margin-left: 10px;"  mat-button class="nav-link active"
+                   (click)="rejectOffer()" >
+
+                    <i class="material-icons">close</i> Reject Offer
+                    <div class="ripple-container"></div>
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

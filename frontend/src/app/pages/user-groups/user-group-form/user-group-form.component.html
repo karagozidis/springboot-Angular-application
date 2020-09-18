@@ -1,0 +1,72 @@
+<button class="close" mat-button (click)="onNoClick()">
+    <i class="material-icons">close</i>
+  </button>
+  <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+  
+                        <p class="card-category" *ngIf="data.compAction==='createUserGroup'">Create a UserGroup</p>
+                        <p class="card-category" *ngIf="data.compAction!=='createUserGroup'">Update a UserGroup</p>
+                    </div>
+                    <div class="card-body">
+                        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <div class="form-group">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Name"  type="text" name="name" [(ngModel)]="userGroupModel.name">
+                                  </mat-form-field>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Description" type="text" name="description" [(ngModel)]="userGroupModel.description">
+                                  </mat-form-field>
+                                  </div>
+                                </div>
+                              </div>
+                              <mat-form-field class="example-chip-list">
+                                  <mat-chip-list #chipList aria-label="Partner selection">  
+                                    <mat-chip *ngFor="let partner of partners"
+                                      [selectable]="selectable"
+                                      [removable]="removable"
+                                      (removed)="remove(partner)">
+                                      {{partner}}
+                                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                    </mat-chip>
+                                    <input
+                                      placeholder="New member..."
+                                      #partnerInput
+                                      [formControl]="partnerCtrl"
+                                      (click)="focusMemberInput()"
+                                      [matAutocomplete]="auto"
+                                      [matChipInputFor]="chipList"
+                                      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                      [matChipInputAddOnBlur]="addOnBlur"
+                                      (matChipInputTokenEnd)="add($event)">
+                                  </mat-chip-list>
+                                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                                    <mat-option *ngFor="let partner of filteredPartners | async"  [value]="partner">
+                                      {{partner}}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                                </mat-form-field>
+                            <button  *ngIf="data.compAction==='createUserGroup'" mat-raised-button type="submit"  >Create</button>
+                            <button  *ngIf="data.compAction!=='createUserGroup'" mat-raised-button type="submit" >Update</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  
+

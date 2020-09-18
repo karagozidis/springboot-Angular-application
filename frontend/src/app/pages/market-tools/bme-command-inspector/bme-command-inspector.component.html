@@ -1,0 +1,64 @@
+
+        <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+
+                
+                            <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;" >
+                                 
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link active" (click)="setConnectionState()" >
+                                        <i  [ngClass]="{'button-visible': connectionState }" class="material-icons">settings_input_component</i> On / off
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item" style="margin-left: 5px;">
+                                  <a mat-button class="nav-link active" (click)="deleteData()" >
+                                      <i class="material-icons">delete</i> Clear
+                                      <div class="ripple-container"></div>
+                                  </a>
+                                </li>
+                                
+                            </ul>
+
+
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                              <li class="nav-item">
+                                  <i class="material-icons header-mat-icon">search</i> 
+                              </li>
+
+                              <li class="nav-item">
+                                <h4 class="card-title"> Trading.exe </h4>
+                                <p class="card-category">BME trading algorithm IO inspector</p>
+                              </li>
+                          </ul>
+
+                        </div>
+                    </div>
+            </div>
+
+
+          <div class="card-body">
+
+                <div style="padding: 0px 20px 0px 20px;" class="tab-content">
+                
+                    <table  class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Command</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr  *ngFor="let command of bmeCommands" >
+                            <td style="padding: 0px;">{{command}}</td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+
+                </div>
+
+          </div>
+      </div>

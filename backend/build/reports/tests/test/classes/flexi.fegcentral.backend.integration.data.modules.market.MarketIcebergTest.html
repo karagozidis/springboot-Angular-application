@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/flexi.fegcentral.backend.integration.data.modules.market.html">flexi.fegcentral.backend.integration.data.modules.market</a> &gt; MarketIcebergTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.775s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="iceberg_test"></a>
+<h3 class="failures">iceberg_test</h3>
+<span class="code">
+<pre>org.junit.ComparisonFailure: expected:&lt;[23].0&gt; but was:&lt;[31].0&gt;
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest.iceberg_test(MarketIcebergTest.java:168)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">iceberg_test</td>
+<td class="failures">0.775s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:27:11.740 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - open_product 2020-06-10T15:27:11.731534300Z 2020-06-10T16:27:11.731534300Z 109
+16:27:11.740 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - OK
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - iceberg_order 109 buy 100.0 22.0 2020-06-10T13:27:11.810532800Z 261 10.0 1.0
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;10.0;22.00;2020-06-10T13:27:11.810532;-1;261
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 0
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 0
+16:27:11.876 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 10.0 22.0 2020-06-10T13:27:11.873533400Z 262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 4;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:11.873533;-1;262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 1
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;4;10.0;22.00;261;262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:11.878 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;10.0;23.00;2020-06-10T13:27:11.873533;-1;261
+16:27:11.878 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 4;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:11.873533;-1;262
+16:27:12.054 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 5.0 22.0 2020-06-10T13:27:12.051533700Z 263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 5;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.051533;-1;263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 1
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;5;5.0;23.00;261;263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;5.0;23.00;2020-06-10T13:27:11.873533;-1;261
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 5;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.051533;-1;263
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 85.0 22.0 2020-06-10T13:27:12.152532600Z 264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 6;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.152532;-1;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 9
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;31.00;261;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;30.00;261;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;29.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;28.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;27.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;26.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;25.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;24.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;5.0;23.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;32.00;2020-06-10T13:27:12.152532;-1;261
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 6;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.152532;-1;264
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/auth/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.users.UserController
+           Method = public flexi.fegcentral.backend.dto.auth.JWTResponseDTO flexi.fegcentral.backend.controllers.users.UserController.authenticate(flexi.fegcentral.backend.dto.auth.LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;jwt&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;,&quot;requires2FA&quot;:false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/products/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.ProductDTO flexi.fegcentral.backend.controllers.data.modules.market.ProductController.create(flexi.fegcentral.backend.dto.data.modules.market.ProductDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.196533800Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11.156532300Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11.156532300Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11.156532300Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:258,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.385533700Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.385533700Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:259,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.469537600Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.469537600Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:260,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.516534200Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:108,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.515537300Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:18.0,&quot;quantity&quot;:20.0,&quot;current_price&quot;:18.0,&quot;current_quantity&quot;:20.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/auth/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.users.UserController
+           Method = public flexi.fegcentral.backend.dto.auth.JWTResponseDTO flexi.fegcentral.backend.controllers.users.UserController.authenticate(flexi.fegcentral.backend.dto.auth.LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;jwt&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;,&quot;requires2FA&quot;:false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/products/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.ProductDTO flexi.fegcentral.backend.controllers.data.modules.market.ProductController.create(flexi.fegcentral.backend.dto.data.modules.market.ProductDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.737532900Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:11.731534300Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:11.731534300Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:11.731534300Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.810532800Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:12Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.810532800Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:11.873533400Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:12Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:11.873533400Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List&lt;flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO&gt; flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = [{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;ACTIVE&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:23.0,&quot;order1_quantity&quot;:10.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:10.0,&quot;orderStatus&quot;:&quot;ACTIVE&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:23.0,&quot;order2_quantity&quot;:10.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:263,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12.052535300Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:12Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12.051533700Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List&lt;flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO&gt; flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = [{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;PARTLY_MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:23.0,&quot;order2_quantity&quot;:10.0},{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;PARTLY_MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:23.0,&quot;order1_quantity&quot;:10.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:133,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;PARTLY_MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:263,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:23.0,&quot;order1_quantity&quot;:5.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:133,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:263,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:23.0,&quot;current_quantity&quot;:5.0,&quot;orderStatus&quot;:&quot;PARTLY_MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:23.0,&quot;order2_quantity&quot;:5.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12.153533100Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:&quot;2020-06-10T14:27:12Z&quot;,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12.152532600Z&quot;,&quot;user&quot;:{&quot;id&quot;:2000,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:&quot;user1@flexi.gr&quot;,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:85.0,&quot;orderStatus&quot;:&quot;DRAFT&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;, Authorization:&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List&lt;flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO&gt; flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
+     Content type = application/json;charset=UTF-8
+             Body = [{&quot;id&quot;:133,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:263,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:23.0,&quot;order2_quantity&quot;:5.0},{&quot;id&quot;:133,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:263,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:5.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:23.0,&quot;order1_quantity&quot;:5.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:23.0,&quot;order1_quantity&quot;:10.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:132,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:262,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:23.0,&quot;order2_quantity&quot;:10.0},{&quot;id&quot;:134,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:31.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:134,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:31.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:135,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:30.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:135,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:30.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:136,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:29.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:136,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:29.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:137,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:28.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:137,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:28.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:138,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:27.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:138,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:27.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:139,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:26.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:139,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:26.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:140,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:25.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:140,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:25.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:141,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:24.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:141,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:24.0,&quot;quantity&quot;:10.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:142,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:32.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:22.0,&quot;order2_quantity&quot;:0.0},{&quot;id&quot;:142,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;timestamp&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;productName&quot;:&quot;0&quot;,&quot;price&quot;:23.0,&quot;quantity&quot;:5.0,&quot;metadata&quot;:null,&quot;buyer&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;seller&quot;:{&quot;id&quot;:null,&quot;createdOn&quot;:null,&quot;createdBy&quot;:null,&quot;username&quot;:&quot;admin&quot;,&quot;email&quot;:null,&quot;password&quot;:null,&quot;status&quot;:null,&quot;country&quot;:null,&quot;rolesFeg&quot;:null,&quot;modulesFeg&quot;:null,&quot;rolesMarket&quot;:null,&quot;modulesMarket&quot;:null,&quot;defaultMarket&quot;:null,&quot;market&quot;:null,&quot;landingPage&quot;:null},&quot;singleOrder1&quot;:{&quot;id&quot;:264,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:85.0,&quot;current_price&quot;:22.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;SELL&quot;,&quot;orderType&quot;:&quot;LIMIT&quot;,&quot;metadata&quot;:&quot;&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;singleOrder2&quot;:{&quot;id&quot;:261,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;product&quot;:{&quot;id&quot;:109,&quot;createdOn&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;createdBy&quot;:&quot;&quot;,&quot;name&quot;:&quot;0&quot;,&quot;deliveryTimeStart&quot;:&quot;2020-06-10T15:27:12Z&quot;,&quot;deliveryTimeEnd&quot;:&quot;2020-06-10T16:27:12Z&quot;,&quot;closesAt&quot;:null,&quot;period&quot;:&quot;MINUTES60&quot;,&quot;productStatus&quot;:&quot;OPEN&quot;,&quot;user&quot;:null,&quot;latestSellOrder&quot;:null,&quot;latestBuyOrder&quot;:null,&quot;marketCode&quot;:&quot;CY&quot;,&quot;hasOrders&quot;:false,&quot;totalOrders&quot;:0},&quot;bidTime&quot;:&quot;2020-06-10T13:27:12Z&quot;,&quot;user&quot;:null,&quot;price&quot;:22.0,&quot;quantity&quot;:10.0,&quot;current_price&quot;:32.0,&quot;current_quantity&quot;:0.0,&quot;orderStatus&quot;:&quot;MATCHED&quot;,&quot;orderDirection&quot;:&quot;BUY&quot;,&quot;orderType&quot;:&quot;ICEBERG&quot;,&quot;metadata&quot;:&quot;{\&quot;icebergQuantity\&quot;:\&quot;100.0\&quot;,\&quot;icebergPriceDelta\&quot;:\&quot;1.0\&quot;}&quot;,&quot;basket&quot;:null,&quot;removedOn&quot;:null},&quot;order1_price&quot;:22.0,&quot;order1_quantity&quot;:0.0,&quot;order2_price&quot;:32.0,&quot;order2_quantity&quot;:0.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.4.1</a> at Jun 10, 2020, 4:27:48 PM</p>
+</div>
+</div>
+</body>
+</html>

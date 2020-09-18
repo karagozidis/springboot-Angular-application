@@ -1,0 +1,122 @@
+.p-2{
+    min-width: 320px;
+}
+
+.card{
+    margin-bottom: 0px;
+}
+
+.line {
+    margin-bottom: 0px !important;
+}
+
+.card-title{
+    font-size: 15px;
+}
+
+
+
+.buy-card{
+    border: 2px solid #f34c4c!important;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.sell-card{
+    border: 2px solid #1eb125!important;
+    background-color: white;
+    margin-top: 8px;
+}
+
+
+.trade-card{
+    border: 2px solid #376480!important;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.odd-row{
+    background: linear-gradient(60deg, #e7f3f9, #ffffff);
+}
+
+.even-row{
+    background: linear-gradient(240deg, #e7f3f9, #ffffff);
+}
+
+.card-category-style {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.my-transaction-border {
+    border: 1px solid #02275f !important;
+}
+
+.my-transaction-avatar {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.mat-column-actions {
+    flex: 0 0 8% !important;
+}
+
+.header-mat-icon{
+    padding: 11px;
+    padding-top: 8px;
+    font-size: 34px;
+}
+
+.card-stats .card-header + .card-footer {
+    border-top: 1px solid #eee;
+    margin-top: 14px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 17px;
+}
+
+.card-stats .card-header .card-category:not([class*=text-]) {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card-stats {
+    margin-top: 20px;
+}
+
+h3, .h3 {
+    line-height: 1.3em !important;
+}
+
+.orderId {
+    font-size: 11px;
+    width: 42px;
+    height: 32px;
+    text-align: center;
+    margin-right: 2px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.card-stats{
+    .card-header{
+        &.card-header-icon i {
+            font-size: 22px;
+            line-height: 6px;
+            width: 34px;
+            height: 17px;
+            text-align: center;
+        }
+    }
+}
+
+.card [class*=card-header-] {
+    margin: 0px 4px 0;
+    padding: 0;
+    position: relative;
+}
+
+.card-stats .card-header .card-icon + .card-title, .card-stats .card-header .card-icon + .card-category {
+    padding-top: 0px;
+}

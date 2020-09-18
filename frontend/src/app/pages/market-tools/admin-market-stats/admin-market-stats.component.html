@@ -1,0 +1,19 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row" [hidden]='productsListHidden'>
+            <div class="col-md-12">
+                <app-products-list  #productsListObject [mode]="'ADMIN'" (productIdSelected)="showTimeline($event)"></app-products-list>
+            </div>
+        </div>
+
+        <div class="row"  [hidden]='productsTimelineHidden' >
+            <div class="col-md-12">
+                <app-product-transactions #apt (backTolist)="showProductsList()" > </app-product-transactions>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

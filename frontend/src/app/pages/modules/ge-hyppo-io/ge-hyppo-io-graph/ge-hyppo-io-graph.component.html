@@ -1,0 +1,226 @@
+
+      <div class="tab">
+
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card">
+
+                             <div class="card-header card-header-tabs card-header-primary">
+                                  <div class="nav-tabs-navigation">
+                                      <div class="nav-tabs-wrapper">
+
+                                          <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                              <li class="nav-item">
+                                                      <a mat-button class="nav-link active"  data-toggle="modal" data-target="#template">
+                                                          <i class="material-icons">info</i> Help
+                                                          <div class="ripple-container"></div>
+                                                      </a>
+                                                  </li>
+                                          </ul>
+
+                                          <ul class="nav nav-tabs" data-tabs="tabs">
+                                              <li class="nav-item">
+                                                      <i class="material-icons header-mat-icon">view_list</i>
+                                              </li>
+                                              <li class="nav-item">
+                                                      <h4 class="card-title">Graph options</h4>
+                                                      <p class="card-category">Select the csv output file & the values from the list </p>
+                                              </li>
+                                          </ul>
+
+
+                                      </div>
+                                  </div>
+
+
+                              </div>
+
+
+                         <br>
+
+
+                         <div class="card-body">
+
+
+
+                                  <div class="container-fluid">
+
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <mat-form-field class="example-full-width">
+                                                  <mat-label >CSV File Selection</mat-label>
+                                                  <mat-select [(ngModel)]="csvSelected">
+                                                          <mat-option *ngFor="let csvFile of csvFileList" [value]="csvFile">
+                                                              {{ csvFile }}
+                                                          </mat-option>
+                                                        </mat-select>
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+
+
+                                      <div class="row">
+                                          <div class="col-md-10">
+                                              <form [formGroup]="form" style="margin-top:15px;margin-left:-1px" >
+                                                  <div  formArrayName="items"
+                                                  *ngFor="let item of form.get('items')['controls']; let i = index">
+                                                    <div [formGroupName]="i">
+
+
+                                                              <mat-form-field class="example-chip-list">
+                                                                      <mat-chip-list #chipList >
+                                                                        <mat-chip
+                                                                          *ngFor="let parameter of graphParametersArray[i]"
+                                                                          [selectable]="selectable"
+                                                                          [removable]="removable"
+                                                                          (removed)="removeGraphParameter(parameter, i)">
+                                                                          {{parameter}}
+                                                                          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                                                        </mat-chip>
+                                                                        <input
+                                                                          placeholder="New parameter..."
+                                                                          #parameterInput
+                                                                          [formControl]="parameterCtrl"
+                                                                          (click) = "focusParameterInput()"
+                                                                          [matAutocomplete]="auto"
+                                                                          [matChipInputFor]="chipList"
+                                                                          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                                                          (matChipInputTokenEnd)="add($event,i)"
+                                                                          formControlName= 'listContents'>
+                                                                      </mat-chip-list>
+                                                                      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event,i)">
+                                                                        <mat-option *ngFor="let parameter of filteredParameters | async" [value]="parameter">
+                                                                          {{parameter}}
+                                                                        </mat-option>
+                                                                      </mat-autocomplete>
+                                                                    </mat-form-field>
+                                                        <div>
+
+
+
+                                                            <button *ngIf="form.controls.items.controls.length > 1" type="button"  class="btn btn-sm btn-info buttonsClass" (click)="removeItem(i)">Remove</button>&nbsp;
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </form>
+                                          </div>
+
+
+
+                                      </div>
+
+
+                                  </div>
+
+
+                          </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <button (click)="onSubmit()" class="btn btn-info pull-right" type="submit" style="width:10vw;">
+      <span [hidden]="showUpdateGraphLoadingButton===false" style="margin-right:0.6vw;" class="spinner-border spinner-border-sm" role="status"></span>
+      <span [hidden]="showUpdateGraphLoadingButton===false">Loading</span>
+      <span [hidden]="showUpdateGraphLoadingButton===true">Update Graph</span>
+  </button>
+</div>
+
+
+
+<br><br>
+<br>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon" style="background: linear-gradient(60deg, #305d79, #6998b5);">
+                                <i class="material-icons" style="font-size: 40px;width: 47px;line-height: 47px;">insert_chart</i>
+                            </div>
+                            <h3 class="card-title">Metrics Graph</h3>
+                        </div>
+
+
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                        <div class="col-md-12">
+
+                                            <div class="graphMainContent">
+                                                <plotly-plot divId="real" [data]="graph.data" [layout]="graph.layout"  [config]="graph.config"
+                                                    [useResizeHandler]="true" [style]="{position: 'relative'}"></plotly-plot>
+                                                    </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+             <div class="modal  fade" id="template"  tabindex="-1" role="dialog"  data-backdrop ="false" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-full" role="document" >
+                    <div class="modal-content" style="position: relative;
+                    top: 45px;
+                    left: 50px;">
+                          <div class="modal-header">
+                           <p style="position: relative;left:42%;margin-bottom:1%; font-weight: bold;">Descriptions</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          </div>
+                            <div class="modal-body" style="white-space: pre-wrap;max-height: calc(100vh - 350px);
+                            overflow-y: auto;">
+
+
+
+        <p><b>Power(DWATT)</b> - DWATT_PLANT normalized with the ambient Temperature</p>
+          <p><b>Plant_Power[MW]</b> - Sum of all generators power</p>
+          <p><b>GTx_Primary_Response[MW]</b>- Primary response=(100-THNSYS)*Design load/Droop</p>
+         <p><b>ST_Power[MW]</b> - Power at the ST generator</p>
+          <p><b>GTx_Power[MW]</b>-Power at the GT generator</p>
+         <p><b>Ambient_Temp[degC]</b> - Ambient air temperature</p>
+         <p><b>Plant_Primary_Response[MW]</b>-Sum of all GTPrimary frequency corrected MW Bias. In case of super fast primary response the value will be calculated from the frequency</p>
+         <p><b>GTx_Fuel_Consumption[kg/s]</b> - GT Gas Fuel Mass Flow Rate Median</p>
+         <p><b>Plant_Fuel_Consumption[kg/s]</b> - Sum of all GT Gas Fuel Mass Flow Rate Median</p>
+         <p><b>PFRLDCMD_PLANT_ISO</b> - PFRLDCMD_PLANT normalized with the ambient Temperature]</p>
+          <p><b>Response[boolean]</b> - Assert if the power plant is doing primary response</p>
+          <p><b>Price_Electricity[$/MWh]</b> - Price of electricity</p>
+          <p><b>Power/Fuel_ratio[MJ_el/kg_fuel]</b> - Ratio between the power and the fuel mass flow rate</p>
+          <p><b>GT_All_Power[MW]</b> - Sum of all GT generators power</p>
+          <p><b>ST/GT_Power_ratio[-]</b> - Power ratio between ST and GT, calculated with data when possible, otherwise estimated</p>
+          <p><b>Scen1_Power_Added_GT[MW]</b> - During active primary response, the GT power output is increased by this amount since the battery is guaranteeing the same amount of capacity reserve</p>
+          <p><b>Scen1_Power_Added_Plant[MW]</b> - The GT Power added thanks to the battery increases also the ST output. This represenst the total, GT+ST</p>
+          <p><b>Scen1_fuel_consumption_incr[kg/s]</b> - When during active primary response, the GT power output is increased, more fuel is used</p>
+          <p><b>Scen1_Power_Fuel_Ratio_incr[MJ_el/kg_fuel]</b> - Working on a bigger load, the whole power plant is able to perform better</p>
+          <p><b>Scen1_Prim_Resp_GT[MW]</b> - Primary response given by the turbine, when also the battery is providing capacity reserve</p>
+          <p><b>Scen1_Prim_Resp_Batt[MW]</b> - Primary response given by the battery, after the turbine has reached its maximum load
+          <p><b>Battery_Energy[MWh]</b> - Energy contained in the battery</p>
+          <p><b>Battery_Losses_Cumulated[MWh]</b> - Cumulated of the battery energy losses due to overall efficiency defined in the input</p>
+          <p><b>Battery_SOC[%]</b> - Battery current state of charge</p>
+          <p><b>Scen1_Revenues[$]</b> - Estimated revenues produced increasing the GT load thanks to the battery</p>
+          <p><b>Scen1_Profits[$]</b>- Revenues estimated by scenario 1 minus gas expenses</p>
+          <p><b>Scen1_Saved_Fuel[kg]</b>- kg of spared gas calculated as compared to what I would have burned to do the same amount of MWh with the efficiency without the battery</p>
+          <p><b>Scen2_Profits[$]</b> - Profits estimated by scenario 2<p>
+
+              </div>
+          </div>
+        </div>
+      </div>

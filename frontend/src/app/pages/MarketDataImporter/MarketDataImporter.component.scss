@@ -1,0 +1,91 @@
+.nav-item{
+    padding-right:10px;
+    .button-disabled{
+      pointer-events: none;
+      cursor: default;
+      background: #dddddd;
+    }
+}
+
+// .mat-column-actions{
+//     padding-left: 15px;
+//     flex: 0 0 120px;
+// }
+
+.table{
+    min-width: 1000px;
+}
+
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}
+
+.mat-header-cell {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .mat-cell {
+    text-align: center;
+    justify-content:center;
+  }
+
+  /* .mat-column-file_name {
+    flex: 0 0 7% !important;
+  } */
+  
+mat-header-row {
+  padding-left:1%
+}
+.mat-column-actions {
+  flex: 0 0 4% !important;
+}
+.mat-column-file_id {
+  flex: 0 0 5% !important;
+}
+.mat-column-order_ID {
+  flex: 0 0 6% !important;
+}
+.mat-column-action {
+  flex: 0 0 7% !important;
+}
+.mat-column-product_name {
+  flex: 0 0 13% !important;
+}
+.mat-column-orderType {
+  flex: 0 0 5% !important;
+}
+
+.mat-column-quantity {
+  flex: 0 0 6% !important;
+}
+.mat-column-price {
+  flex: 0 0 5% !important;
+}
+
+.mat-column-orderDirection {
+  flex: 0 0 6% !important;
+}
+.mat-column-timeStamp {
+  flex: 0 0 10% !important;
+}
+
+.mat-column-basket_ID {
+  flex: 0 0 6% !important;
+}
+.mat-column-basket_Type {
+  flex: 0 0 7% !important;
+}
+
+.mat-column-status {
+  flex: 0 0 11% !important;
+}
+  

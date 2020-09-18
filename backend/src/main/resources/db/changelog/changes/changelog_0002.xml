@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0002.xml">
+
+        <changeSet id="changelog_0002.xml" author="European Dynamics">
+            <sql>
+                INSERT INTO `user` (`id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `version`, `email`, `password`, `status`, `username`,
+                `modules_crm`,
+                `roles_crm`,
+                `modules_market`,
+                `roles_market`,
+                `encrypted_private_key`
+                ) VALUES
+                (2000, '', now(), '', now(), 0, 'user1@onCloudApp.gr', '$2a$10$/qyqvfMLp0qEpTI4zE5HreTAvBI2I8CxdCc9muniHs126F4tSQs/K', 'enabled', 'admin','hyppoio','admin','market','admin','');
+            </sql>
+        </changeSet>
+
+</databaseChangeLog>

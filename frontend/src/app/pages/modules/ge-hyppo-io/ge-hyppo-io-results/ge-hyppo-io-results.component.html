@@ -1,0 +1,130 @@
+    <!-- <div >
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" type="text" name="name" [(ngModel)]="currentResult.name">   
+      </mat-form-field>
+      </div> --> 
+    <div class="tab">
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                            <div class="card-header card-header-tabs card-header-primary">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+
+                                            <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                                        <li class="nav-item">
+                                                                <a mat-button class="nav-link active"  data-toggle="modal" data-target="#resultsDescriptions">
+                                                                    <i class="material-icons">info</i> Help
+                                                                    <div class="ripple-container"></div>
+                                                                </a>
+                                                            </li>
+                                            </ul>
+
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="nav-item">
+                                                        <i class="material-icons header-mat-icon">dvr</i> 
+                                                </li>
+                                                <li class="nav-item">
+                                                        <h4 class="card-title">Overall results</h4>
+                                                        <p class="card-category">Select an entry from history to activate this section</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="container-fluid">
+                                        <div class="row">
+
+                                
+
+                                                <div class="col-md-12"> 
+                                                
+                                                    <ngx-json-viewer [json]="contentArray"></ngx-json-viewer> 
+                                                
+                                                </div>    
+                                        </div>
+                                    </div>
+
+                                </div>
+
+</div> </div> </div> </div>
+
+        <div class="container-fluid">
+   
+      </div>
+    </div>  
+       
+    <div class="modal  fade" id="resultsDescriptions"  tabindex="-1" role="dialog"  data-backdrop ="false" aria-labelledby="exampleModalLabel" aria-hidden="true" > 
+        <div class="modal-dialog modal-full" role="document" >
+            <div class="modal-content" style="position: relative;
+            top: 45px;
+            left: 50px;">
+                <div class="modal-header">
+                    <p style="position: relative;left: 41%;margin-bottom:1%; font-weight: bold;">  Descriptions </p>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   </div>
+                <div class="modal-body" style="white-space: pre-wrap;max-height: calc(100vh - 350px);
+                overflow-y: auto;">
+           
+          <p class="description-title"><b>Metadata:</b></p><p><b>SiteName_mod :</b> Name of the project</p>
+          <p><b>Data_source :</b> Name of the input file</p>
+          <p><b>Country :</b>Country of the project</p>
+          <p><b >Equipment :</b> GT frame</p>
+          <p><b >Customer :</b> Customer Name</p>
+          <p><b>Controller :</b> Name of the Operating Company</p>
+          <p><b >SiteName :</b>Name of the Site</p>
+          <p><b >Serial_Number :</b> Serial Number of the asset</p>
+          <p><b>Contract :</b> Contract Information</p>
+          <p class="description-title"><br><b>Financial</b></p>
+          <p class="description-subtitle"></p>
+          <!-- <b>Starting_date</b> -->
+          <p><b>Battery_price[$]</b> : Initial price of the battery</p>
+          <p><b>Scen1_Saved_gas[kg]</b> : Saved gas due to better efficiency in scenario 1</p>
+          <p><b>Scen2_more_pr_prft[$] </b>: Profits gained selling more capacity reserve with scenario 2</p>
+          <p><b>Scen1_New_setpoint_prft[$]</b> : Profits gained selling more electricity with scenario 2</p>
+          <p><b>SFFR_prft[$]</b> : Profits gained selling the super fast frequency response service</p>
+          <p class="description-title"><br><b>Battery</b></p>
+          <!-- <p class="description-subtitle"><b>Starting_date</b></p> -->
+          <p class="description-subtitle"><b>Input</b></p>
+          <p><b>Apparent Power[MVA]</b> : Apperent power needed for the battery, can be different from power when black start is required</p>
+          <p><b>Power_to_pr[MW]</b>: Share of the power battery used to increase the capacity reserve</p>
+          <p><b>Power_to_load[MW]</b> : Share of the power battery used to increase the load during primary response</p>
+          <p><b>Energy_max[MWh]</b> : Size of the battery</p>
+          <p><b>Power[MW]</b> : The power the battery is able to deliver</p>
+          <p><b>Power_super_fast_resp[MW]</b> : The maximum power to deliver for the super fast frequency response</p><br>
+          <p class="description-subtitle"><b>output</b></p>
+          <p><b>Mean_added_hr[MW/(kg/s)]</b> : The mean added power over fuel ratio thanks to higher GT load</p>
+          <p><b>Mean_added_power[MW] :</b> The mean added power thanks to the battery</p><br>
+          <p class="description-subtitle"><b>stats</b></p>
+          <p><b>MAX_batt_Power[MW]</b> : The max amount of battery power reached during primary response</p>
+          <p><b>Battery_losses[MWh]</b> : The energy losses due to battery efficiency </p>
+          <p><b>GT_resp_time[%]</b> : The percentage of the time the GT is used to provide primary response</p>
+          <p><b>MAX_SOC[%]</b> : The max State Of Charge reached during primary response by the battery</p>
+          <p><b>min_SOC[%]</b> : The min State Of Charge reached during primary response by the battery</p>
+          <p><b>Bat_resp_time[%]</b> : The percentage of the time the Battery is used to provide primary response</p>
+          <p><b>SFFR_total_discharge[MWh]</b> : The value of constant power to be purchased from the grid to end the period with the same battery energy level</p>
+          <p><b>SFFR_deadband_recharge_needed[MW]</b> : The value of power to be purchased from the grid during the deadband period to end the period with the same battery energy level</p>
+          <br><p class="description-title"><b>Calc_param</b></p>
+          <!-- <p class="description-subtitle"><b>starting_date</b></p> -->
+          <p><b>baseload[MW]</b> : Estimated baseload - calculated as the max of the 5 minutes rolling average of the power, when the power plant is not responding</p>
+          <p><b>primary_reserve[MW]</b> : Estimated power plant capacity response - calculated as the baseload minus the max of the 5 minutes rolling average of the power, when the power plant is responding</p>
+          <br><p class="description-title"><b>Time_stats</b></p>
+          <p ><b>Overall:</b> The sum of all the time intervals analyzed</p>
+          <!-- <b>Starting_date</b> -->
+          <p><b>Start :</b> The starting time of this time interval</p>
+          <p><b>Finish :</b> The ending time of this time interval</p>
+          <p><b>Delta_time :</b> Finish minus start time for this time interval</p>
+      </div>  
+    </div>
+  </div>
+    </div>
+
+      
+      
+      

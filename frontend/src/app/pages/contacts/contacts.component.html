@@ -1,0 +1,147 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                  <li class="nav-item">
+                    <a mat-button class="nav-link active" (click)="inviteUser()" data-toggle="tab">
+                      <i class="material-icons">playlist_add</i>
+                      Add new
+                      <div class="ripple-container"></div>
+
+                    </a>
+                  </li>
+
+
+                  <li class="nav-item">
+                    <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                      <i class="material-icons">autorenew</i>
+                      Refresh
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="tab-content">
+
+              <div class="table-responsive table">
+
+                  <mat-table
+                      [dataSource]="dataSource"
+                      matSort
+                      matSortDisableClear
+                      (matSortChange)="refresh()">
+
+                  <ng-container matColumnDef="actions" class="td-actions text-right">
+                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+
+                      <button *ngIf="row.contactStatus !== 'pending'" mat-raised-button
+                              type="button" matTooltip="Delete" matTooltipPosition="above"
+                              class="btn btn-danger btn-link btn-sm btn-just-icon"
+                              (click)="deleteContact(row)">
+                        <i class="material-icons">delete_outline</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="action">
+                    <mat-header-cell mat-sort-header *matHeaderCellDef>Actions
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+
+                      <button *ngIf="row.contactStatus === 'rejected'"
+                              mat-raised-button type="button"
+                              matTooltip="Delete" matTooltipPosition="above"
+                              class="btn btn-danger btn-link btn-sm btn-just-icon"
+                              (click)="deleteContact(row)">
+                        <i class="material-icons">delete_outline</i>
+                      </button>
+
+
+                      <button *ngIf="row.contactStatus === 'pending' &&
+                                        row.contactType === 'SENDER'" mat-raised-button
+                              type="button" matTooltip="Approve Contact Request"
+                              matTooltipPosition="above"
+                              class="btn btn-primary btn-link btn-sm btn-just-icon"
+                              style="color:#0a1332;" (click)="acceptInvitation(row)">
+                        <i class="material-icons">done</i>
+                      </button>
+
+                      <button *ngIf="row.contactStatus !== 'rejected'"
+                              mat-raised-button type="button"
+                              matTooltip="Reject Contact Request"
+                              matTooltipPosition="above"
+                              class="btn btn-primary btn-link btn-sm btn-just-icon"
+                              style="color:#0a1332;" (click)="clearInvitation(row)">
+                        <i class="material-icons">clear</i>
+                      </button>
+
+                    </mat-cell>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="username">
+                    <mat-header-cell mat-sort-header *matHeaderCellDef>Partner
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.username}}</mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell mat-sort-header *matHeaderCellDef>Status</mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+
+                      <ng-container *ngIf="row.contactStatus === 'accepted'"
+                      >
+                        <div class="mat-cell-text text-success"> Active
+                        </div>
+                      </ng-container>
+                      <ng-container *ngIf="row.contactStatus === 'rejected'">
+                        <div class="mat-cell-text text-danger">Contact Request Rejected
+                        </div>
+                      </ng-container>
+                      <ng-container *ngIf="row.contactStatus === 'pending'"
+                      >
+                        <div class="mat-cell-text text-primary"> Contact
+                          Request was sent & waiting Partners
+                          Acceptance
+                        </div>
+                      </ng-container>
+                    </mat-cell>
+                  </ng-container>
+
+
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                </mat-table>
+                <mat-paginator
+                    [length]="totalElements"
+                    [pageSize]="paginator.pageSize"
+                    [pageIndex]="paginator.pageIndex"
+                    [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                    (page)="refresh()">
+                </mat-paginator>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

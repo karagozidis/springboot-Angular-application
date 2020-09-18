@@ -1,0 +1,128 @@
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top" >
+
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+
+            <div class="navbar-minimize" (click)="setSideBarVisibilityState()">
+                <button mat-raised-button="" class="btn btn-just-icon btn-white btn-fab btn-round">
+                    <i class="material-icons text_align-center visible-on-sidebar-regular">more_vert</i>
+                    <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
+                </button>
+            </div>
+
+            <a class="navbar-brand" style="font-size: 1.5rem;" id="navbarId">
+              <i class="material-icons header-icon">{{getHeaderIcon()}}</i>
+              {{getTitle()}}
+            </a>
+        </div>
+        <button  class="navbar-toggler" id="navBarToggler" type="button" (click)="sidebarToggle()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+            <form class="navbar-form">
+            </form>
+            <ul class="navbar-nav">
+
+                <li *ngIf="appType === AppType.CRM" class="nav-item dropdown" >
+                    <a class="nav-link" href="javascript:void(0)" style="font-size: 10px;padding-bottom:0;color: green;" *ngIf="isCrmLocalActive === true" >
+                        <i class="material-icons">pesettings_input_componentrson</i>
+                        <div>Crm local Connected</div>
+                    </a>
+                    <a class="nav-link" href="javascript:void(0)" style="font-size: 10px;padding-bottom:0;color: gray;" *ngIf="isCrmLocalActive === false" >
+                        <i class="material-icons">pesettings_input_componentrson</i>
+                        <div>Crm local Not Connected</div>
+                    </a>
+                </li>
+
+                <!-- <li *ngIf="isOnMarket()" class="nav-item dropdown">
+                    <span class="bmd-form-group">
+                        <div class="input-group no-border">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Show/Hide Products Section"  class="nav-link" style="padding-right: 1px;cursor: pointer;padding-left: 1px;" (click)="hideProductsTable()">
+                                    <img src="assets/img/top-left-table.png" width="15" height="15" >
+                            </a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Show/Hide Orders Section" class="nav-link" style="padding-right: 1px;padding-left: 1px;cursor: pointer;" (click)="hideOrdersByProductTable()">
+                                <img src="assets/img/top-right-table.png" width="15" height="15" >
+                            </a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Show/Hide Orders&Trades Section" class="nav-link" style="padding-right: 1px;padding-left: 1px;cursor: pointer;" (click)="hideOrdersAndTradesTable()">
+                                <img src="assets/img/bottom-left-table.png" width="15" height="15" >
+                            </a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Show/Hide Weather Section" class="nav-link" style="padding-left: 1px;cursor: pointer;" (click)="hideWeatherTable()" >
+                                <img src="assets/img/bottom-right-table.png" width="15" height="15" >
+                            </a>
+                        </div>
+                    </span>
+                </li> -->
+
+                <li class="nav-item dropdown" *ngIf="appType === AppType.MARKET" style="padding-left: 56px;">
+                    <a class="nav-link" style="visibility: hidden;">
+                        <i class="material-icons">notifications</i>
+                    </a>
+
+                    <div>
+                        <button mat-button [matMenuTriggerFor]="menu" style="position:absolute;bottom:2px;right:1px;"  >
+                            <div class="flag-icon" [class.cy-flag-icon]="selectedCountry=='Cyprus'"
+                            [class.bg-flag-icon]="selectedCountry=='Bulgaria'"></div>
+                            <span>{{selectedCountry}}</span>
+                        </button>
+
+                        <mat-menu #menu="matMenu" >
+                            <button mat-menu-item (click)="setMarketCountry('Cyprus')">
+                                <div class="cy-flag-icon flag-icon"></div>
+                                <span style="white-space:pre">Cyprus  </span>
+                            </button>
+                            <button mat-menu-item (click)="setMarketCountry('Bulgaria')" >
+                                <div class="bg-flag-icon flag-icon"></div>
+                                <span style="white-space:pre">Bulgaria</span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="javascript:void(0)"  data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" >
+                        <i class="material-icons">notifications</i>
+                        <span *ngIf="totalNotifications > 0" class="notification">{{totalNotifications}}</span>
+                        <p>
+                            <span class="d-lg-none d-md-block">Some Actions</span>
+                        </p>
+                    </a>
+                    <div [ngClass]="{'displayMenu':totalNotifications !== 0,'hideMenu':totalNotifications === 0 }"
+                        class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" >
+                        <a *ngFor="let notificationDto of notificationsData" class="dropdown-item"
+
+                            href="javascript:void(0) " (click)="notificationClicked(notificationDto.id)"
+                           >{{ notificationDto.name }}</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="padding-top: 0px;">
+                        <i class="material-icons">person</i>
+
+                        <p>
+                            <span class="d-lg-none d-md-block">Some Actions</span>
+                        </p>
+
+                        <div style="position:absolute;left: 50%;transform:translateX(-50%);">{{userNameVariable}}</div>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="javascript:void(0)" *ngIf="isUserAdmin()"
+                            [routerLink]="['/user-profile']">Account</a>
+                        <a class="dropdown-item" id="goToMarket" *ngIf="appType === AppType.CRM && userAccess === UserAccess.CRM_AND_MARKET"
+                           href="javascript:void(0)"  (click)="redirectToPage(AppType.MARKET)">Go To Market</a>
+                        <a class="dropdown-item" id="returnToCrm" *ngIf="appType === AppType.MARKET && userAccess === UserAccess.CRM_AND_MARKET"
+                            href="javascript:void(0)" (click)="redirectToPage(AppType.CRM)">Return To Crm</a>
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="onLoggedout()">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

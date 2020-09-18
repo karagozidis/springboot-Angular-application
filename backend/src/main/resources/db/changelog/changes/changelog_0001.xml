@@ -1,0 +1,564 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0001.xml">
+
+    <changeSet author="helias" id="1575984957436-1">
+        <createTable tableName="aes_key">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="encrypted_key" type="TEXT"/>
+            <column name="encryption_version" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="keyuuid" type="VARCHAR(255)"/>
+            <column name="rsa_public_key_id" type="BIGINT"/>
+            <column name="size" type="INT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="user_group_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-2">
+        <createTable tableName="basket">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="basket_type" type="VARCHAR(255)"/>
+            <column name="metadata" type="VARCHAR(255)"/>
+            <column name="timestamp" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-3">
+        <createTable tableName="bmecommand">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="command_type" type="VARCHAR(255)"/>
+            <column name="message" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-4">
+        <createTable tableName="bmeorder_book_entry">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="entry_group_message" type="VARCHAR(255)"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="product_id" type="BIGINT"/>
+            <column name="quantity" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-5">
+        <createTable tableName="contact">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="receiver_id" type="BIGINT"/>
+            <column name="sender_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-6">
+        <createTable tableName="country">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-7">
+        <createTable tableName="matched_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="metadata" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="quantity" type="DOUBLE"/>
+            <column name="status" type="INT"/>
+            <column name="timestamp" type="datetime"/>
+            <column name="single_order1_id" type="BIGINT"/>
+            <column name="single_order2_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-8">
+        <createTable tableName="message">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="encrypted_message" type="LONGBLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-9">
+        <createTable tableName="message_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="encryption_version" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="metadata" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="sender_id" type="BIGINT"/>
+            <column name="size" type="VARCHAR(255)"/>
+            <column name="tag" type="VARCHAR(255)"/>
+            <column name="time_sent" type="datetime"/>
+            <column name="user_group_id" type="BIGINT"/>
+            <column name="message" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-10">
+        <createTable tableName="notification">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="description" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="receiver_id" type="BIGINT"/>
+            <column name="sender_id" type="BIGINT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="time_sent" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-11">
+        <createTable tableName="product">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="delivery_time_end" type="datetime"/>
+            <column name="delivery_time_start" type="datetime"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="period" type="VARCHAR(255)"/>
+            <column name="product_status" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-12">
+        <createTable tableName="rsa_public_key">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="keyuuid" type="VARCHAR(255)"/>
+            <column name="public_key" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="size" type="INT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-13">
+        <createTable tableName="single_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="bid_time" type="datetime"/>
+            <column name="current_price" type="DOUBLE"/>
+            <column name="current_quantity" type="DOUBLE"/>
+            <column name="metadata" type="VARCHAR(255)"/>
+            <column name="order_direction" type="VARCHAR(255)"/>
+            <column name="order_status" type="VARCHAR(255)"/>
+            <column name="order_type" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="quantity" type="DOUBLE"/>
+            <column name="basket_id" type="BIGINT"/>
+            <column name="product_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-14">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="encrypted_private_key" type="TEXT">
+                <constraints nullable="true"/>
+            </column>
+            <column name="modules_crm" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modules_market" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roles_crm" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roles_market" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-15">
+        <createTable tableName="user_group">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="encryption_version" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-16">
+        <createTable tableName="user_to_user_group">
+            <column name="user_group_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-17">
+        <createTable tableName="weather_result">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="cloud_percentage" type="DOUBLE"/>
+            <column name="humidity" type="DOUBLE"/>
+            <column name="radiation" type="DOUBLE"/>
+            <column name="radiation_date" type="datetime"/>
+            <column name="radiation_time" type="datetime"/>
+            <column name="temperature" type="DOUBLE"/>
+            <column name="weather_condition_description" type="VARCHAR(255)"/>
+            <column name="weather_condition_icon" type="VARCHAR(255)"/>
+            <column name="weather_condition_id" type="INT"/>
+            <column name="weather_condition_main" type="VARCHAR(255)"/>
+            <column name="weather_date_time" type="datetime"/>
+            <column name="wind_digree" type="DOUBLE"/>
+            <column name="wind_speed" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-18">
+        <createIndex indexName="FK4kyxou5udc31b407y8iula3jo" tableName="matched_order">
+            <column name="single_order1_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-19">
+        <createIndex indexName="FK4x1sus75hqodee3pnip99vog8" tableName="aes_key">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-20">
+        <createIndex indexName="FK8e1emba6orfbatnb6bub6rovr" tableName="single_order">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-21">
+        <createIndex indexName="FK979liw4xk18ncpl87u4tygx2u" tableName="product">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-22">
+        <createIndex indexName="FK9mb4gn8pggjkus43we1af8kmf" tableName="single_order">
+            <column name="basket_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-23">
+        <createIndex indexName="FKdp9n1m0ovuoxc1rd24ux4gbao" tableName="aes_key">
+            <column name="rsa_public_key_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-24">
+        <createIndex indexName="FKeggdhk8s8sv0l104bhcyss5m5" tableName="message_info">
+            <column name="user_group_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-25">
+        <createIndex indexName="FKfdheg7vkbwo3hoi69frii3tbk" tableName="single_order">
+            <column name="product_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-26">
+        <createIndex indexName="FKfemhplm6homx9lx5bft54wqnt" tableName="message_info">
+            <column name="sender_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-27">
+        <createIndex indexName="FKge8lxibk9q3wf206s600otk61" tableName="user">
+            <column name="country_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-28">
+        <createIndex indexName="FKgpv5rvwj628uvdbpk4d7ms6y5" tableName="rsa_public_key">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-29">
+        <createIndex indexName="FKitjeiubncmo40fq58c01jygl6" tableName="matched_order">
+            <column name="single_order2_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-30">
+        <createIndex indexName="FKk5fiqqsjico0y32jk2vpold5" tableName="contact">
+            <column name="sender_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-31">
+        <createIndex indexName="FKkhtrb2oa7qhti32gbnb49ckdc" tableName="user_to_user_group">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-32">
+        <createIndex indexName="FKmlidwdldgmdw67l7pbrval0un" tableName="notification">
+            <column name="receiver_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-33">
+        <createIndex indexName="FKmtqyh1wp1x7jqgkr9er6q3ek1" tableName="user_to_user_group">
+            <column name="user_group_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-34">
+        <createIndex indexName="FKn9k2mifl9c7x5okmqm3t0eqf3" tableName="contact">
+            <column name="receiver_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-35">
+        <createIndex indexName="FKnbt1hengkgjqru2q44q8rlc2c" tableName="notification">
+            <column name="sender_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-36">
+        <createIndex indexName="FKo4d01une6qcmp7bi1l55e2kts" tableName="message_info">
+            <column name="message"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-37">
+        <createIndex indexName="FKs23imuro9um41s6gmxi58l7tb" tableName="aes_key">
+            <column name="user_group_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-38">
+        <addForeignKeyConstraint baseColumnNames="single_order1_id" baseTableName="matched_order" constraintName="FK4kyxou5udc31b407y8iula3jo" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="single_order" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-39">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="aes_key" constraintName="FK4x1sus75hqodee3pnip99vog8" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-40">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="single_order" constraintName="FK8e1emba6orfbatnb6bub6rovr" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-41">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="product" constraintName="FK979liw4xk18ncpl87u4tygx2u" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-42">
+        <addForeignKeyConstraint baseColumnNames="basket_id" baseTableName="single_order" constraintName="FK9mb4gn8pggjkus43we1af8kmf" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="basket" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-43">
+        <addForeignKeyConstraint baseColumnNames="rsa_public_key_id" baseTableName="aes_key" constraintName="FKdp9n1m0ovuoxc1rd24ux4gbao" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="rsa_public_key" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-44">
+        <addForeignKeyConstraint baseColumnNames="user_group_id" baseTableName="message_info" constraintName="FKeggdhk8s8sv0l104bhcyss5m5" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user_group" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-45">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="single_order" constraintName="FKfdheg7vkbwo3hoi69frii3tbk" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-46">
+        <addForeignKeyConstraint baseColumnNames="sender_id" baseTableName="message_info" constraintName="FKfemhplm6homx9lx5bft54wqnt" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-47">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="user" constraintName="FKge8lxibk9q3wf206s600otk61" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="country" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-48">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="rsa_public_key" constraintName="FKgpv5rvwj628uvdbpk4d7ms6y5" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-49">
+        <addForeignKeyConstraint baseColumnNames="single_order2_id" baseTableName="matched_order" constraintName="FKitjeiubncmo40fq58c01jygl6" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="single_order" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-50">
+        <addForeignKeyConstraint baseColumnNames="sender_id" baseTableName="contact" constraintName="FKk5fiqqsjico0y32jk2vpold5" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-51">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_to_user_group" constraintName="FKkhtrb2oa7qhti32gbnb49ckdc" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-52">
+        <addForeignKeyConstraint baseColumnNames="receiver_id" baseTableName="notification" constraintName="FKmlidwdldgmdw67l7pbrval0un" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-53">
+        <addForeignKeyConstraint baseColumnNames="user_group_id" baseTableName="user_to_user_group" constraintName="FKmtqyh1wp1x7jqgkr9er6q3ek1" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user_group" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-54">
+        <addForeignKeyConstraint baseColumnNames="receiver_id" baseTableName="contact" constraintName="FKn9k2mifl9c7x5okmqm3t0eqf3" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-55">
+        <addForeignKeyConstraint baseColumnNames="sender_id" baseTableName="notification" constraintName="FKnbt1hengkgjqru2q44q8rlc2c" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-56">
+        <addForeignKeyConstraint baseColumnNames="message" baseTableName="message_info" constraintName="FKo4d01une6qcmp7bi1l55e2kts" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="message" validate="true"/>
+    </changeSet>
+    <changeSet author="helias" id="1575984957436-57">
+        <addForeignKeyConstraint baseColumnNames="user_group_id" baseTableName="aes_key" constraintName="FKs23imuro9um41s6gmxi58l7tb" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user_group" validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>
+

@@ -1,0 +1,95 @@
+
+
+.area-hidden {
+  display:none;
+}
+
+.button-active {
+  color: #44ff98;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 2px 8px;
+    text-align: center;
+}
+
+.table-header{
+  background-color: #6392af42;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6392af; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4884a9; 
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: #c4d2da;
+}
+
+.mat-row:hover {
+  background-color: #f2f7fb;
+}
+
+.mat-table {
+  width: 100%;
+  min-width: 600px;
+}
+
+tr.mat-footer-row, tr.mat-row {
+  height: 30px;
+}
+
+tr.mat-header-row {
+  height: 39px;
+  background-color: #c8d9e4;
+  color: black;
+}
+
+tr.mat-header {
+  height: 39px;
+  background-color: #c8d9e4;
+  color: black;
+}
+
+
+.element.style {
+  color: black;
+}
+
+
+
+
+.redColor{
+  background-color: #ffc9ce;
+}
+.greenColor{
+  background-color: #cfe6cf;
+}
+
+.mat-column-actions{
+  width: 80px;
+  flex: 0 0 20px;
+}
+
+
+.mat-row, .mat-header-row {  
+  min-width: 8800px;  
+  width: 100%;  
+}  

@@ -1,0 +1,171 @@
+
+        <div class="card">
+              <div class="card-header card-header-tabs card-header-primary">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+
+                  
+
+                              <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;" >
+                    
+                                  <li class="nav-item">
+                                    <a mat-button class="nav-link active" (click)="refreshProducts()" >
+                                        <i class="material-icons">autorenew</i> Refresh
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                  </li>
+
+                                  <li style="margin-left: 5px;" class="nav-item">
+                                          <a mat-button class="nav-link active" data-toggle="modal" data-target="#dateFiltersModal" >
+                                              <i class="material-icons">filter_list</i> Show on period
+                                              <div class="ripple-container"></div>
+                                          </a>
+                                  </li>
+
+                                  <li class="nav-item">
+                                    <input type="text"  [(ngModel)]="productsViewMarketCode" name="productsViewMarketCode" style="margin-top: 7px;margin-left: 10px;width: 50px;">
+                                  </li>
+
+                              </ul>
+
+                              <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <i class="material-icons header-mat-icon">search</i> 
+                                </li>
+
+                                <li class="nav-item">
+                                  <h4 class="card-title"> View Products </h4>
+                                  <p class="card-category">View market products by filters </p>
+                                </li>
+                            </ul>
+
+                          </div>
+                      </div>
+              </div>
+
+
+            <div class="card-body">
+
+                  <div class="tab-content">
+
+
+                          <div class="table-responsive table">
+                            <mat-table [dataSource] = "productsData" matSort>  
+
+
+                              <ng-container matColumnDef="actions" >
+                                <mat-header-cell mat-sort-header *matHeaderCellDef>Transactions</mat-header-cell>  
+                                  <mat-cell *matCellDef="let row">
+
+                                    <a (click)="productTilelineSelected(row.id)" *ngIf="row.hasOrders"  matTooltip="View Orders/trades of Product" matTooltipPosition="above"  class="btn btn-primary btn-link btn-sm btn-just-icon" >
+                                      <i class="material-icons">subject</i>
+                                    </a>
+
+                      
+
+                                </mat-cell>
+                          </ng-container>
+
+                              <ng-container matColumnDef="id" >
+                                    <mat-header-cell mat-sort-header *matHeaderCellDef>id</mat-header-cell>  
+                                    <mat-cell *matCellDef="let row">
+                                       {{row.id}}
+                                    </mat-cell>
+                              </ng-container>
+                               
+                              <ng-container matColumnDef="name" >
+                                  <mat-header-cell mat-sort-header *matHeaderCellDef>Name</mat-header-cell>  
+                                  <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="deliveryTimeStart" >
+                                <mat-header-cell mat-sort-header *matHeaderCellDef>Delivary time start</mat-header-cell>  
+                                <mat-cell *matCellDef="let row">{{row.deliveryTimeStart}}</mat-cell>
+                              </ng-container>
+                             
+                              <ng-container matColumnDef="deliveryTimeEnd" >
+                                <mat-header-cell mat-sort-header *matHeaderCellDef>Delivery time end</mat-header-cell>  
+                                <mat-cell *matCellDef="let row">{{row.deliveryTimeEnd}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="closesAt" >
+                                <mat-header-cell mat-sort-header *matHeaderCellDef>Closes at</mat-header-cell>  
+                                <mat-cell *matCellDef="let row">{{row.closesAt}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="period" >
+                                <mat-header-cell mat-sort-header *matHeaderCellDef>Period</mat-header-cell>  
+                                <mat-cell *matCellDef="let row">{{row.period}}</mat-cell>
+                              </ng-container>
+                              
+                              <ng-container matColumnDef="productStatus" >
+                                <mat-header-cell mat-sort-header  *matHeaderCellDef>Status</mat-header-cell>  
+                                <mat-cell *matCellDef="let row" [ngClass]="{'open-product': row.productStatus === 'OPEN', 'closed-product': row.productStatus === 'CLOSED'}">{{row.productStatus}}</mat-cell>
+                              </ng-container>
+
+                              <ng-container matColumnDef="totalOrders" >
+                                <mat-header-cell mat-sort-header  *matHeaderCellDef>Total orders</mat-header-cell>  
+                                <mat-cell *matCellDef="let row" >{{row.totalOrders}}</mat-cell>
+                              </ng-container>
+
+                              
+
+                              <mat-header-row *matHeaderRowDef="productsDisplayedColumns"></mat-header-row>
+                              <mat-row *matRowDef="let row; columns: productsDisplayedColumns"></mat-row>
+                            </mat-table>
+                            <mat-paginator #paginator 
+                            
+                            [pageIndex]="0"
+                            [pageSize]="500"
+                            [pageSizeOptions]="[5, 10, 15, 20, 50, 100, 500, 1000]">
+                            </mat-paginator>
+                        </div>
+
+
+
+                  </div>
+
+            </div>
+        </div>
+ 
+
+<div class="modal fade" id="dateFiltersModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Show Market products on period</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <mat-card>
+                <mat-calendar [selected]="showProductDateFrom" (selectedChange)="onFromSelect($event)"></mat-calendar>
+              </mat-card>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <mat-card>
+                <mat-calendar [selected]="showProductDateTo" (selectedChange)="onToSelect($event)"></mat-calendar>
+              </mat-card>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)="refreshProducts()">Show</button>
+        </div>
+      </div>
+    </div>
+
+  </div>

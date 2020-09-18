@@ -1,0 +1,283 @@
+
+.uploadCSV {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* .card{
+  min-width: 1100px;
+} */
+
+
+.mat-button {
+    background-color: #305d79;
+    color:white;
+    float: right;
+}
+
+.mat-accordion {
+    margin-top:30px;
+}
+
+.mat-expansion-panel {
+    background: transparent;
+
+}
+
+.tab{
+    margin-top:30px;
+}
+.main-content{
+  margin-top:0px;
+  right:1%;
+}
+
+.csv_data{
+    margin-left: 1rem;
+}
+
+p{
+   // font-weight:bold;
+    margin-bottom: 0.3rem;
+}
+
+// .material-icons {
+//     color:red
+// }
+
+.header-mat-icon{
+    padding: 11px;
+    padding-top: 8px;
+    font-size: 34px;
+}
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}
+.errorMsg {
+    font-size: 11px;
+}
+
+.buttonsClass {
+    position: relative;
+    bottom: 37px;
+    left: 97%
+}
+
+.addButtonClass {
+    left:-5px;
+    bottom: 18px;
+}
+
+.graphClass{
+    right: 35%;
+    top: 40px;
+}
+
+.listClass{
+    bottom: 56px;
+    left: 258px; 
+}
+.listTitle{
+    margin-left:28px;
+    margin-top:12px;
+}
+.example-chip-list {
+    width: 95%;
+  }
+  .mat-error{
+      margin-top:0;
+  }
+
+  .tab{
+    margin-top: 30px;
+  }
+  .mat-table {
+    min-width: 1400px;
+    width: calc(100% - 1400px); 
+  }
+  .card{
+    min-width:auto;
+    margin-top:0px;
+  }
+  .first{
+    margin-top:2%;
+  }
+  .second{
+    margin-top:4%;
+  }
+  .third{
+    margin-top:4%;
+  }
+  .fourth{
+    margin-top:4%;
+  }
+
+  .padding-0{
+    padding-right:3%;
+    padding-left:0;
+    /* right:6%; */
+  }
+  .energyTitle{
+      margin-top:7%;
+      font-weight: bold;
+  }
+  .activePowerTitle{
+      margin-top: 7%;
+      font-weight: bold;
+  }
+  .mat-column-service {
+    flex: 0 0 7% !important;
+  }
+
+  .mat-column-power_reserve {
+    flex: 0 0 5% !important;
+    
+  }
+  .mat-column-select_deselect_all {
+    flex: 0 0 7% !important;
+    
+  }
+  .mat-column-period_of_activation {
+    flex: 0 0 81% !important;
+    @extend %row-alignment;
+    
+  }
+
+  .powerBalance{ 
+    margin-top: 7%;
+    margin-left:15%;
+  }
+  .powerBalanceCheckbox{
+    margin-top:8%;
+  }
+
+  
+  
+  mat-cell,
+  mat-footer-cell,
+  mat-header-cell {
+    font-size: 0.8rem;
+    white-space: pre-line;
+    justify-content:left;
+    color: #001625;
+   }
+
+  mat-cell {
+        height: 22px;
+  }
+
+  mat-header-cell {
+    height: 24px;  
+  }
+  
+  .subHeader{ 
+    margin-left:11%;
+    width:79.5%;
+    @extend %row-alignment;
+  }
+
+  .checkboxesRow{
+    margin-right:5%;
+    @extend %row-alignment;
+  }
+
+  %row-alignment{
+    justify-content: center;
+  }
+  %column-border-color-dark{
+    border-left: 1px solid #b9b9b9;
+}
+  .timeCells{
+     padding:0 5px 0 5px; 
+  }
+  .elementField{
+    width:10%;
+  }
+
+  /* .cell1{
+    right:0.5%;
+  } */
+
+  .cell1{
+    right:3%;
+  }
+  .cell2{
+    right:2.4%;
+  }
+  .cell3{
+    right:1.4%;
+  }
+  .cell4{
+    right:0.6%;
+  }
+  .cell5{
+    left:0.5%;
+  }
+  .cell6{
+    left:1.2%;
+  }
+  .cell7{
+    left:2%;
+  }
+  .cell8{
+    left:2.7%;
+  }
+  .cell9{
+    left:3.7%;
+  }
+  .cell10{
+    left:4.2%;
+  }
+  .cell11{
+    left:4.5%;
+  }
+  .cell12{
+    left:4.6%;
+  }
+  .cell13{
+    left:4.7%;
+   }
+  .cell14{
+    left:4.7%;
+  }
+  .cell15{
+    left:4.9%;
+  }
+  .cell16{
+    left:5%;
+  }
+  .cell17{
+    left:5.2%;
+  }
+  .cell18{
+    left:5.3%;
+  }
+  .cell19{
+    left:5.5%;
+  }
+  .cell20{
+    left:5.7%;
+  }
+  .cell21{
+    left:6%;
+  }
+  .cell22{
+    left:6%;
+  }
+  .cell23{
+    left:6%;
+  }
+  .cell24{
+    left:6.3%;
+  }
+
+
+  

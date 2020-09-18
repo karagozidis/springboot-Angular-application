@@ -1,0 +1,75 @@
+<div class="mat-table-container">
+        <mat-table [dataSource]="dataSource" [style.minWidth]='minWidth'>
+            <ng-container *ngFor="let column of columns; let i = index" [matColumnDef]="column.field">
+                <mat-header-cell *matHeaderCellDef (mouseover)="getHeaderTooltipData(column.name)" matTooltip={{headerDisplayedData}}>{{ column.name }}</mat-header-cell>
+                <mat-cell   *matCellDef="let row" [ngClass]="{'greenFontColor' : row[column.field]==='Sell' || column.name ==='Sell Qty' || column.name ==='Sell Price' || ((column.name ==='Price' || column.name ==='Qty') && (row['orderDirectionMyOrdersTable']==='Sell' || row['orderDirectionMyTradesTable']==='Sell')),
+                'redFontColor' : row[column.field]==='Buy' || column.name ==='Buy Qty' || column.name ==='Buy Price' || ((column.name ==='Price' || column.name ==='Qty') && (row['orderDirectionMyOrdersTable']==='Buy' || row['orderDirectionMyTradesTable']==='Buy')),
+                'greyFontColor' : column.name === 'Closes At',
+                'boldFont' : column.name === 'Buy Price' || column.name === 'Sell Price' || column.name === 'Price' ,
+                'italicFont': column.name === 'Closes At',
+                'disabledRow' : (row.orderStatusMyOrdersTable !== 'Active' && row.orderStatusMyOrdersTable !== 'Queued' && row.orderStatusMyOrdersTable !== 'Partly Matched') && this.columns[0]['table'] === 3 && (getOrdersAndTradesCurrentTable() !== ordersAndTradesState.TRADES && getOrdersAndTradesCurrentTable() !== ordersAndTradesState.ALL_TRADES)} "
+                (mouseover)="getToolTipData(row,column.name, i)" matTooltip={{displayedData}}> {{ row[column.field] }}  </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true">
+            </mat-header-row>
+
+
+            <mat-row *matRowDef="let row; columns: displayedColumns;let k = index;let odd = odd;"
+             [ngClass]="{'highlight-mat-row': isHighLightedProduct( row['nameProductsTable'] ,this.columns[0]['table']),'mat-row-odd': isOddProduct( row['nameProductsTable'],this.columns[0]['table'],odd),'mat-row-even': isEvenProduct( row['nameProductsTable'],this.columns[0]['table'],odd) && this.columns[0]['table'] === 3,
+             'weatherFirstRow':isFirstWeatherRow(this.columns[0]['table'],k),
+             'basket-orders-hightlight':(ordersBelongToSelectedBasket(k) && this.columns[0]['table'] === 3 && getOrdersAndTradesCurrentTable() !== ordersAndTradesState.BASKET)}"
+             class="my-mat-row"
+             (mouseover)="setSelectedBasket(k,this.columns[0]['table']);" (mouseleave)="removeRowHighlight()" (contextmenu) = "showMenu($event, row, k);setSelectedBasket(k);$event.preventDefault();"
+            (click) = "updateOrdersByProductsTable($event,row,true,k);" (dblclick)="onRowClicked($event,row,true,k)">{{row.date}}
+            <ng-template *ngIf="this.columns[0]['table'] === 1" #ordersMenu let-k>
+                <section class="user-menu">
+                    <!-- <div (click)="onRowClicked($event,row,true,k)"> <i class="material-icons" style="font-size:10px;">add</i> Place Order</div>
+                    <div (click)="onRowClicked($event,row,true,k)"> <i class="material-icons" style="font-size:10px;">add</i>Add to Basket</div> -->
+                    <div (click)="onRowClicked($event,row,true,k)">Place Order</div>
+                    <!-- <div (click)="onRowClicked($event,row,true,k)">Add to Basket</div> -->
+                    <div (click)="showProductTimeline(k)" >Show Timeline</div>
+                </section>
+            </ng-template>
+
+            <ng-template  *ngIf="this.columns[0]['table'] === 2" #ordersMenu let-k>
+            </ng-template>
+
+            <ng-template  *ngIf="this.columns[0]['table'] === 3" #ordersMenu let-k>
+                <section class="user-menu">
+                    <div *ngIf="isOrderInsideBasket(k)===false && isOrderActive(k)===true && (getOrdersAndTradesCurrentTable() === ordersAndTradesState.ORDERS || getOrdersAndTradesCurrentTable() === ordersAndTradesState.BASKET)" (click)="onRowClicked($event, row, true, k)">Update Order</div>
+                    <div *ngIf="isOrderInsideBasket(k)===true && isOrderActive(k)===true && (getOrdersAndTradesCurrentTable() === ordersAndTradesState.ORDERS || getOrdersAndTradesCurrentTable() === ordersAndTradesState.BASKET) " (click)="onRowClicked($event, row, true, k)">Update Basket</div>
+                    <div *ngIf="isOrderInsideBasket(k)===false && isOrderActive(k)===true && (getOrdersAndTradesCurrentTable() === ordersAndTradesState.ORDERS || getOrdersAndTradesCurrentTable() === ordersAndTradesState.BASKET)" (click)="removeOrder($event,row,true,k)">Remove Order</div>
+                    <div *ngIf="isOrderInsideBasket(k)===true && isOrderActive(k)===true && (getOrdersAndTradesCurrentTable() === ordersAndTradesState.ORDERS || getOrdersAndTradesCurrentTable() === ordersAndTradesState.BASKET) " (click)="removeOrder($event,row,true,k)">Remove Basket</div>
+                    <div *ngIf="getOrdersAndTradesCurrentTable() === ordersAndTradesState.ORDERS" (click)="showOrderTimeline(k)" >Show Timeline</div>
+                </section>
+            </ng-template>
+
+            <ng-template  *ngIf="this.columns[0]['table'] === 4" #ordersMenu let-k>
+            </ng-template>
+        </mat-row>
+    </mat-table>
+</div>
+
+<div class="modal fade" #myModal id="myModal" name="myModal" >
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 95%;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Transactions timeline</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+            <div class="row" >
+                <div class="col-md-12">
+                    <app-user-product-transactions #apt [showNavigation]="false" > </app-user-product-transactions>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>

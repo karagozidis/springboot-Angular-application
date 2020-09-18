@@ -1,0 +1,42 @@
+.mat-raised-button {
+    
+    position: relative;
+    background-color: #305d79;;
+    left:75%
+    /* left:56% */
+   
+}
+
+.material-icons {
+    color: white;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: darkcyan !important;
+  }
+
+  .no-button .yes-button {
+    background-color: transparent!important;
+  }
+  .no-button {
+     color:grey;
+      margin:7px;
+  }
+  .yes-button {
+    color:red;
+   ;
+}
+::ng-deep .no-button>.mat-button-focus-overlay {
+    background-color:transparent !important;
+}
+
+.material-icons.closeClass{
+      
+  font-size:18px;
+  cursor:pointer;
+  color:black;
+  position:absolute;
+  left:97%;
+  bottom:30%;
+  
+}

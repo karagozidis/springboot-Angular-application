@@ -1,0 +1,45 @@
+
+.header-mat-icon{
+    padding: 11px;
+    padding-top: 8px;
+    font-size: 34px;
+}
+
+.tab{
+    margin-top: 30px;
+}
+
+small, .small {
+    font-size: 60%;
+    font-weight: 400;
+}
+
+.nav-pills .nav-item .nav-link {
+    line-height: 24px;
+    /*text-transform: uppercase;*/
+    font-size: 9px;
+    font-weight: 500;
+    width: 90px;
+    max-width: 90px;
+    text-align: center;
+    color: #555;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 10px;
+    /*padding: 10px 15px;*/
+    background-color: #67866b;
+    background: linear-gradient(60deg, #566758, #72a779);
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #6b6b6b;
+    color: #fff;
+    border-left: 5px solid #4d98b3!important;
+}
+
+.nav-pills .nav-item i {
+    display: block;
+    font-size: 30px;
+    padding: 7px 0;
+}
+
+.userModules {
+    padding: 4px;
+}

@@ -1,0 +1,50 @@
+<nav class="sidebar">
+    <div class="logo">
+        <div class="logo-img">
+            <img src="/assets/img/onCloudApp-logo.png"/>
+        </div>
+    </div>
+    <div class="sidebar-wrapper">
+        <div *ngIf="isMobileMenu() && appType === AppType.CRM">
+        </div>
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+
+                <a *ngIf="userHasRightsOnMenu(menuItem.rolesCrm,menuItem.moduleCrm,menuItem.rolesMarket,menuItem.moduleMarket) && !isParentMenu(menuItem)"
+                   class="nav-link" [routerLink]="[menuItem.path]">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+
+                <a class="nav-link"
+                   *ngIf="isParentMenu(menuItem)"
+                   data-toggle="collapse" href="#menu{{menuItem.id}}">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>
+                        {{menuItem.title}}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+
+                <ul *ngIf="isParentMenu(menuItem)" class="nav-item collapse onCloudAppul" id="menu{{menuItem.id}}">
+                    <li routerLinkActive="active" *ngFor="let submenuItem of menuItem.submenus" class="nav-item">
+                        <a *ngIf="userHasRightsOnMenu(submenuItem.rolesCrm,submenuItem.moduleCrm,submenuItem.rolesMarket,submenuItem.moduleMarket) && !isParentMenu(submenuItem)"
+                           class="nav-link" [routerLink]="[submenuItem.path]">
+                            <i class="material-icons">{{submenuItem.icon}}</i>
+                            <p>{{submenuItem.title}}</p>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+
+<div class="d-flex justify-content-center" style="position:absolute;bottom:3vh;left:0;width:100%;z-index:1000;">
+    <div [hidden]="loadingIndicationHidden" class="spinner-border" style="width:5vh;height:5vh"></div>
+</div>

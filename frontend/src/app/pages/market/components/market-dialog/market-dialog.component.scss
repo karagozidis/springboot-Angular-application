@@ -1,0 +1,55 @@
+.card {
+    width:480px;
+}
+.card-header {
+  background-color: #305d79;
+  color:white;
+  float: center;
+}
+
+.card .card-category:not([class*=text-]) {
+    color: white;
+}
+.material-icons{
+  cursor:pointer;
+  float:right;
+  position:inherit;
+  position:relative;
+  transform: translate(98%, -100%);
+  font-size:larger;
+}
+.mat-raised-button {
+   
+    background-color: #305d79;
+    color:white;
+    float:right;  
+}
+.close.mat-button {
+    background-color: transparent;
+    position: relative;
+    left: 0%;
+    min-width: auto;
+    line-height:0;
+    font-size:0rem;
+  }
+
+.checkedBuyColor{
+     font-weight: bold;
+     border: 1px solid #b10404;
+     color: #b10404;
+     background-color: white;
+     border-radius: 4px;
+     
+    //  color:#b10404;                      
+  }
+  .checkedSellColor{
+    font-weight: bold;
+    border: 1px solid rgb(98, 155, 84);
+    color : rgb(98, 155, 84);
+    background-color: white;
+    border-radius: 4px;
+  }
+  // .mat-button-toggle{
+  //   font-weight: bold;
+  // }
+  

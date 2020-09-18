@@ -1,0 +1,526 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card first" *ngIf="this.appDataService.userDto.modulesCrm.includes('substation-operator')===true">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: Header</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <br>
+
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                    <div class="col-md-12"> 
+                                        <h6>          
+                                                 Information
+                                        </h6>
+                                    </div>    
+                            </div>
+                        </div>
+                        
+                        <div class="container-fluid">
+                           
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Name"  name = "name" [(ngModel)]="activeSubstationInputMetadata.name"  pattern="^[a-zA-Z0-9_]*$" >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Description" [(ngModel)]="activeSubstationInputMetadata.description"  name = "param2" >
+                                    </mat-form-field>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea2"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+
+                                        Header
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea2" class="container-fluid collapse show">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width" >
+                                        <mat-label>Service</mat-label>
+                                        <mat-select [(value)]= selectedService>
+                                            <mat-option  value = "1">Demand Response Management</mat-option>
+                                            <mat-option  value = "2" >Backup Management</mat-option>
+                                            <mat-option  value = "3" >Multi-Market Service</mat-option>
+                                            <mat-option  value = "4" >Generation Schedule Optimization</mat-option>
+                                            <mat-option  value = "5">Preventive Maintenance</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width" >
+                                        <mat-label>Resolution</mat-label>
+                                        <mat-select [(value)]= selectedResolution [disabled]="true">
+                                            <mat-option  value = "1" >1 Hour</mat-option>
+                                            <!-- <mat-option  value = "2" >15 minutes</mat-option>
+                                            <mat-option  value = "3" >5 minutes</mat-option> -->
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <br> 
+                    </div>
+                </div>
+                <div class="card second" *ngIf="this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" >
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: Operation Constraints</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-body">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea3"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Operation Constraints
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea3" class="container-fluid collapse show">
+                            <div class="row">
+                                <div class="col-md-2">
+                                   <p class="energyTitle">Energy</p>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Initial(kWh) </mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.eint'>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Final(kWh)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.eter'>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Minimum(kWh)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.emin'>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0" >
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Maximum(kWh)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.emax'>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 padding-0" style="left:16.5%;">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Charge Efficiency(PU)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.etach'>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0" style="left:16.8%;">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Discharge Efficiency(PU)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.etadis'>
+                                    </mat-form-field>
+                                </div>
+                            </div> 
+                            <br>  
+                            <br>
+                            <div class="row">
+                                <div class="col-md-2">
+                                   <p class="activePowerTitle">Active Power</p>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Minimum Discharge(kW)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.pdismin'   >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Maximum Discharge(kW)</mat-label>
+                                        <input matInput numeric decimals="1"  [(ngModel)]='activeSubstationInputOperationConstraints.pdismax'  >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Minimum charge(kW)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.pchmin'   >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2 padding-0">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Maximum charge(kW)</mat-label>
+                                        <input matInput numeric decimals="1" [(ngModel)]='activeSubstationInputOperationConstraints.pchmax' >
+                                    </mat-form-field>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+                <div class="card third" *ngIf="this.appDataService.userDto.modulesCrm.includes('substation-operator')===true">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: DataFiles</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-body">
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea4"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        DataFiles
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="colapseArea4" class="container-fluid collapse show">
+                            
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>CMR Price</mat-label>
+                                        <input matInput  [min]="displayValueCmrPrice" [max]="displayValueCmrPrice" [disabled]="displayValueCmrPrice === ''"   [matDatepicker]="picker" (dateChange)="catchDateEvent('change', $event,'displayValueCmrPrice')" [value]="displayValueCmrPrice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Demand</mat-label>
+                                        <input matInput [min]="displayValueDemand" [max]="displayValueDemand" [disabled]="displayValueDemand === ''"  [matDatepicker]="picker2" (dateChange)="catchDateEvent('change', $event,'displayValueDemand')"  [value]="displayValueDemand">
+                                        <mat-datepicker-toggle matSuffix [for]="picker2" ></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Generation</mat-label>
+                                        <input matInput [min]="displayValueGeneration" [max]="displayValueGeneration" [disabled]="displayValueGeneration === ''" [matDatepicker]="picker3" (dateChange)="catchDateEvent('change', $event,'displayValueGeneration')"  [value]="displayValueGeneration">
+                                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker3></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>PvPower</mat-label>
+                                        <input matInput [min]="displayValuePvPower" [max]="displayValuePvPower" [disabled]="displayValuePvPower === ''" [matDatepicker]="picker4" (dateChange)="catchDateEvent('change', $event,'displayValuePvPower')"  [value]="displayValuePvPower" >
+                                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker4></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Pbp Price</mat-label>
+                                        <input matInput [min]="displayValuePbpPrice" [max]="displayValuePbpPrice" [disabled]="displayValuePbpPrice === ''" [matDatepicker]="picker5" (dateChange)="catchDateEvent('change', $event,'displayValuePbpPrice')"  [value]="displayValuePbpPrice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker5></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Pv Price</mat-label>
+                                        <input matInput [min]="displayValuePvPrice" [max]="displayValuePvPrice" [matDatepicker]="picker6" [disabled]="displayValuePvPrice === ''" (dateChange)="catchDateEvent('change', $event,'displayValuePvPrice')"  [value]="displayValuePvPrice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker6></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Settlement Price</mat-label>
+                                        <input matInput [min]="displayValueSettlementPrice" [max]="displayValueSettlementPrice" [matDatepicker]="picker7" [disabled]="displayValueSettlementPrice === ''" (dateChange)="catchDateEvent('change', $event,'displayValueSettlementPrice')"  [value]="displayValueSettlementPrice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker7></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>TieLine PowerFlow</mat-label>
+                                        <input matInput [min]="displayValueTieLinePowerFlow" [max]="displayValueTieLinePowerFlow" [disabled]="displayValueTieLinePowerFlow === ''"  [matDatepicker]="picker8"  (dateChange)="catchDateEvent('change', $event,'displayValueTieLinePowerFlow')"  [value]="displayValueTieLinePowerFlow">
+                                        <mat-datepicker-toggle matSuffix [for]="picker8"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker8></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>WholeSale Price</mat-label>
+                                        <input matInput [min]="displayValueWholeSalePrice" [max]="displayValueWholeSalePrice" [disabled]="displayValueWholeSalePrice === ''" [matDatepicker]="picker9" (dateChange)="catchDateEvent('change', $event,'displayValueWholeSalePrice')"  [value]="displayValueWholeSalePrice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker9"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker9></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>{{windPowerLabel}}</mat-label>
+                                        <input matInput [min]="displayValueWindPower" [max]="displayValueWindPower" [disabled]="displayValueWindPower === ''" [matDatepicker]="picker10" (dateChange)="catchDateEvent('change', $event,'displayValueWindPower')"  [value]="displayValueWindPower">
+                                        <mat-datepicker-toggle matSuffix [for]="picker10"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker10></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="card fourth">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">view_list</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Section: Flexibility Services Schedule</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h6 data-toggle="collapse" style="cursor: pointer;" href="#colapseArea5"
+                                        aria-expanded="true" aria-controls="multiCollapseExample1">
+                                        Flexibility Services Schedule
+                                        <i class="material-icons" style="font-size: 11px;">expand_more</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="colapseArea5" class="container-fluid collapse show">
+                            
+                            <div class="table-responsive">
+                                <mat-table #table [dataSource]="dataSource">
+                              
+                                  <!--- Note that these columns can be defined in any order.
+                                        The actual rendered columns are set as a property on the row definition" -->
+                              
+                                  <!-- Position Column -->
+                                  <ng-container matColumnDef="service">
+                                    <mat-header-cell *matHeaderCellDef> Service </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+                                  </ng-container>
+                              
+                                  <!-- Name Column -->
+                                  <ng-container matColumnDef="power_reserve" >
+                                    <mat-header-cell *matHeaderCellDef>Power Reserve(%)</mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index" >
+                                        <div class="col-xs-2">
+                                            <mat-form-field class="example-full-width" style="width:30%;" >
+                                                <input matInput numeric decimals="0" [(ngModel)] = "element.power_reserve" [disabled] = "this.appDataService.userDto.modulesCrm.includes('system-operator')===true && this.appDataService.userDto.rolesCrm.includes('admin')===false ">
+                                            </mat-form-field>
+                                            <!-- <mat-form-field class="example-full-width" style="width:30%;" >
+                                                <input matInput numeric decimals="0" [(ngModel)] = "element.power_reserve">
+                                            </mat-form-field> -->
+                                        </div>
+                                    </mat-cell>
+                                  </ng-container>
+                              
+                                  <!-- Symbol Column -->
+                                  <ng-container matColumnDef="period_of_activation">
+                                    <mat-header-cell *matHeaderCellDef> Period of Activation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let i = index;"> 
+                                        <div class="checkboxesRow" > 
+                                           <div class="row" *ngIf="i!==10 && i!==11">
+                                                <div class="col" ><mat-checkbox  [(ngModel)] = "cellUpdatedState[i][0]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][1]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][2]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][3]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][4]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][5]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][6]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][7]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][8]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][9]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][10]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][11]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][12]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][13]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][14]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][15]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][16]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][17]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][18]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][19]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][20]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][21]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][22]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                                <div class="col"><mat-checkbox [(ngModel)] = "cellUpdatedState[i][23]" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox></div>
+                                               
+                                           </div>
+                                         
+                                        </div>  
+                                    </mat-cell>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="select_deselect_all" >
+                                    <mat-header-cell *matHeaderCellDef> Select/Deselect All </mat-header-cell>
+                                    <mat-cell *matCellDef="let element;let i = index">
+                                        <div class="row" *ngIf="i!==10 && i!==11">
+                                           <!--  <div class="col"><mat-checkbox  [(ngModel)]="selectedCellInTheRow[i]" (change)="$event ? updateAllCellsInRowCheckedState(i):null" 
+                                                class="example-margin" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"></mat-checkbox>
+                                            </div> -->
+                                            <div class="col"><mat-checkbox  [(ngModel)]="selectedCellInTheRow[i]" (change)="$event ? updateAllCellsInRowCheckedState(i):null" 
+                                                class="example-margin" [disabled] = "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" ></mat-checkbox>
+                                            </div>
+                                        </div>
+                                    </mat-cell>
+                                  </ng-container>
+                                  
+                                  <ng-container matColumnDef="time-division">
+                                    <mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="2">
+                                       <div class="subHeader">
+                                           <div class="row justify-content-around">
+                                                <div class="col">1</div>
+                                                <div class="col">2</div>
+                                                <div class="col">3</div>
+                                                <div class="col">4</div>
+                                                <div class="col">5</div>
+                                                <div class="col">6</div>
+                                                <div class="col">7</div>
+                                                <div class="col">8</div>
+                                                <div class="col">9</div>
+                                                <div class="col">10</div>
+                                                <div class="col">11</div>
+                                                <div class="col">12</div>
+                                                <div class="col">13</div>
+                                                <div class="col">14</div>
+                                                <div class="col">15</div>
+                                                <div class="col">16</div>
+                                                <div class="col">17</div>
+                                                <div class="col">18</div>
+                                                <div class="col">19</div>
+                                                <div class="col">20</div>
+                                                <div class="col">21</div>
+                                                <div class="col">22</div>
+                                                <div class="col">23</div>
+                                                <div class="col">24</div>
+                                           </div>
+                                        </div>
+                                    </mat-header-cell>
+                                 </ng-container>
+                                  <mat-header-row *matHeaderRowDef="displayedColumns" class="example-first-header-row"></mat-header-row>
+  
+                                  <mat-header-row *matHeaderRowDef="['time-division']" class="example-second-header-row"></mat-header-row>
+                              
+                                  
+                                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                                </mat-table>
+                                <br>
+                                <br>
+
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2" style="padding-right: 0px;padding-left: 0px;">
+                           <p class="powerBalance">Power Balance</p>
+                        </div> 
+                        <div class="col-md-2 " style="padding-left: 0px;right: 4%;">
+                               
+                                <div class="powerBalanceCheckbox" ><mat-checkbox  [(ngModel)] = "powerBalance" [disabled]="this.appDataService.userDto.modulesCrm.includes('substation-operator')===true"  ></mat-checkbox></div>
+                           
+                        </div>
+                  </div>
+                  <div>
+                    <br>
+                    <br>
+                    <button mat-raised-button  (click) ="runExecution()" class="btn btn-info pull-right" *ngIf= "this.appDataService.userDto.modulesCrm.includes('system-operator')===true" >
+                        Update Schedule
+                    </button>
+                    <button mat-raised-button (click) ="runExecution()" class="btn btn-info pull-right" *ngIf= "this.appDataService.userDto.modulesCrm.includes('substation-operator')===true" >
+                        Run
+                    </button>
+                  </div>
+                </div>
+                <br>
+                
+                
+                        
+               
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div [hidden]="sideBarVisible===false"  class="sidebar"  data-color= "azure" data-background-color="white">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background"></div>
+    </div>
+   
+<!--    <div id="main-panel" class="main-panel sidebar-visible">-->
+    <div class="main-panel" [ngClass]="{'sidebar-hidden':sideBarVisible === false, 'sidebar-visible':sideBarVisible===true}" >
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+        <app-footer *ngIf="appType === AppType.CRM"></app-footer>
+    </div>
+</div>
+
+<!-- Buy-Modal-angular -->
+
+
+<!-- <div class="d-flex justify-content-center" >
+<div class="spinner-border" style="position:fixed;bottom:6vh;left:0.5vw;width:5vh;height:5vh;z-index:1000;color:#0d2939;"> </div>
+</div> -->
+<!-- <mat-spinner class="mat-spinner-color"></mat-spinner> -->

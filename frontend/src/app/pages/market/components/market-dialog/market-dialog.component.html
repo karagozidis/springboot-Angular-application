@@ -1,0 +1,161 @@
+<div class="modal-header">
+    <h5 class="modal-title" *ngIf="dialogAnyData.tableIdToPass===3">Update Market Order</h5>
+    <h5 class="modal-title" *ngIf="selectedMarketTypeChoice!=='BASKET'&& dialogAnyData.tableIdToPass===1">Market Order</h5>
+    <h5 class="modal-title" *ngIf="selectedMarketTypeChoice==='BASKET' && dialogAnyData.tableIdToPass===1">Basket</h5>
+
+    <button type="button" class="close" data-dismiss="modal"  (click)="onNoClick()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form #userForm="ngForm"  (ngSubmit)="onSubmit()" >
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Product: &nbsp; &nbsp;{{productTitleInDialog}}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <mat-button-toggle-group [(value)]="selectedMarketChoice" #group="matButtonToggleGroup" [value]="orderDirectionTypes.BUY"  name="orderDirection">
+                    <mat-button-toggle [value]="orderDirectionTypes.BUY" [ngClass]="{'checkedBuyColor': redColor}"
+                    (change)="marketChoiceChanged($event)">Buy</mat-button-toggle>
+                    <div style="width:1px;"></div>
+                    <mat-button-toggle [value]="orderDirectionTypes.SELL" [ngClass]="{'checkedSellColor': aquamarine}"
+                    (change)="marketChoiceChanged($event)">Sell</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="col-md-6">
+                <p style="font-weight: bold;margin-bottom:0;">{{deliveryPeriodInDialog}} </p>
+                <p *ngIf="dialogAnyData.arrayViewInDialog !== 'basket_orders'" style="margin-top:0;vertical-align: top; display: inline-block;" >{{dateInDialog}},</p>
+                <p style="margin-top:0;vertical-align: top;display: inline-block;">{{deliveryTimeStartInDialog}}</p>
+                <!-- <p *ngIf="dialogAnyData.tableIdToPass===3" style="margin-top:0;" >{{deliveryTimeStartInDialog}}</p> -->
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input matInput placeholder="Price(€/MWh)" numeric decimals="2" [(ngModel)]="orderDialogData.price" (keyup.enter)="onEnterMethod()"
+                           #price = "ngModel" name="price"  required/>
+                    <mat-error *ngIf="price.invalid" class="invalid-feedback">
+                        <div class="errorMsg" *ngIf="price?.errors.required">Price field is required</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field *ngIf="selectedMarketTypeChoice!=='ICEBERG'">
+                    <input matInput placeholder="Quantity(MW)"  numeric decimals="1" (keyup.enter)="onEnterMethod()"
+                           [(ngModel)]="orderDialogData.quantity" #quantity= "ngModel" name="quantity" required />
+                    <mat-error *ngIf="quantity.invalid" class="invalid-feedback">
+                        <div class="errorMsg" *ngIf="quantity?.errors.required">Quantity(MW) field is required</div>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="selectedMarketTypeChoice==='ICEBERG'">
+                    <input matInput placeholder="Quantity Chunk(MW)"  numeric decimals="1" (keyup.enter)="onEnterMethod()"
+                           [(ngModel)]="orderDialogData.quantity" #quantity= "ngModel" name="quantity" required />
+                    <mat-error *ngIf="quantity.invalid" class="invalid-feedback">
+                        <div class="errorMsg" *ngIf="quantity?.errors.required">Quantity(MW) field is required</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row"  style="margin-top:20px;">
+            <div class="col-md-12">
+                <p style="font-weight:bold;">Order Details</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width" *ngIf="dialogAnyData.arrayViewInDialog === 'my_orders' && dialogAnyData.compAction === 'updateOrder'" >
+                    <mat-label>Order Type</mat-label>
+                    <mat-select [(value)]= selectedMarketTypeChoice [disabled]="true" matTooltip="{{getOrderTypeTooltip(selectedMarketTypeChoice)}}">
+                        <mat-option  [value] = "orderTypes.LIMIT" matTooltip="{{getOrderTypeTooltip(orderTypes.LIMIT)}}">Limit</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.ICEBERG)===true" [value] = "orderTypes.ICEBERG" matTooltip="{{getOrderTypeTooltip(orderTypes.ICEBERG)}}">Iceberg</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.IOC)===true" [value] = "orderTypes.IOC" matTooltip="{{getOrderTypeTooltip(orderTypes.IOC)}}">IoC</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.FOK)===true" [value] ="orderTypes.FOK" matTooltip="{{getOrderTypeTooltip(orderTypes.FOK)}}">FoK</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.AON)===true" [value] ="orderTypes.AON" matTooltip="{{getOrderTypeTooltip(orderTypes.AON)}}">AON</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.BASKET)===true" [value] ="orderTypes.BASKET" matTooltip="{{getOrderTypeTooltip(orderTypes.BASKET)}}">Basket</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width" *ngIf="dialogAnyData.arrayViewInDialog === 'basket_orders' " >
+                    <mat-select placeholder="Basket" [disabled]="true">
+                        <mat-option  value="orderTypes.BASKET">
+                            Basket
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" *ngIf="dialogAnyData.arrayViewInDialog !== 'basket_orders'  && dialogAnyData.compAction !== 'updateOrder'" >
+                    <mat-label>Order Type</mat-label>
+
+                    <mat-select  [(value)]="selectedMarketTypeChoice" (selectionChange)="changeOrderType($event.value)" matTooltip="{{getOrderTypeTooltip(selectedMarketTypeChoice)}}">
+
+                        <mat-option  [value] ="orderTypes.LIMIT" matTooltip="{{getOrderTypeTooltip(orderTypes.LIMIT)}}">Limit</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.ICEBERG)===true" [value] = "orderTypes.ICEBERG" matTooltip="{{getOrderTypeTooltip(orderTypes.ICEBERG)}}">Iceberg</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.IOC)===true" [value] = "orderTypes.IOC" matTooltip="{{getOrderTypeTooltip(orderTypes.IOC)}}">IoC</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.FOK)===true" [value] ="orderTypes.FOK" matTooltip="{{getOrderTypeTooltip(orderTypes.FOK)}}">FoK</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.AON)===true" [value] ="orderTypes.AON" matTooltip="{{getOrderTypeTooltip(orderTypes.AON)}}">AON</mat-option>
+                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.BASKET)===true"  [value] ="orderTypes.BASKET" matTooltip="{{getOrderTypeTooltip(orderTypes.BASKET)}}">Basket</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width" *ngIf="dialogAnyData.arrayViewInDialog === 'basket_orders'" >
+                    <mat-select [(value)]= selectedBasketTypeChoice [disabled]="true" matTooltip="{{getBasketTypeTooltip(selectedBasketTypeChoice)}}">
+                        <mat-option [value]="basketTypes.EXCLUSIVE" matTooltip="{{getBasketTypeTooltip(basketTypes.EXCLUSIVE)}}">Exclusive</mat-option>
+                        <mat-option [value]="basketTypes.VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.VOLUME_CONSTRAINED)}}">Volume Constrained</mat-option>
+                        <mat-option [value]="basketTypes.CUMULATIVE_VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.CUMULATIVE_VOLUME_CONSTRAINED)}}">Cumulative Volume Constrained</mat-option>
+                        <!-- <mat-option [value]="basketTypes.LINKED" matTooltip="{{getBasketTypeTooltip(basketTypes.LINKED)}}">Linked Group</mat-option> -->
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" [style.opacity]="basketTypeOpacity"  *ngIf="dialogAnyData.arrayViewInDialog !== 'basket_orders'  && dialogAnyData.compAction === 'updateOrder'" >
+                    <mat-label>Basket Type</mat-label>
+                    <mat-select [(value)]="selectedBasketTypeChoice" [disabled]="true" matTooltip="{{getBasketTypeTooltip(selectedBasketTypeChoice)}}" >
+                        <mat-option [value]="basketTypes.EXCLUSIVE" matTooltip="{{getBasketTypeTooltip(basketTypes.EXCLUSIVE)}}">Exclusive</mat-option>
+                        <mat-option [value]="basketTypes.VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.VOLUME_CONSTRAINED)}}">Volume Constrained</mat-option>
+                        <mat-option [value]="basketTypes.CUMULATIVE_VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.CUMULATIVE_VOLUME_CONSTRAINED)}}">Cumulative Volume Constrained</mat-option>
+                        <!-- <mat-option [value]="basketTypes.LINKED" matTooltip="{{getBasketTypeTooltip(basketTypes.LINKED)}}">Linked Group</mat-option> -->
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" [style.opacity]="basketTypeOpacity"  *ngIf="dialogAnyData.arrayViewInDialog !== 'basket_orders'  && dialogAnyData.compAction !== 'updateOrder'" >
+                    <mat-label>Basket Type</mat-label>
+                    <mat-select [(value)]="selectedBasketTypeChoice" (selectionChange)="changeBasketType($event.value)" [disabled] = "basketTypeDisabled" matTooltip="{{getBasketTypeTooltip(selectedBasketTypeChoice)}}" >
+                        <mat-option [value]="basketTypes.EXCLUSIVE"  matTooltip="{{getBasketTypeTooltip(basketTypes.EXCLUSIVE)}}">Exclusive</mat-option>
+                        <mat-option [value]="basketTypes.VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.VOLUME_CONSTRAINED)}}">Volume Constrained</mat-option>
+                        <mat-option [value]="basketTypes.CUMULATIVE_VOLUME_CONSTRAINED" matTooltip="{{getBasketTypeTooltip(basketTypes.CUMULATIVE_VOLUME_CONSTRAINED)}}">Cumulative Volume Constrained</mat-option>
+                        <!-- <mat-option [value]="basketTypes.LINKED" matTooltip="{{getBasketTypeTooltip(basketTypes.LINKED)}}">Linked Group</mat-option> -->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div  *ngIf="firstParamDisabled === false || secondParamDisabled===false || thirdParamDisabled === false" class="row">
+            <div class="col-md-4">
+                <mat-form-field [style.opacity]="firstParamOpacity" >
+                    <input matInput placeholder="{{firstParamPlaceholder}}" matTooltip="{{getParametersTooltip(firstParamPlaceholder)}}"  numeric decimals="1" [allowNegative]="false" [(ngModel)]="orderDialogData.metadata.param1" name="param1" [disabled]="firstParamDisabled" (keyup.enter)="onEnterMethod()"/>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field [style.opacity]="secondParamOpacity" >
+                    <input matInput   numeric decimals="1" [allowNegative]="selectedMarketTypeChoice==='ICEBERG'?true:false"  placeholder="{{secondParamPlaceholder}}"  matTooltip="{{getParametersTooltip(secondParamPlaceholder)}}" [(ngModel)]="orderDialogData.metadata.param2" name="param2" [disabled]="secondParamDisabled" (keyup.enter)="onEnterMethod()"/>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field [style.opacity]="thirdParamOpacity" >
+                    <input matInput placeholder="{{thirdParamPlaceholder}}"  numeric decimals="1"[allowNegative]="false" [(ngModel)]="orderDialogData.metadata.param3" name="param3"  matTooltip="{{getParametersTooltip(thirdParamPlaceholder)}}" [disabled]="thirdParamDisabled" (keyup.enter)="onEnterMethod()" />
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <button *ngIf="selectedMarketTypeChoice!=='BASKET'&& selectedMarketChoice==='BUY' && dialogAnyData.tableIdToPass===1" mat-raised-button (click)="placeOrder()" >Buy</button>
+    <button *ngIf="selectedMarketTypeChoice!=='BASKET'&& selectedMarketChoice==='SELL' && dialogAnyData.tableIdToPass===1" mat-raised-button (click)="placeOrder()" >Sell</button>
+    <button *ngIf="selectedMarketTypeChoice==='BASKET' && dialogAnyData.tableIdToPass===1" mat-raised-button  (click)="addOrderToBasket()">Add To Basket</button>
+    <button *ngIf="dialogAnyData.tableIdToPass===3" mat-raised-button  style="float:right;"  (click)="onUpdateButtonClick()">Update</button>
+    <button *ngIf="dialogAnyData.tableIdToPass===3" mat-raised-button  (click)="openRemoveDialog()" style="float:left;">Remove</button>
+
+
+</div>

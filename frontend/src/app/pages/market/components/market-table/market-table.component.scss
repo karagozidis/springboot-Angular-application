@@ -1,0 +1,598 @@
+.greenFontColor {
+    color: rgb(76, 117, 66);
+    // font-weight: 200;
+}
+
+.redFontColor {
+    // color: rgb(189, 40, 53);
+    color: rgb(125, 44, 44);
+    // font-weight: 200;
+}
+
+.greyFontColor {
+    color: rgb(136, 136, 136);
+}
+
+.boldFont {
+    font-weight: bold;
+}
+
+.basket-orders-hightlight {
+    background: #c8d9e4 !important;
+}
+
+.italicFont {
+    font-style: italic;
+}
+
+.mat-table {
+    min-width: 500px;
+    line-height: 1.2em;
+    // overflow-x: visible;
+    // overflow-y: auto;
+}
+
+/* Header title text */
+mat-cell,
+mat-footer-cell,
+mat-header-cell {
+    font-size: 0.8rem;
+    padding-left:1px;
+    white-space: nowrap;
+    justify-content:left;
+    color: #001625;
+}
+
+mat-cell {
+    height: 22px;
+}
+
+mat-header-cell {
+    height: 24px;
+    // font-weight: normal;
+}
+
+.mat-header-row{
+    background-color: #aebad0;
+    position: sticky;
+    top: 0;
+    min-height: 1vh;
+}
+
+.mat-table mat-cell:first-child {
+    padding-left: 0px;
+    // flex: 0 0 10% !important;
+    // width: 1% !important ;
+    border-left: 1px solid #e0e0e0;
+    // border-color: black;
+}
+
+.mat-table mat-cell:last-child {
+    padding-right: 0px;
+    border-right:1px solid #e0e0e0;
+    // flex: 1;
+}
+
+.mat-table mat-header-cell:first-child {
+    padding-left: 2px;
+    // flex: 0 0 10% !important;
+    // width: 1% !important ;
+    border-left: 1px ;
+    // border-color: black;
+}
+
+%column-number{
+    justify-content: center;
+}
+
+%column-border-color-light{
+    border-left: 1px solid #FFFFFF;
+}
+
+%column-border-color-dark{
+    border-left: 1px solid #b9b9b9;
+}
+
+.mat-header-row{
+    min-height: 1vh !important;
+}
+
+.my-mat-row{
+    min-height: 1vh !important;
+}
+.weatherFirstRow{
+    border-bottom: 2px solid #6392af;
+}
+
+
+// Products Table Column Sizes
+.mat-column-nameProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 16% !important;
+}
+
+.mat-column-closesAtProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 11% !important;
+}
+
+.mat-column-deliveryTimeStartProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 11% !important;
+}
+
+.mat-column-periodProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 11% !important;
+}
+
+.mat-column-dateProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 11% !important;
+}
+
+.mat-column-buyQuantityProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 10% !important;  
+}
+
+.mat-column-buyPriceProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 10% !important;
+}
+
+.mat-column-sellQuantityProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 10% !important;
+}
+
+.mat-column-sellPriceProductsTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 10% !important;
+}
+
+// Product Orders Table Column Sizes
+.mat-column-buyQuantityOrdersByProduct {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 25% !important;
+}
+
+.mat-column-buyPriceOrdersByProduct {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 25% !important;
+}
+
+.mat-column-sellQuantityOrdersByProduct {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 25% !important;
+}
+
+.mat-column-sellPriceOrdersByProduct {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 25% !important;
+}
+
+// My Orders Table Column Sizes
+.mat-column-orderIdMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 7% !important;
+}
+
+.mat-column-productNameMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 15% !important;
+}
+
+.mat-column-orderStatusMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 10% !important;
+}
+
+.mat-column-orderDirectionMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 5% !important;
+}
+
+.mat-column-quantityMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 6% !important;
+}
+
+.mat-column-priceMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 6% !important;
+}
+
+.mat-column-deliveryTimeStartMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 13% !important;
+}
+
+.mat-column-periodMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 10% !important;
+}
+
+.mat-column-dateMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 12% !important;
+}
+
+.mat-column-orderTypeMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 8% !important;
+}
+
+.mat-column-basketTypeMyOrdersTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 8% !important;
+}
+
+// My Trades Table Column Sizes
+.mat-column-tradeIdMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 7% !important;
+}
+
+.mat-column-orderIdMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 7% !important;
+}
+
+.mat-column-productMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 16% !important;
+}
+
+.mat-column-priceMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 6% !important;
+}
+
+.mat-column-quantityMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 6% !important;
+}
+
+.mat-column-orderDirectionMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 9% !important;
+}
+
+.mat-column-buyerMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 9% !important;
+}
+
+.mat-column-sellerMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 9% !important;
+}
+
+.mat-column-dateMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 13% !important;
+}
+
+.mat-column-orderTypeMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 9% !important;
+}
+
+.mat-column-basketTypeMyTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 9% !important;
+}
+
+// All Trades Table Column Sizes
+.mat-column-productAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 20% !important;
+}
+
+.mat-column-priceAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 15% !important;
+}
+
+.mat-column-quantityAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-light;
+    flex: 0 0 15% !important;
+}
+
+.mat-column-buyerAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 15% !important;
+}
+
+.mat-column-sellerAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 15% !important;
+}
+
+.mat-column-dateAllTradesTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 20% !important;
+}
+
+
+// Weather Table Column Sizes
+.mat-column-dateWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 14% !important;
+}
+
+.mat-column-timeWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 14% !important;
+}
+
+
+.mat-column-temperatureWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 18% !important;
+}
+
+.mat-column-sunRadiationWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 18% !important;
+}
+
+.mat-column-windSpeedWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 18% !important;
+}
+
+.mat-column-skyInfoWeatherTable {
+    @extend %column-number;
+    @extend %column-border-color-dark;
+    flex: 0 0 18% !important;
+}
+
+
+.mat-table mat-header-cell:last-child {
+    padding-right: 0px;
+    padding-left:2px;
+    // flex:1;
+}
+
+.highlight-mat-row{
+    background-color: #aac7da;
+    font-weight: bold;
+}
+
+.mat-row-odd{
+    background: #e5ecf1;
+}
+
+.mat-row-even{
+    background: #F7F7F7;
+}
+
+// .mat-row:nth-child(odd){
+//     background: #e5ecf1;
+// }
+
+// .mat-row:nth-child(even){
+//     background: #F7F7F7;
+// }
+
+
+
+.disabledRow{
+   // cursor: not-allowed;
+   // pointer-events: none;
+    color: #a0a0a0;
+}
+
+.user-menu {
+    background-color: #fafafa;
+    padding: 4pt;
+    font-size: 10pt;
+    z-index: 1000;
+    box-shadow: 0 0 12pt rgba(0, 0, 0, 0.25);
+    border-radius: 4pt;
+    padding: 0.5em 0 0.5em 0;
+    animation: fadeIn 0.1s ease-out;
+    opacity:1.0;
+    display:block;
+    font-family: Tahoma;
+}
+
+
+.user-menu hr {
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.user-menu div {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5em 2em 0.5em 0em;
+    max-width: 18em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-menu div:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.user-menu div::before {
+    content: '';
+    float: left;
+    margin-right: 0.75em;
+    width: 0.5em;
+    height: 1em;
+    display: inline-block;
+}
+
+.checkedBuyColor{
+    background-color:rgb(255, 127, 138);
+}
+.checkedSellColor{
+    background-color:  aquamarine ;
+}
+
+.orderTypeClass {
+    left:18%;
+    top:15%
+}
+
+.material-icons {
+    font-size: 18px;
+}
+
+.mat-dialog-container {
+    width: 20% !important;
+}
+
+.area-hidden {
+    display:none;
+}
+
+.button-active {
+    color: #44ff98;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 2px 8px;
+    text-align: center;
+}
+
+.table-header{
+    background-color: #6392af42;
+}
+
+.mat-row:hover {
+    background-color: #c8d9e4;
+}
+
+.mat-header-row {
+    // height: 22px;
+    background-color: #c8d9e4;
+    color: black;
+}
+
+.mat-header {
+    // height: 39px;
+    background-color: #c8d9e4;
+    color: black;
+}
+//
+// .redColor{
+//     background-color: #ffc9ce;
+// }
+//
+// .greenColor{
+//     background-color: #cfe6cf;
+// }
+
+.overflow-auto{
+    background-color: #ffffff6e;
+}
+//
+// .mat-column-select {
+//   overflow: auto;
+// }
+
+.mat-table-container {
+    overflow: auto;
+    max-height: 100%;
+    
+    
+   
+}
+@-moz-document url-prefix() {
+    .mat-table-container {
+        scrollbar-width: thin;
+        scrollbar-color: #6392af #f1f1f1;
+    }
+}
+
+.col{
+    padding: 0px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6392af;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4884a9;
+}
+//
+//
+// .mat-column-initialQuantityMyOrdersTable {
+//   @extend %column-number;
+//   @extend %column-border-color-dark;
+//   flex: 0 0 4% !important;
+// }
+// .mat-column-initialPriceMyOrdersTable {
+//   @extend %column-number;
+//   @extend %column-border-color-dark;
+//   flex: 0 0 4% !important;
+// }

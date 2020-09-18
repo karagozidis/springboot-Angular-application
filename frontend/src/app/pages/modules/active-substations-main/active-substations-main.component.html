@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid" style="margin-top:2%">
+      <div class="row">
+        <div class ="col-md-12">
+        <div class="stepperClass">
+          <mat-horizontal-stepper [linear]="true" #stepper [ngClass]="{'greenFirst': firstClass===true, 'greenSecond': secondClass ===true, 'greenThird': thirdClass===true,'greenForth': forthClass===true}">
+            <mat-step [stepControl]="firstFormGroup" >
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel><p class="stepperText">System operator creates schedule</p></ng-template>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel><p class="stepperText">Substation operator runs optimization</p></ng-template>
+
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel><p class="stepperText">Offer sent to system operator</p></ng-template>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="forthFormGroup">
+              <form [formGroup]="forthFormGroup">
+                <ng-template matStepLabel><p class="stepperText">Offer accepted by system operator</p></ng-template>
+              </form>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </div>
+      </div>
+      </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card-body">
+                    <mat-tab-group selectedIndex="0" (selectedTabChange)="changeTab($event)">
+                        <mat-tab label="Input" *ngIf="this.appDataService.userDto.modulesCrm.includes('system-operator')===true || this.appDataService.userDto.modulesCrm.includes('substation-operator')===true">
+                            <ng-template matTabContent>
+                             <app-active-substations-management></app-active-substations-management>
+                            </ng-template>
+                        </mat-tab>
+                        <mat-tab label="History" *ngIf="this.appDataService.userDto.modulesCrm.includes('system-operator')===true || this.appDataService.userDto.modulesCrm.includes('substation-operator')===true">
+                            <ng-template matTabContent>
+                                <app-active-substations-history></app-active-substations-history>
+                            </ng-template>
+                        </mat-tab>
+                        <mat-tab label="Upload Forecasted Data" *ngIf="this.appDataService.userDto.modulesCrm.includes('import-forecasted-data')===true">
+                            <ng-template matTabContent>
+                                <app-active-substations-upload-forecasted-data></app-active-substations-upload-forecasted-data>
+                            </ng-template>
+                        </mat-tab>
+                        <mat-tab label="Results">
+                            <ng-template matTabContent>
+                               <app-active-substations-results></app-active-substations-results>
+                            </ng-template>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

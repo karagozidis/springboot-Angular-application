@@ -1,0 +1,101 @@
+.mat-table {
+    background: transparent;
+}
+
+.mat-paginator{
+    background-color: transparent;
+}
+
+.mat-fab {
+    background-color: #305d79;
+    float:right;
+    z-index:5;
+    position : fixed;
+    display : flex;
+    right:7%;
+    align-self : flex-end;
+    bottom : 10%;
+    margin-bottom : 68px;
+}
+
+.myClass .mat-dialog-container {
+    width:550px;
+  }
+
+.mat-column-action_edit {
+    word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+ }
+
+ .mat-column-action_delete {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+ }
+
+
+ .nav-item{
+    padding-right:10px;
+}
+
+.card-header{
+    background: linear-gradient(60deg, #305d79, #6998b5);
+}
+
+.mat-column-name{
+    flex: 0 0 12% !important;
+}
+.mat-column-description{
+    flex: 0 0 47% !important;
+}
+.mat-column-members{
+    flex: 0 0 28% !important;
+}
+
+.mat-column-actions{
+    padding-left: 0 !important;
+    flex: 0 0 5% !important;
+    justify-content: center;
+}
+
+mat-header-cell {
+    padding-right: 0 !important;
+    word-break: break-all;
+    /* text-align: center;
+    justify-content: center; */
+}
+
+mat-cell {
+    /* text-align: center;
+    justify-content: center; */
+    padding-right: 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mat-cell-text {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+}

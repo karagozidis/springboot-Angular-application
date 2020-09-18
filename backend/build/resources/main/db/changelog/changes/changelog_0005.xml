@@ -1,0 +1,92 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0005.xml">
+
+    <changeSet author="ED" id="1580909247013-4">
+        <addColumn tableName="import_order">
+            <column name="message_info_name" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1580909247013-5">
+        <addColumn tableName="import_order">
+            <column name="singleOrderActiveGroupId" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1580909247013-6">
+        <addColumn tableName="weather_result">
+            <column name="market_code" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1580909247013-7">
+        <addColumn tableName="weather_result">
+            <column name="sky_code" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-1">
+        <addColumn tableName="matched_order">
+            <column name="order1_price" type="DOUBLE(22)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED" id="1583327722381-2">
+        <addColumn tableName="matched_order">
+            <column name="order1_quantity" type="DOUBLE(22)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="helias (generated)" id="1583327722381-3">
+        <addColumn tableName="matched_order">
+            <column name="order2_price" type="DOUBLE(22)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED" id="1583327722381-4">
+        <addColumn tableName="matched_order">
+            <column name="order2_quantity" type="DOUBLE(22)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED" id="1583327722381-5">
+        <addColumn tableName="import_order">
+            <column name="single_order_active_group_id" type="BIGINT(19)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-6">
+        <renameColumn tableName="import_order" columnDataType="BIGINT(19)" oldColumnName="single_order_active_group_id"
+                      newColumnName="active_group_id"/>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-7">
+        <addColumn tableName="single_order">
+            <column name="removed_on" type="datetime"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-8">
+        <addColumn tableName="user">
+            <column name="default_market" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-9">
+        <addColumn tableName="user">
+            <column name="market" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-10">
+        <addColumn tableName="user">
+            <column name="landing_page" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="ED" id="1583327722381-11">
+        <addColumn tableName="weather_result">
+            <column name="type" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

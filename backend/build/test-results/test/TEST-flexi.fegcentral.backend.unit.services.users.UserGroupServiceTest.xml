@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flexi.fegcentral.backend.unit.services.users.UserGroupServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-06-10T13:27:48" hostname="DESKTOP-8MV4NGR" time="0.005">
+  <properties/>
+  <testcase name="getUserGroups_test" classname="flexi.fegcentral.backend.unit.services.users.UserGroupServiceTest" time="0.003"/>
+  <testcase name="getUserGroup_test" classname="flexi.fegcentral.backend.unit.services.users.UserGroupServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

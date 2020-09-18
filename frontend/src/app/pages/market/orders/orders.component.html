@@ -1,0 +1,239 @@
+            <div class="main-content">
+                <!-- Top Tables -->
+                <div class="row w-100 top-tables-margins" #topTablesDiv
+                [ngClass]="{ 'h-50':getTopVisibility() === 'side',
+                'h-100':getTopVisibility() === 'wide',
+                'area-hidden':getTopVisibility() === 'hidden'}">
+
+
+                    <!-- Top Left Table -->
+                    <div class="col-md-8"
+                    [ngClass]="{ 'col-md-8':getTopLeftVisibility() === 'side',
+                    'col-md-12':getTopLeftVisibility() === 'wide',
+                    'area-hidden':getTopLeftVisibility() === 'hidden',
+                    'h-100':wrapTablesToAvailableHeight === true}">
+
+                        <!-- Top Left Table Header-->
+                        <div class="row table-header-row" >
+                            <div class="col h-100" #topLeftHeader>
+                                <nav class="navbar navbar-light bg-light table-title">
+                                    <a class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                        Products
+                                    </a>
+                                </nav>
+                            </div>
+                            <!-- <div class="panorama-table-icon">
+                                <nav class="navbar navbar-light bg-light table-title" style="box-shadow:none;">
+                                </nav>
+                            </div> -->
+                            <div class="table-icons">
+                                <nav class="navbar navbar-light bg-light table-title" style="box-shadow:none;">
+                                    <a *ngIf="tableExistsAtFullScreen() === false" class="navbar-brand">
+                                        <i class="material-icons" (click)="hideOrdersByProductTable()">crop_16_9</i>
+                                    </a>
+                                    <a class="navbar-brand">
+                                        <i class="material-icons" (click)="switchProductsTableFullScreen()">fullscreen</i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Top Left Table Content-->
+                        <div class="row table-row">
+                            <div class="col h-100 w-100" #topLeftTable >
+                                <app-market-table [dataSource]="datasourceProductsTable" [columns]="productsTableColumns" [minWidth]="'1000px'">
+                                </app-market-table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Right Table -->
+                    <div class="col-md-4"
+                    [ngClass]="{ 'col-md-4':getTopRightVisibility() === 'side',
+                        'col-md-12':getTopRightVisibility() === 'wide',
+                        'area-hidden':getTopRightVisibility() === 'hidden',
+                        'h-100':wrapTablesToAvailableHeight === true}">
+
+                        <!-- Top Right Table Header-->
+                        <div class="row table-header-row">
+                            <div class="col h-100" #topRightHeader >
+                                <nav class="navbar navbar-light bg-light table-title">
+                                    <a class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                            Orders by Product
+                                    </a>
+                                </nav>
+                            </div>
+
+                            <div class="table-icons">
+                                <nav class="navbar navbar-light bg-light table-title" style="box-shadow:none;">
+                                    <a *ngIf="tableExistsAtFullScreen() === false" class="navbar-brand">
+                                        <i class="material-icons" (click)="hideProductsTable()">crop_16_9</i>
+                                    </a>
+                                    <a class="navbar-brand">
+                                        <i class="material-icons" (click)="switchOrdersByProductTableFullScreen()">fullscreen</i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Top Right Table Content-->
+                        <div class="row table-row">
+                            <div class="col h-100 w-100" #topRightTable>
+                                <app-market-table [dataSource]="datasourceOrdersByProductTable" [columns]="ordersByProductsColumns" [minWidth]="'400px'"></app-market-table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+            <!-- Bottom Tables -->
+            <div class="row w-100 bottom-tables-margins" #bottomTablesDiv
+            [ngClass]="{ 'h-50':getBottomVisibility() === 'side',
+            'h-100':getBottomVisibility() === 'wide',
+            'area-hidden':getBottomVisibility() === 'hidden'}">
+
+            <!-- Bottom Left Table -->
+                <div class="col-md-8"
+                [ngClass]="{ 'col-md-8':getBottomLeftVisibility() === 'side',
+                'col-md-12':getBottomLeftVisibility() === 'wide',
+                'area-hidden':getBottomLeftVisibility() === 'hidden',
+                'h-100':wrapTablesToAvailableHeight === true}">
+
+                         <!-- Bottom Left Table Header-->
+                         <div class="row table-header-row">
+                            <div class="col h-100 table-title-column" style="background-color: white;" #bottomLeftHeader>
+                                <nav class="navbar table-title" style="position:absolute;box-shadow:none;">
+                                    <a *ngIf='selectedBottomLeftTable === BottomLeftTables.MY_ORDERS' class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                            My Orders
+                                    </a>
+
+                                    <a *ngIf='selectedBottomLeftTable === BottomLeftTables.MY_TRADES' class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                            My Trades
+                                    </a>
+                                    <a *ngIf='selectedBottomLeftTable === BottomLeftTables.ALL_TRADES' class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                            All Trades
+                                    </a>
+                                    <a *ngIf='selectedBottomLeftTable === BottomLeftTables.BASKET' class="navbar-brand">
+                                        <i class="material-icons">view_list</i>
+                                            Current Basket
+                                    </a>
+                                        <button *ngIf="selectedBottomLeftTable===BottomLeftTables.BASKET && this.orderStateService.processMode !== 'updateBasketFromOrdersArray'" mat-button (click)="postBasket()" type="submit"
+                                            [disabled]="this.orderStateService.getBasketTableArray().length ===0"
+                                            style="height:100%;padding-left:0;padding-right:0;">
+                                            Place All
+                                        </button>
+                                        <button *ngIf="selectedBottomLeftTable===BottomLeftTables.BASKET && this.orderStateService.processMode === 'updateBasketFromOrdersArray'" mat-button (click)="updateBasket()" type="submit"
+                                            [disabled]="this.orderStateService.getBasketTableArray().length ===0"
+                                            style="height:100%;padding-left:0;padding-right:0;">
+                                            Update
+                                        </button>
+
+                                        <button *ngIf="selectedBottomLeftTable===BottomLeftTables.BASKET" mat-button (click)="clearAllBasketOrders()"
+                                            [disabled]="this.orderStateService.getBasketTableArray().length ===0"
+                                            style="height:100%;padding-left:0;padding-right:0;">
+                                            Clear All
+                                        </button>
+                                   
+                                        
+                                </nav>
+
+                                <mat-form-field style="height:100%;border:0;position:absolute;right:42%;width:12%;font-size:0.9rem;top:10%" >
+                                    <mat-select [(value)]="selectedBottomLeftTable" style="height:100%;" (selectionChange)="onDropdownChange()">
+                                        <mat-option [value]="BottomLeftTables.ALL_TRADES">All Trades</mat-option>
+                                        <mat-option [value]="BottomLeftTables.MY_TRADES">My Trades</mat-option>
+                                        <mat-option [value]="BottomLeftTables.MY_ORDERS">My Orders</mat-option>
+                                        <mat-option *ngIf="scenario1TestArray.includes(orderTypes.BASKET)===true" [value]="BottomLeftTables.BASKET">Basket Table</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <form class="date-block_bottom_right" [formGroup]="filterForm_" style="position:absolute;top:10%;right:10%;width:30%;font-size:0.9rem;">
+                                            <mat-form-field style="position:absolute;width:48%;left:0;">
+                                                <input matInput readonly [matDatepicker]="fromDate_" [value]="displayFromDate" 
+                                                (dateChange)="addFromEvent('change', $event)" formControlName="fromDate_">
+                                                <mat-datepicker-toggle matSuffix [for]="fromDate_"></mat-datepicker-toggle>
+                                                <mat-datepicker #fromDate_></mat-datepicker>
+                                            </mat-form-field>
+                                            <mat-form-field style="position:absolute;width:48%;left:52%;">
+                                                <input matInput readonly  [min]="displayFromDate"  [matDatepicker]="toDate_" [value]="displayToDate"
+                                                (dateChange)="addToEvent('change', $event)" formControlName="toDate_">
+                                                <mat-datepicker-toggle matSuffix [for]="toDate_"></mat-datepicker-toggle>
+                                                <mat-datepicker #toDate_></mat-datepicker>
+                                            </mat-form-field>
+                                </form>
+
+                                <div class="table-icons">
+                                    <nav class="navbar navbar-light bg-light table-title" style="box-shadow:none;">
+                                        <a *ngIf="selectedBottomLeftTable!==BottomLeftTables.BASKET || (selectedBottomLeftTable===BottomLeftTables.BASKET && 
+                                        (this.orderStateService.processMode!==BasketMode.UPDATE_BASKET_FROM_ORDERS_ARRAY && this.orderStateService.processMode!==BasketMode.ADD_TO_BASKET))" style="margin-bottom:4px;">
+                                            <i class="material-icons" title="Export as CSV" (click)="downloadTableAsCSV()">save_alt</i> 
+                                        </a>
+                                        <a *ngIf="tableExistsAtFullScreen() === false" class="navbar-brand">
+                                            <i class="material-icons" (click)="hideWeatherTable()">crop_16_9</i>
+                                        </a>
+                                        <a class="navbar-brand">
+                                            <i class="material-icons" (click)="switchOrdersAndTradesTableFullScreen()">fullscreen</i>
+                                        </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom Left Table Content-->
+                        <div class="row table-row">
+                            <div class="col h-100 w-100" #bottomLeftTable >
+                                <app-market-table *ngIf="selectedBottomLeftTable === BottomLeftTables.ALL_TRADES" [dataSource]="dataSourceAllTradesDisplayingData" [minWidth]="'1000px'"
+                                                  [columns]="allTradesTableColumns"></app-market-table>
+                                <app-market-table *ngIf="selectedBottomLeftTable === BottomLeftTables.MY_ORDERS" [dataSource]="dataSourceMyOrdersTableDisplayingData" [minWidth]="'1000px'"
+                                                  [columns]="myOrdersTableColumns"></app-market-table>
+                                <app-market-table *ngIf="selectedBottomLeftTable === BottomLeftTables.MY_TRADES" [dataSource]="dataSourceMyTradesTableDisplayingData" [minWidth]="'1000px'"
+                                                  [columns]="myTradesTableColumns"></app-market-table>
+                                <app-market-table *ngIf="selectedBottomLeftTable === BottomLeftTables.BASKET " [dataSource]="basketDataSource" [minWidth]="'1000px'"
+                                                  [columns]="myOrdersTableColumns"></app-market-table>
+                            </div>
+                        </div>
+
+                </div>
+
+                <!-- Bottom Right Table -->
+                <div class="col-md-4"
+                [ngClass]="{ 'col-md-4':getBottomRightVisibility() === 'side',
+                'col-md-12':getBottomRightVisibility() === 'wide',
+                'area-hidden':getBottomRightVisibility() === 'hidden',
+                'h-100':wrapTablesToAvailableHeight === true}" >
+
+                                 <!-- Bottom Right Table Header-->
+                                 <div class="row table-header-row">
+                                    <div class="col h-100" #bottomRightHeader  style="padding-right: 0px;" >
+                                        <nav class="navbar navbar-light bg-light table-title">
+                                            <a class="navbar-brand">
+                                                <i class="material-icons">cloud</i>
+                                                Weather
+                                            </a>
+                                        </nav>
+                                    </div>
+
+                                    <div class="table-icons">
+                                        <nav class="navbar navbar-light bg-light table-title" style="box-shadow:none;">
+                                            <a *ngIf="tableExistsAtFullScreen() === false" class="navbar-brand">
+                                                <i class="material-icons" (click)="hideOrdersAndTradesTable()">crop_16_9</i>
+                                            </a>
+                                            <a class="navbar-brand">
+                                                <i class="material-icons" (click)="switchWeatherTableFullScreen()">fullscreen</i>
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Right Table Content-->
+                                <div class="row table-row">
+                                    <div class="col h-100 w-100" #bottomRightTable >
+                                            <app-market-table [dataSource]="datasourceWeatherTable" [columns]="weatherTableColumns" [minWidth]="'500px'"></app-market-table>
+                                    </div>
+                                </div>
+                </div>
+            </div>
+        </div>

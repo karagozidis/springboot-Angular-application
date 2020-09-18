@@ -1,0 +1,119 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <br>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon" style="background: linear-gradient(60deg, #305d79, #6998b5);">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <h3 class="card-title">
+                            <small>User: </small>{{getUserDto().username}}
+                        </h3>
+                        <h3 class="card-title">
+                            <small>Email: </small>
+                            {{getUserDto().email}}
+                        </h3>
+                        <h4 class="card-title">
+                            <small>Country: </small>
+                            {{getUserDto().country.name}}
+                        </h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">power_settings_new</i>
+                            <a href="javascript:void(0)" (click)="onLoggedout()">Log out</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon" style="background: linear-gradient(60deg, #305d79, #6998b5);">
+                            <i class="material-icons">apps</i>
+                        </div>
+                        <h3 class="card-title">
+                            <small>Go to your</small>
+                            Available Modules
+                        </h3>
+
+                    </div>
+                    <div class="card-body " style="padding: 30px;">
+
+                        <ul class="nav nav-pills nav-pills-warning nav-pills-icons justify-content-center">
+                            <ng-container *ngFor="let modulesInfo of modulesInfos">
+
+                                <li *ngIf="userHasRightsOnMenu(modulesInfo.rolesCrm,modulesInfo.moduleCrm,modulesInfo.rolesMarket,modulesInfo.moduleMarket)"
+                                    class="nav-item userModules">
+                                    <a href="#link9" [routerLink]="modulesInfo.path" class="nav-link">
+                                        <i class="material-icons"> {{modulesInfo.icon}}</i>
+                                        {{modulesInfo.title}}
+                                    </a>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="card card-stats">
+
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon" style="background: linear-gradient(60deg, #305d79, #6998b5);">
+                            <i class="material-icons">notification_important</i>
+                        </div>
+                        <h3 class="card-title">
+                            Notifications
+                        </h3>
+                        <h4 class="card-title">
+                             Latest 5
+                        </h4>
+                    </div>
+
+
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-warning">
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Descryption</th>
+                            </thead>
+                            <tbody>
+
+                            <tr *ngFor="let row of dataSource">
+                                <td>{{row.createdOn}}</td>
+                                <td>{{row.name}}</td>
+                                <td [innerHTML]="row.descriptionPreview"> </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card-footer" style="border-top: 1px solid #d1e1ea;">
+                        <div class="stats">
+                            <i class="material-icons text-danger">reply_all</i>
+                            <a [routerLink]="'/notification-messages'">Go to Notifications</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

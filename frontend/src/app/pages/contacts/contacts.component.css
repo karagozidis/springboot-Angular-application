@@ -1,0 +1,39 @@
+.mat-table {
+    background: transparent;
+}
+.mat-paginator{
+    background-color: transparent;
+}
+
+.invite_user {
+    float:right;
+    position:fixed;
+    left:92%;
+    margin-top:100px;
+}
+.material-icons {
+    vertical-align: middle;
+  }
+.aligned-with-icon{
+    vertical-align: middle;
+    margin-top: 5px;
+    margin-left: 5px; /* optional */
+}
+
+.mat-fab {
+    position:absolute;
+    background-color: #305d79;
+    float:right;
+    right:7%;
+    margin-top:15%
+}
+
+
+  
+.nav-item{
+    padding-right:10px;
+}
+.mat-column-actions{
+    padding-left: 15px;
+    flex: 0 0 120px;
+}

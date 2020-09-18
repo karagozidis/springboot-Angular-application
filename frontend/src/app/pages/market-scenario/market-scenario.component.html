@@ -1,0 +1,180 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+
+                                <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                    <li class="nav-item">
+                                        <a mat-button class="nav-link active" (click)="save()" data-toggle="tab">
+
+                                            <i class="material-icons">save</i> Save
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">edit</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">Market Scenarios</h4>
+                                        <p class="card-category">Edit Market Scenarios</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="tab-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-chip-list">
+                                        <mat-chip-list #chipList aria-label="Order Type selection">
+                                          <mat-chip
+                                            *ngFor="let orderType of orderTypes"
+                                            [selectable]="selectable"
+                                            [removable]="removable"
+                                            (removed)="remove(orderType)">
+                                            {{orderType}}
+                                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                          </mat-chip>
+                                          <input
+                                            placeholder="New Order Type..."
+                                            #orderTypesInput
+                                            (click)="focusOrderTypesInput()"
+                                            [formControl]="orderTypesCtrl"
+                                            [matAutocomplete]="auto"
+                                            [matChipInputFor]="chipList"
+                                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                            (matChipInputTokenEnd)="add($event)">
+                                        </mat-chip-list>
+                                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                                          <mat-option *ngFor="let orderType of filteredorderTypes | async" [value]="orderType">
+                                            {{orderType}}
+                                          </mat-option>
+                                        </mat-autocomplete>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <i class="material-icons header-mat-icon">history</i>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h4 class="card-title">History</h4>
+                                        <p class="card-category">View all the changes on the market settings </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="tab-content">
+
+                            <div class="table-responsive table">
+
+                                <mat-table
+                                        [dataSource]="dataSource"
+                                        matSort
+                                        matSortDisableClear
+                                        (matSortChange)="refresh()">
+
+                                    <ng-container matColumnDef="createdOn">
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Created On</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.createdOn}}</mat-cell>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="createdBy">
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Created By</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.createdBy}}</mat-cell>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="scenario">
+                                        <mat-header-cell mat-sort-header *matHeaderCellDef>Scenario</mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.scenario}}</mat-cell>
+                                    </ng-container>
+
+                                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                                </mat-table>
+
+
+                                <mat-paginator
+                                        [length]="totalElements"
+                                        [pageSize]="paginator.pageSize"
+                                        [pageIndex]="paginator.pageIndex"
+                                        [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                                        (page)="refresh()">
+                                </mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="addNewModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="material-icons" style="padding-right: 10px;">playlist_add</i>
+                <h5 class="modal-title" id="exampleModalLongTitle">Add New</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" style="padding-left: 50px;padding-right: 50px;">
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" click="save()" data-dismiss="modal">
+                    Save
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

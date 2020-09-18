@@ -1,0 +1,39 @@
+.mat-stepper-horizontal{
+    display: initial;
+}
+.stepperClass{
+    
+    left: 50%;
+    max-width: 50rem;
+    position: relative;
+    transform: translateX(-50%);
+
+}
+
+.stepperText{
+    white-space: break-spaces;
+    margin-top:1rem;
+}
+
+.green{  
+    background-color: green;
+}
+/* ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: red; 
+ } */
+
+::ng-deep .greenFirst .mat-step-header:nth-of-type(1) .mat-step-icon{
+    background-color: green; 
+}
+ 
+::ng-deep .greenSecond .mat-step-header:nth-of-type(2) .mat-step-icon{
+    background-color: green; 
+}
+
+::ng-deep .greenThird .mat-step-header:nth-of-type(3) .mat-step-icon{
+    background-color: green; 
+  }
+
+::ng-deep .greenForth .mat-step-header:nth-of-type(3) .mat-step-icon{
+    background-color: green; 
+  }

@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog_0006.xml">
+
+    <changeSet author="Helias Karagozidis" id="0006-1">
+        <createTable tableName="market_scenario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="scenario" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
+

@@ -1,0 +1,65 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                      <div class="card-header card-header-tabs card-header-primary">
+                              <div class="nav-tabs-navigation">
+                                  <div class="nav-tabs-wrapper">
+                                    <ul class="nav nav-tabs" data-tabs="tabs" style="float: left;" *ngIf="appType === AppType.MARKET">
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link active"  [routerLink]="['/market']">
+                                                <i class="material-icons">menu_open</i>Return to Market
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                      <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                                          <li class="nav-item">
+                                              <a mat-button class="nav-link active"  [routerLink]="['/notification-messages']" 
+                                              >
+                                                  <i class="material-icons">menu_open</i> All notifications
+                                                  <div class="ripple-container"></div>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                      <ul class="nav nav-tabs" data-tabs="tabs">
+                                          <li class="nav-item">
+                                                  <i class="material-icons header-mat-icon">notification_important</i> 
+                                          </li>
+                                          <li class="nav-item">
+                                                  <h4 class="card-title">{{data.name}}</h4>
+                                                  <p class="card-category">{{data.createdOn}}</p>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="card-body">
+                              <div class="container-fluid">
+                                <!-- <br>
+                                  <div class="row">
+                                      <div class="col-md-12"> 
+                                         Date: {{data.createdOn}}
+                                      </div>  
+                                  </div> -->
+                                  
+                                  <br>
+
+                                  <div class="row" class="display-area">
+                                   
+                                          <div class="col-md-12"> 
+
+                                              <pre  [innerHTML]="data.description" ></pre>
+                                             
+                                          </div>    
+                                  </div>
+                                  <br><br>
+                              </div>
+                          </div>
+                  </div> 
+            </div> 
+      </div> 
+  </div>
+</div>

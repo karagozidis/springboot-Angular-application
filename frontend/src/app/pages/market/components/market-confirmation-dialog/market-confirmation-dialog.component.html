@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+    <p *ngIf="this.modalDialogData.userCommand==='updateSpecificRow'">Are you sure you want to update the order's details?</p>
+  <p *ngIf="this.modalDialogData.userCommand==='clearSpecificRow'">Are you sure you want to delete the selected order from the basket?</p>
+  <p *ngIf="this.modalDialogData.userCommand==='clearAll'">Are you sure you want to delete the whole list of the Basket Orders?</p>
+  <p *ngIf="this.modalDialogData.userCommand=== 'modifyBasketType'">If you change the Basket Type, all current orders inside the Basket will be replaced. Proceed?</p>
+  <p *ngIf="this.modalDialogData.userCommand=== 'postBasket'">Are you sure you want to place the Basket ?</p>
+  <p *ngIf="this.modalDialogData.userCommand=== 'clearSpecificOrderFromList'">Are you sure you want to delete the selected order?</p>
+  <p *ngIf="this.modalDialogData.userCommand==='deactivateBasketFromList'">Are you sure you want to delete the selected Basket ?</p>
+  <p *ngIf="this.modalDialogData.userCommand==='updateBasket'">Are you sure you want to update your selected Basket Details ?</p>
+  <p  *ngIf="this.modalDialogData.userCommand ==='deleteFileById'">Are you sure you want to delete the selected File  ?</p>
+  <p *ngIf="this.modalDialogData.userCommand === 'deleteAllMarketData'">Are you sure you want to delete all your Market Data ?</p>
+  <p *ngIf="this.modalDialogData.userCommand === 'deleteAllWeatherData'">Are you sure you want to delete the selected Weather Data ?</p>
+
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="reject" (click)="onNoClick()">No </button>
+  <button mat-button class="accept"(click)="removeOrderFromBasket()"cdkFocusInitial>Yes</button>
+  <button mat-button class="accept" *ngIf="this.modalDialogData.userCommand==='clearSpecificOrderFromList'"(click)="removeOrderFromList()"cdkFocusInitial>Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='clearAll'" mat-button class="accept"(click)="clearAll()"cdkFocusInitial>Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='postBasket'" mat-button class="accept"(click)="postBasket()"cdkFocusInitial>Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='modifyBasketType'" mat-button class="accept"(click)="modifyBasket()"cdkFocusInitial>Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='updateSpecificRow'" mat-button class="accept" (click)="updateRow()">Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='deactivateBasketFromList'" mat-button class="accept" (click)="deactivateBasket()">Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand==='updateBasket'" mat-button class="accept" (click)="updateBasket()">Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand ==='deleteFileById'"  mat-button class="accept" (click)="deleteFileById()">Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand ==='deleteAllMarketData'"  mat-button class="accept" (click)="deleteAllMarketData()">Yes</button>
+  <button *ngIf="this.modalDialogData.userCommand ==='deleteAllWeatherData'"  mat-button class="accept" (click)="deleteAllWeatherData()">Yes</button>
+
+
+
+
+</div>

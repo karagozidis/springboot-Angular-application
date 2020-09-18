@@ -1,0 +1,95 @@
+// .card {
+//     margin-top: 60px;
+// }
+
+.uploadCSV {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.mat-button {
+    background-color: #305d79;
+    color:white;
+    float: right;
+}
+
+.mat-accordion {
+    margin-top:30px;
+}
+
+.mat-expansion-panel {
+    background: transparent;
+
+}
+
+.tab1{
+    margin-top:30px;
+}
+
+.csv_data{
+    margin-left: 1rem;
+}
+
+p{
+   // font-weight:bold;
+    margin-bottom: 0.3rem;
+}
+
+// .material-icons {
+//     color:red
+// }
+
+.header-mat-icon{
+    padding: 11px;
+    padding-top: 8px;
+    font-size: 34px;
+}
+
+.choose-files-button {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height:0px;
+    border:none;
+    margin:0;
+    padding:0
+}
+.errorMsg {
+    font-size: 11px;
+}
+
+.buttonsClass {
+    position: relative;
+    bottom: 37px;
+    left: 97%
+}
+
+.addButtonClass {
+    left:-5px;
+    bottom: 18px;
+}
+
+.graphClass{
+    right: 35%;
+    top: 40px;
+}
+
+.listClass{
+    bottom: 56px;
+    left: 258px; 
+}
+.listTitle{
+    margin-left:28px;
+    margin-top:12px;
+}
+.example-chip-list {
+    width: 95%;
+  }
+  .mat-error{
+      margin-top:0;
+  }
+
+  .tab{
+    margin-top: 30px;
+  }

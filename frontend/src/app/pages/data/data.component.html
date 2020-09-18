@@ -1,0 +1,170 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+
+          <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs" style="float: right;">
+                  <li style="margin-left: 5px;" class="nav-item">
+                    <h6 style="margin-top: 15px;font-style: italic;margin-right: 10px;">
+                      Period Showing {{dateFrom| date:'dd/MM/yy' }} - {{dateTo |
+                      date:'dd/MM/yy'}}
+                    </h6>
+                  </li>
+                  <li style="margin-left: 5px;" class="nav-item">
+                    <a mat-button class="nav-link active" data-toggle="modal"
+                       data-target="#dateFiltersModal">
+                      <i class="material-icons">filter_list</i>
+                      filters
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                </ul>
+
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                  <li class="nav-item">
+                    <i class="material-icons header-mat-icon">view_list</i>
+                  </li>
+                  <li class="nav-item">
+                    <h4 class="card-title">Messages List</h4>
+                    <p class="card-category">List of all available messages</p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+
+            <div class="table-responsive">
+              <mat-table
+                  [dataSource]="dataSource"
+                  matSort
+                  matSortDisableClear
+                  (matSortChange)="refresh()">
+
+                <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let row">
+                    <button mat-raised-button type="button"
+                            class="btn btn-primary btn-link btn-sm btn-just-icon"
+                            style="color:#0a1332;" (click)="downloadMessage(row)">
+                      <i class="material-icons">get_app</i>
+                    </button>
+
+                    <button mat-raised-button type="button"
+                            class="btn btn-danger btn-link btn-sm btn-just-icon"
+                            (click)="deleteMessage(row)">
+                      <i class="material-icons">delete_outline</i>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                  <mat-header-cell mat-sort-header *matHeaderCellDef> Name
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let selectedMessage">{{ selectedMessage.name}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="tag">
+                  <mat-header-cell mat-sort-header *matHeaderCellDef> Tag</mat-header-cell>
+                  <mat-cell *matCellDef="let  selectedMessage">{{ selectedMessage.tag}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="timeSent">
+                  <mat-header-cell *matHeaderCellDef>Time Sent</mat-header-cell>
+                  <mat-cell
+                      *matCellDef="let  selectedMessage">{{ selectedMessage.createdOn | date:
+                    'medium'}}
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="userGroupId">
+                  <mat-header-cell *matHeaderCellDef>User Group</mat-header-cell>
+                  <mat-cell
+                      *matCellDef="let  selectedMessage">{{ selectedMessage.userGroupName}}
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="senderId">
+                  <mat-header-cell *matHeaderCellDef>Sender</mat-header-cell>
+                  <mat-cell
+                      *matCellDef="let  selectedMessage">{{ selectedMessage.createdBy}}
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+              </mat-table>
+              <mat-paginator
+                  [length]="totalElements"
+                  [pageSize]="paginator.pageSize"
+                  [pageIndex]="paginator.pageIndex"
+                  [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                  (page)="refresh()">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="dateFiltersModal" tabindex="-1" role="dialog"
+     aria-labelledby="settingsModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Show Market products on period</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput [(ngModel)]="nameFilter" placeholder="Name Filter">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput [(ngModel)]="tagFilter" placeholder="Tag Filter">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card>
+              <mat-calendar [selected]="dateFrom"
+                            (selectedChange)="onFromSelect($event)"></mat-calendar>
+            </mat-card>
+          </div>
+          <div class="col-md-6">
+            <mat-card>
+              <mat-calendar [selected]="dateTo"
+                            (selectedChange)="onToSelect($event)"></mat-calendar>
+            </mat-card>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="refresh()">
+          Show
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

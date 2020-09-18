@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-06-10T13:27:11" hostname="DESKTOP-8MV4NGR" time="0.775">
+  <properties/>
+  <testcase name="iceberg_test" classname="flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest" time="0.775">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;[23].0&gt; but was:&lt;[31].0&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[23].0&gt; but was:&lt;[31].0&gt;
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at flexi.fegcentral.backend.integration.data.modules.market.MarketIcebergTest.iceberg_test(MarketIcebergTest.java:168)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <system-out><![CDATA[16:27:11.740 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - open_product 2020-06-10T15:27:11.731534300Z 2020-06-10T16:27:11.731534300Z 109
+16:27:11.740 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - OK
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - iceberg_order 109 buy 100.0 22.0 2020-06-10T13:27:11.810532800Z 261 10.0 1.0
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;10.0;22.00;2020-06-10T13:27:11.810532;-1;261
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 0
+16:27:11.835 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 0
+16:27:11.876 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 10.0 22.0 2020-06-10T13:27:11.873533400Z 262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 4;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:11.873533;-1;262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 1
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;4;10.0;22.00;261;262
+16:27:11.877 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:11.878 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;10.0;23.00;2020-06-10T13:27:11.873533;-1;261
+16:27:11.878 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 4;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:11.873533;-1;262
+16:27:12.054 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 5.0 22.0 2020-06-10T13:27:12.051533700Z 263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 5;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.051533;-1;263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 1
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;5;5.0;23.00;261;263
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;5.0;23.00;2020-06-10T13:27:11.873533;-1;261
+16:27:12.055 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 5;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.051533;-1;263
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - limit_order 109 sell 85.0 22.0 2020-06-10T13:27:12.152532600Z 264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - ORDERS 1
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 6;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.152532;-1;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - TRADES 9
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;31.00;261;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;30.00;261;264
+16:27:12.155 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;29.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;28.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;27.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;26.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;25.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;10.0;24.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;6;5.0;23.00;261;264
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - UPDATED_ORDERS 2
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 3;iceberg;buy;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;32.00;2020-06-10T13:27:12.152532;-1;261
+16:27:12.156 [Test worker] INFO  f.f.b.s.d.m.m.TradingProcessInteractionService - 6;limit;sell;109;2020-06-10T15:27:11.731534;2020-06-10T16:27:11.731534;0.0;22.00;2020-06-10T13:27:12.152532;-1;264
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/auth/
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.users.UserController
+           Method = public flexi.fegcentral.backend.dto.auth.JWTResponseDTO flexi.fegcentral.backend.controllers.users.UserController.authenticate(flexi.fegcentral.backend.dto.auth.LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"jwt":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A","requires2FA":false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/products/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.ProductDTO flexi.fegcentral.backend.controllers.data.modules.market.ProductController.create(flexi.fegcentral.backend.dto.data.modules.market.ProductDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":108,"createdOn":"2020-06-10T13:27:11.196533800Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:11.156532300Z","deliveryTimeEnd":"2020-06-10T16:27:11.156532300Z","closesAt":"2020-06-10T14:27:11.156532300Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":258,"createdOn":"2020-06-10T13:27:11.385533700Z","createdBy":"","product":{"id":108,"createdOn":"2020-06-10T13:27:11Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:11Z","deliveryTimeEnd":"2020-06-10T16:27:11Z","closesAt":"2020-06-10T14:27:11Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:11.385533700Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":10.0,"orderStatus":"DRAFT","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":259,"createdOn":"2020-06-10T13:27:11.469537600Z","createdBy":"","product":{"id":108,"createdOn":"2020-06-10T13:27:11Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:11Z","deliveryTimeEnd":"2020-06-10T16:27:11Z","closesAt":"2020-06-10T14:27:11Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:11.469537600Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":5.0,"orderStatus":"DRAFT","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiNjQyNTFiNi0zYTA0LTQyNGUtODdkZC1hNjE5MjU1ZGNlYWUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.Yx4QBv8BiXQW6pt2oKCOMI7mWkY31TvmgwhSJdX_O0A"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":260,"createdOn":"2020-06-10T13:27:11.516534200Z","createdBy":"","product":{"id":108,"createdOn":"2020-06-10T13:27:11Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:11Z","deliveryTimeEnd":"2020-06-10T16:27:11Z","closesAt":"2020-06-10T14:27:11Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:11.515537300Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":18.0,"quantity":20.0,"current_price":18.0,"current_quantity":20.0,"orderStatus":"DRAFT","orderDirection":"BUY","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/auth/
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.users.UserController
+           Method = public flexi.fegcentral.backend.dto.auth.JWTResponseDTO flexi.fegcentral.backend.controllers.users.UserController.authenticate(flexi.fegcentral.backend.dto.auth.LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"jwt":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg","requires2FA":false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/products/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.ProductDTO flexi.fegcentral.backend.controllers.data.modules.market.ProductController.create(flexi.fegcentral.backend.dto.data.modules.market.ProductDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":109,"createdOn":"2020-06-10T13:27:11.737532900Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:11.731534300Z","deliveryTimeEnd":"2020-06-10T16:27:11.731534300Z","closesAt":"2020-06-10T14:27:11.731534300Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":261,"createdOn":"2020-06-10T13:27:11.810532800Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":"2020-06-10T14:27:12Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:11.810532800Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":10.0,"orderStatus":"DRAFT","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":262,"createdOn":"2020-06-10T13:27:11.873533400Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":"2020-06-10T14:27:12Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:11.873533400Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":10.0,"orderStatus":"DRAFT","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List<flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO> flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":10.0,"orderStatus":"ACTIVE","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":23.0,"order1_quantity":10.0,"order2_price":22.0,"order2_quantity":0.0},{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":10.0,"orderStatus":"ACTIVE","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":23.0,"order2_quantity":10.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":263,"createdOn":"2020-06-10T13:27:12.052535300Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":"2020-06-10T14:27:12Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12.051533700Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":5.0,"orderStatus":"DRAFT","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List<flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO> flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":5.0,"orderStatus":"PARTLY_MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":23.0,"order2_quantity":10.0},{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":5.0,"orderStatus":"PARTLY_MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":23.0,"order1_quantity":10.0,"order2_price":22.0,"order2_quantity":0.0},{"id":133,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":5.0,"orderStatus":"PARTLY_MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":263,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":23.0,"order1_quantity":5.0,"order2_price":22.0,"order2_quantity":0.0},{"id":133,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":263,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":23.0,"current_quantity":5.0,"orderStatus":"PARTLY_MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":23.0,"order2_quantity":5.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /modules/market/orders/
+       Parameters = {}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.OrderController
+           Method = public flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO flexi.fegcentral.backend.controllers.data.modules.market.OrderController.create(flexi.fegcentral.backend.dto.data.modules.market.SingleOrderDTO) throws java.lang.Exception
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":264,"createdOn":"2020-06-10T13:27:12.153533100Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":"2020-06-10T14:27:12Z","period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12.152532600Z","user":{"id":2000,"createdOn":null,"createdBy":null,"username":"admin","email":"user1@flexi.gr","password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":85.0,"orderStatus":"DRAFT","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /modules/market/products/matched-orders
+       Parameters = {product-id=[109]}
+          Headers = [Content-Type:"application/json", "application/json", Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZTExOWYzZi0yODU0LTRiNTQtYTIzZC0wYzIzZGIzYmYzZmUiLCJpYXQiOjE1OTE3OTU2MzEsInN1YiI6ImFkbWluIiwiaXNzIjoiZmxleGl0cmFuc3RvcmUuZXUiLCJleHAiOjE1OTE4ODIwMzEsInVzZXJfaWQiOjIwMDB9.WtS0GcMRE2EcdaqbKfXuzGT_vWBuezOvjOPknSJodLg"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = flexi.fegcentral.backend.controllers.data.modules.market.ProductController
+           Method = public java.util.List<flexi.fegcentral.backend.dto.data.modules.market.trades.TradeDTO> flexi.fegcentral.backend.controllers.data.modules.market.ProductController.getMatchedOrders(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":133,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":263,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":23.0,"order2_quantity":5.0},{"id":133,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":263,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":5.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":23.0,"order1_quantity":5.0,"order2_price":22.0,"order2_quantity":0.0},{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":23.0,"order1_quantity":10.0,"order2_price":22.0,"order2_quantity":0.0},{"id":132,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":22.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":262,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":23.0,"order2_quantity":10.0},{"id":134,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":31.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":134,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":31.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":135,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":30.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":135,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":30.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":136,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":29.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":136,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":29.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":137,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":28.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":137,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":28.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":138,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":27.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":138,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":27.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":139,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":26.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":139,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":26.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":140,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":25.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":140,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":25.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":141,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":24.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":141,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":24.0,"quantity":10.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0},{"id":142,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"singleOrder2":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"order1_price":32.0,"order1_quantity":0.0,"order2_price":22.0,"order2_quantity":0.0},{"id":142,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","timestamp":"2020-06-10T13:27:12Z","productName":"0","price":23.0,"quantity":5.0,"metadata":null,"buyer":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"seller":{"id":null,"createdOn":null,"createdBy":null,"username":"admin","email":null,"password":null,"status":null,"country":null,"rolesFeg":null,"modulesFeg":null,"rolesMarket":null,"modulesMarket":null,"defaultMarket":null,"market":null,"landingPage":null},"singleOrder1":{"id":264,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":85.0,"current_price":22.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"SELL","orderType":"LIMIT","metadata":"","basket":null,"removedOn":null},"singleOrder2":{"id":261,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","product":{"id":109,"createdOn":"2020-06-10T13:27:12Z","createdBy":"","name":"0","deliveryTimeStart":"2020-06-10T15:27:12Z","deliveryTimeEnd":"2020-06-10T16:27:12Z","closesAt":null,"period":"MINUTES60","productStatus":"OPEN","user":null,"latestSellOrder":null,"latestBuyOrder":null,"marketCode":"CY","hasOrders":false,"totalOrders":0},"bidTime":"2020-06-10T13:27:12Z","user":null,"price":22.0,"quantity":10.0,"current_price":32.0,"current_quantity":0.0,"orderStatus":"MATCHED","orderDirection":"BUY","orderType":"ICEBERG","metadata":"{\"icebergQuantity\":\"100.0\",\"icebergPriceDelta\":\"1.0\"}","basket":null,"removedOn":null},"order1_price":22.0,"order1_quantity":0.0,"order2_price":32.0,"order2_quantity":0.0}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

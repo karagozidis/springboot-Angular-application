@@ -1,0 +1,38 @@
+.dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: #305d79;
+    border: 0;
+    box-shadow: none;
+}
+
+.dropdown-menu li > a{
+    color: #fff;
+}
+
+.onCloudAppul {
+    list-style-type: none;
+    padding-left: 10px;
+    padding: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6392af;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4884a9;
+}

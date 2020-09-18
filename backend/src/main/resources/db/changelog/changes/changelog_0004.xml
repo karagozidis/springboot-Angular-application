@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+  logicalFilePath="changelog_0004.xml">
+
+  <changeSet author="ED (generated)" id="1580909247013-1">
+        <createTable tableName="file_upload_registry">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="filename" type="VARCHAR(255)"/>
+            <column name="path" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="prefix" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-2">
+        <createTable tableName="import_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="modified_on" type="datetime"/>
+            <column name="version" type="BIGINT"/>
+            <column name="action" type="VARCHAR(255)"/>
+            <column name="basket_id" type="VARCHAR(255)"/>
+            <column name="basket_type" type="VARCHAR(255)"/>
+            <column name="basket_meta" type="VARCHAR(255)"/>
+            <column name="message_info_id" type="BIGINT"/>
+            <column name="order_direction" type="VARCHAR(255)"/>
+            <column name="order_type" type="VARCHAR(255)"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="order_meta" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="product_name" type="VARCHAR(255)"/>
+            <column name="quantity" type="DOUBLE"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="time_stamp" type="datetime"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="single_order_id" type="BIGINT"/>
+            <column name="market_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-3">
+        <addColumn tableName="basket">
+            <column name="basket_status" type="VARCHAR(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-4">
+        <addColumn tableName="product">
+            <column name="market_code" type="VARCHAR(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-5">
+        <addColumn tableName="message_info">
+            <column name="unique_id" type="VARCHAR(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-6">
+        <createIndex indexName="FK2alei1t7exsd7r5qxcdlbehpv" tableName="file_upload_registry">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ED (generated)" id="1580909247013-7">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="file_upload_registry" constraintName="FK2alei1t7exsd7r5qxcdlbehpv" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

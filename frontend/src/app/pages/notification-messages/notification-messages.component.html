@@ -1,0 +1,115 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12">
+
+
+        <div class="card">
+
+          <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs" style="float: left;"
+                    *ngIf="appType === AppType.MARKET">
+                  <li class="nav-item">
+                    <a mat-button class="nav-link active" [routerLink]="['/market']">
+                      <i class="material-icons">menu_open</i>
+                      Return to Market
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                  <li data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                      class="nav-item">
+                    <a mat-button class="nav-link active" (click)="markAllAsRead()"
+                       data-toggle="tab">
+                      <i class="material-icons">done_all</i>
+                      Mark all as read
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a mat-button class="nav-link active" (click)="refresh()" data-toggle="tab">
+                      <i class="material-icons">autorenew</i>
+                      Refresh
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <mat-table
+                  [dataSource]="dataSource"
+                  matSort
+                  matSortDisableClear
+                  (matSortChange)="refresh()">
+
+
+                <ng-container matColumnDef="actions" class="td-actions text-right">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let row">
+                    <!-- <button mat-raised-button type="button" matTooltip="View" matTooltipPosition="above"
+                     class="btn btn-primary btn-link btn-sm btn-just-icon" (click)="openNotification(row)">
+                        <i class="material-icons">edit</i>
+                    </button> -->
+                    <button mat-raised-button type="button" matTooltip="Mark as Read"
+                            matTooltipPosition="above"
+                            class="btn btn-primary btn-link btn-sm btn-just-icon"
+                            (click)="updateStatus(row.id, $event)">
+                      <i class="material-icons">done_all</i>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="createdOn">
+                  <mat-header-cell mat-sort-header *matHeaderCellDef>Date</mat-header-cell>
+                  <mat-cell *matCellDef="let dataRow">
+                    <div class="mat-cell-text">{{dataRow.createdOn}}</div>
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                  <mat-header-cell mat-sort-header *matHeaderCellDef>Name</mat-header-cell>
+                  <mat-cell *matCellDef="let dataRow">
+                    <div class="mat-cell-text">{{dataRow.name}}</div>
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="description">
+                  <mat-header-cell mat-sort-header *matHeaderCellDef>Description</mat-header-cell>
+                  <mat-cell *matCellDef="let dataRow">
+                    <div class="mat-cell-text">
+                      <div [innerHTML]="dataRow.descriptionPreview"></div>
+                    </div>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns"
+                         [ngClass]="{'unreadNotification': row.status === 'pending' }"
+                         (click)="onRowClicked(row)"></mat-row>
+
+              </mat-table>
+
+              <mat-paginator
+                  [length]="totalElements"
+                  [pageSize]="paginator.pageSize"
+                  [pageIndex]="paginator.pageIndex"
+                  [pageSizeOptions]="[5, 10, 15,
+                                                20,50,100,500,1000]"
+                  (page)="refresh()">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

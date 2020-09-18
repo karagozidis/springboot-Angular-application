@@ -1,0 +1,346 @@
+<div class="main-content" style="height: 100px;">
+
+  <div class="row h-50 w-100" 
+    [ngClass]="{ 'h-50':getTopVisibility() === 'side',
+                      'h-100':getTopVisibility() === 'wide',
+                      'area-hidden':getTopVisibility() === 'hidden'}"
+  >
+
+        <div class=" h-100 overflow-auto" style="padding: 0px;"
+         [ngClass]="{ 'col-md-8':getTopLeftVisibility() === 'side',
+                      'col-md-12':getTopLeftVisibility() === 'wide',
+                      'area-hidden':getTopLeftVisibility() === 'hidden'}"
+        >
+
+          <table mat-table [dataSource]="productDataSource" class="mat-elevation-z8">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="actions" >
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element">  
+                
+
+                <button mat-raised-button type="button" matTooltip="Edit" matTooltipPosition="above"  class="btn btn-primary btn-link btn-sm btn-just-icon"  data-toggle="modal" data-target="#settingsModal">
+                  <i class="material-icons">sort</i>
+                </button>
+                
+              </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name" >
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> price </th>
+              <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="quantity">
+              <th mat-header-cell *matHeaderCellDef> Quantity </th>
+              <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+            </ng-container>
+
+
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="latestBuy">
+          <th mat-header-cell *matHeaderCellDef> Latest Buy </th>
+          <td mat-cell *matCellDef="let element"  [ngClass]="{'redColor': element.latestBuy <= 5, 'greenColor': element.latestBuy >= 5 }"> {{element.latestBuy}} </td>
+        </ng-container>
+               <!-- Symbol Column -->
+        <ng-container matColumnDef="latestSell">
+          <th mat-header-cell *matHeaderCellDef> Latest Sell </th>
+          <td mat-cell *matCellDef="let element"> {{element.latestSell}} </td>
+        </ng-container>
+                  <!-- Symbol Column -->
+                   <ng-container matColumnDef="deliveryDate">
+                    <th mat-header-cell *matHeaderCellDef> DeliveryDate </th>
+                    <td mat-cell *matCellDef="let element"> {{element.deliveryDate}} </td>
+                  </ng-container>
+                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                  </ng-container>
+                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                  </ng-container>
+                              
+
+
+
+
+          
+            <tr mat-header-row *matHeaderRowDef="porductColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: porductColumns;"></tr>
+          </table>
+
+        </div>
+
+        <div class="h-100 overflow-auto" style="padding: 0px;"
+                 [ngClass]="{ 'col-md-4':getTopRightVisibility() === 'side',
+                      'col-md-12':getTopRightVisibility() === 'wide',
+                      'area-hidden':getTopRightVisibility() === 'hidden'}"
+        >
+        
+         
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef> Weight </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+
+        </div>
+ 
+
+  </div>
+
+  <div class="row h-50 w-100" 
+    [ngClass]="{ 'h-50':getBottomVisibility() === 'side',
+                      'h-100':getBottomVisibility() === 'wide',
+                      'area-hidden':getBottomVisibility() === 'hidden'}" >
+
+          <div class="col-md-6 h-100 overflow-auto" style="padding: 0px;"
+          		    [ngClass]="{ 'col-md-6':getBottomLeftVisibility() === 'side',
+                      'col-md-12':getBottomLeftVisibility() === 'wide',
+                      'area-hidden':getBottomLeftVisibility() === 'hidden'}"  >
+                                    
+                                    <!-- <div class="row" >
+                                      <div class="col-md-6 ">
+
+                                          <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-secondary">Left</button>
+                                            <button type="button" class="btn btn-secondary">Middle</button>
+                                            <button type="button" class="btn btn-secondary">Right</button>
+                                          </div>
+                                      </div>
+                                    </div> -->
+                                                            
+                                      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="position">
+                                          <th mat-header-cell *matHeaderCellDef>            
+                                            
+                                            <!-- <i class="material-icons"  id="dropdownMenuButton" data-toggle="dropdown" style="cursor: pointer;padding-top:7px;">build</i>              
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                              <a class="dropdown-item" href="#">Orders</a>
+                                              <a class="dropdown-item" href="#">Trades</a>
+                                              <a class="dropdown-item" href="#">Others</a>
+                                            </div>  -->
+                                            
+                                            </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container>
+                                      
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+                                      
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="weight">
+                                          <th mat-header-cell *matHeaderCellDef> Weight </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                                        </ng-container>
+                                      
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="symbol">
+                                          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                                        </ng-container>
+                                      
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                      </table>
+      
+      
+          </div>
+
+          <div class="col-md-6 h-100 overflow-auto" style="padding: 0px;"
+          					        [ngClass]="{ 'col-md-6':getBottomRightVisibility() === 'side',
+                      'col-md-12':getBottomRightVisibility() === 'wide',
+                      'area-hidden':getBottomRightVisibility() === 'hidden'}">
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+            
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+            
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+
+
+
+          </div>
+    
+  </div>
+
+</div>
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Show/Hide Data Tables</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+
+            <a class="btn" (click)="hideProductsTable()" href="javascript:void(0);"  
+            [ngClass]="{'button-active':topLeftVisibilityStatus === true}"> 
+              <i class="material-icons" style="transform: rotate(315deg);">keyboard_arrow_up</i>
+              <span class="pmd-floating-hidden">Top Left</span>
+            </a> 
+
+            <a class="btn" (click)="hideOrdersByProductTable()" href="javascript:void(0);"
+             [ngClass]="{'button-active':topRightVisibilityStatus === true}" > 
+            	<span class="pmd-floating-hidden">Top Right</span>
+              <i class="material-icons" style="transform: rotate(45deg);">keyboard_arrow_up</i>
+            </a>
+            <br>
+          
+            <a class="btn" (click)="hideOrdersAndTradesTable()"  href="javascript:void(0);" 
+             [ngClass]="{'button-active':bottomLeftVisibilityStatus === true}">  
+              <i class="material-icons" style="transform: rotate(225deg);">keyboard_arrow_up</i>
+              <span class="pmd-floating-hidden">Bottom Left</span>
+            </a> 
+
+            <a class="btn" (click)="hideWeatherTable()" href="javascript:void(0);"
+            [ngClass]="{'button-active':bottomRightVisibilityStatus === true}">  
+              <span class="pmd-floating-hidden">Bottom Right</span>
+              <i class="material-icons" style="transform: rotate(135deg);">keyboard_arrow_up</i>
+            </a> 
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+
+<div class="fixed-plugin" style="height: 52px;">
+	<div class="dropdown show-dropdown open">
+		<a data-toggle="dropdown" href="#" aria-expanded="true">
+			<i  class="fa fa-cog fa-2x"></i>
+		</a>
+
+    <ul class="dropdown-menu">
+
+      <li class="header-title">Settings</li>
+
+      <li>
+        <a class="img-holder switch-trigger" href="javascript:void(0)">
+          <img _ngcontent-c1="" src="assets/img/sidebar-3.jpg">
+        </a>
+      </li>
+
+      <li>
+        <a class="img-holder switch-trigger" href="javascript:void(0)">
+          <img src="assets/img/sidebar-3.jpg">
+        </a>
+      </li>
+
+      <li>
+        <a class="img-holder switch-trigger" href="javascript:void(0)">
+          <img _ngcontent-c1="" src="assets/img/sidebar-3.jpg">
+        </a>
+       </li>
+       <li>
+        <a class="img-holder switch-trigger" href="javascript:void(0)">
+          <img _ngcontent-c1="" src="assets/img/sidebar-3.jpg">
+        </a>
+      </li>
+
+
+
+      <li class="button-container" style="border-top: 1px solid #ddd;">
+        <div >
+          <button   data-toggle="modal" data-target="#settingsModal" class="btn btn-info btn-block btn-fill">
+          Tables Visibility 
+          </button>
+        </div>
+      </li>
+
+
+      <li _ngcontent-aty-c1="" class="button-container"  style="border-bottom: 1px solid #ddd;">
+        <div _ngcontent-aty-c1="">
+          <button _ngcontent-aty-c1="" class="btn btn-warning btn-block btn-fill" data-target="#buy" data-toggle="modal"> Demo </button>
+        </div>
+      </li>
+
+
+    </ul>
+
+
+	</div>
+</div>

@@ -1,0 +1,28 @@
+.main-content{
+    margin-top:0px;
+}
+
+.mat-column-name {
+    flex: 0 0 20% !important;
+    @extend %row-alignment;
+}
+.mat-column-description {
+    flex: 0 0 20% !important;
+    @extend %row-alignment;
+}
+.mat-column-calculation_date {
+    flex: 0 0 20% !important;
+    @extend %row-alignment;
+}
+.mat-column-status {
+    flex: 0 0 20% !important;
+    @extend %row-alignment;
+}
+.mat-column-actions {
+    flex: 0 0 15% !important;
+    
+}
+
+%row-alignment{
+    justify-content: center;
+  }

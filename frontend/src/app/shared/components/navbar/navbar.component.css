@@ -1,0 +1,79 @@
+.dropdown-item:hover {
+    background-color: #467999
+  }
+
+.displayMenu {
+  visibility: visible;
+}
+
+.hideMenu {
+  visibility: hidden;
+}
+
+.cy-flag-icon {
+  background-image: url("/assets/img/flags/cyprus-v1.png");
+}
+
+.bg-flag-icon {
+  background-image: url("/assets/img/flags/bulgaria-v1.png");
+}
+
+.flag-icon {
+
+  margin-right:8px;
+  display:inline-block;
+  vertical-align: middle;
+  height:35px;
+  width:35px;
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.bg-flag-icon{
+  right:4%;
+}
+.mat-menu-item {
+ text-align: center;
+}
+
+.isDisabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+/*
+.goToMarket-hidden{
+  display:none;
+}
+.returnToCrm-hidden{
+  display:none;
+} */
+.navResponsiveButton-hidden{
+  display:none;
+}
+
+.header-icon{
+  font-size: 40px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  /*color: #315e7a;*/
+}
+
+/*.cToggleButton {
+    padding: 10px;
+    color: #54839f;
+    border-color: #54839f57;
+    box-shadow: none;
+    border-width: 1px 1px 0px 0px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #ffffff73;
+    padding-right: 10px;
+}
+
+.cToggleButton:hover {
+    color: #305d79;
+    border-color: #54839f57;
+    background-color: #ffffff73;
+} */
